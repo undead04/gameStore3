@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.client')
 @section('title', 'Home page | Web game store')
 @section('content')
     <section class="bg-black py-2">

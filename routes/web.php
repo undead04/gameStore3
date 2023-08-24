@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use function Termwind\render;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::view('/', 'clients.home');
+
+Route::view('/admin', 'admin.home');
+
+Route::prefix('admin')->group(function () {
+    Route::view('/', 'admin.home')->name('admin.home');
+    Route::view('/games', 'admin.game.games')->name('admin.game.games');
+    Route::view('/editgames/1', 'admin.game.gamesDetail');
+});
