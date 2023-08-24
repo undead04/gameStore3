@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+/* Config */
+
+/* tag */
+a {
+    text-decoration: none;
+    color: black ;
+}
+/* class */
+/* Truncate text */
+.truncated {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+/* Main nav */
+
+/* Wrapper */
+.head {
+    background-image: url("	https://cs-gameworld.myshopify.com/cdn/shop/t/5/assets/bg_image.jpg?v=13958289029611430451629426560");
+    background-size: cover;
+}
+/* Sub nav */
+.subnav {
+    z-index: 1;
+    background-color: black;
+    height: 30px;
+    color: #969696;
+}
+
+.subnav_label {
+    font-size: 1rem;
+}
+.subnav .control-item {
+    padding: 0 10px;
+    border-left: 1px solid #5d5d5d;
+}
+
+.control-item a {
+    color: inherit;
+    text-decoration: none;
+
+}
+
+.control-item span {
+    font-weight: 700;
+}
+
+/* Main nav */
+
+.headnav_services {
+    color: #969696;
+}
+
+.haednav_contacts span {
+    display: inline-block;
+    padding: 4px 2px;
+}
+
+.haednav_contacts span:last-child:hover {
+    color: aqua;
+    cursor: pointer;
+}
+
+.headnav_search {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    height: 30px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.headnav_search input{
+    flex: 1;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 8px;
+}
+
+.headnav_search span {
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: 6px 7px;
+    background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(245,245,245,1) 21%, rgba(226,226,226,1) 62%, rgba(226,226,226,1) 100%);
+    cursor: pointer;
+}
+
+/* Product banner */
+
+.product_banner_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product_banner {
+    background-image: url("https://cdn2.unrealengine.com/egs-ac-mirage-carousel-desktop-1920x1080-b74b6e380b4d.jpg?h=720&quality=medium&resize=1&w=1280");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 30px 40px;
+    height: auto;
+}
+
+.product_banner_body {
+    width: 320px;
+    margin-bottom: 20px;
+}
+.product_banner_title {
+    width: 200px;
+    margin-right: auto;
+    margin-bottom: 5px;
+}
+
+.product_publish {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.product_description {
+    font-size: 1.6rem;
+    font-weight: 500;
+    display: -webkit-box;
+    line-clamp: 4;
+    overflow: hidden;
+    word-break: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
+.product_actions {
+
+}
+
+.product_actions_buy {
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+}
+
+.btn + .btn {
+    margin-left: 16px;
+}
+
+.product_actions_addcart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 1.2rem;
+}
+
+.icon-plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    border: 1px solid white;
+    margin-right: 8px;
+}
+.icon-plus i {
+    margin-top: 1px;
+}
+
+/* Side product banner */
+
+.product_wrapper {
+    display: flex;
+    flex-direction: column;   
+    align-items: flex-end;
+}
+
+.game_product_thumb {
+    display: flex;
+    align-items: center;
+    width: 176px;
+    padding: 9px 0px 9px 6px;
+    background-color: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.game_product_thumb:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+.game_product_avatar {
+    margin: 0 8px;
+}
+.game_product_avatar img {
+    width: 40px;
+}
+
+.game_title {
+    flex: 1;
+    font-size: 1.2rem;
+    word-wrap: break-word;
+}
+
+
+
+/* Footer */
+.footer_wrapper {
+    margin: 0 40px;
+    color: white;
+}
+
+.contact_link {
+    text-decoration: none;
+    font-size: 2.8rem;
+}
+
+.contact_link + .contact_link {
+    margin-left: 8px;
+}
