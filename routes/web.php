@@ -17,9 +17,6 @@ use function Termwind\render;
 
 
 Route::view('/', 'clients.home');
-
-Route::view('/admin', 'admin.home');
-
 Route::prefix('admin')->group(function () {
     Route::view('/', 'admin.home')->name('admin.home');
     Route::get('/games', [GameController::class, 'index'])->name('admin.game.games');

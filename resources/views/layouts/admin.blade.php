@@ -15,6 +15,7 @@
 
     {{-- CSS --}}
     <link href="{{ asset('/css/global.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('/css/form.css') }}">
     <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" />
 </head>
 
