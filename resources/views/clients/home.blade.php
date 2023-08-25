@@ -1,90 +1,200 @@
 @extends('layouts.client')
 @section('title', 'Home page | Web game store')
 @section('content')
-    <section class="bg-black py-2">
+    @include('clients.parts.banner')
+    <section class="py-5 bg-black">
         <div class="container-md">
-            <div class="row align-content-center">
-                <div class="col-md-9 product_banner_wrapper">
-                    <div class="product_banner text-white">
-                        <div class="product_banner_body">
-                            <div class="product_banner_title">
-                                <img class="img-fluid"
-                                    src="https://cdn2.unrealengine.com/egs-ac-mirage-carousel-logo-350x143-c22cafeefdfb.png"
-                                    alt="bannertitle">
+            <a class="games_title">
+                <h2 class="text-white my-3">Game on sale</h2>
+            </a>
+            <div class="row flex-nowrap overflow-x-scroll">
+                <div class="col-md-2-4">
+                    <div>
+                        <a href="#">
+                            <div class="card bg-transparent">
+                                <div class="game_picture">
+                                    <div class="game_picture_wrapper">
+                                        <img class="img-fluid"
+                                            src="https://cdn1.epicgames.com/spt-assets/5d045544c8834efbab794fe891c6697a/trex-dinosaur-game-ngf4p.png?h=480&quality=medium&resize=1&w=360"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-text text-secondary game_base">BASE GAME</div>
+                                    <div class="card-text text-light game_title">T-Rex Dinosaur Game</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <div class="rounded-2 bg-primary text-white game_saleoff">-10%</div>
+                                        <div class="games_price">
+                                            <div class="text-decoration-line-through text-secondary game_old_price">đ10000
+                                            </div>
+                                            <div class="text-light game_new_price">đ7000</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="product_publish">
-                                <span>AVAILABLE OCTOBER 5</span>
-                            </div>
-                            <div class="product_description">
-                                <span>Experience the story of Basim seeking answers and justice as he navigates the
-                                    bustling
-                                    streets of ninth-century Baghdad.</span>
-                            </div>
-                        </div>
-                        <div class="product_actions">
-                            <div class="btn btn-light btn-lg product_actions_buy">
-                                PRE-PURCHASE NOW
-                            </div>
-                            <div class="btn btn-outline-light btn-lg product_actions_addcart">
-                                <div class="icon-plus"><i class="fa-solid fa-plus"></i></div>
-                                <span>ADD TO CART</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
-
-                <div class="col-md-3">
-                    <div class="product_wrapper text-white">
-                        <div class="game_product_thumb">
-                            <div class="game_product_avatar">
-                                <img class="img-fluid"
-                                    src="https://cdn2.unrealengine.com/egs-lotr-return-to-moria-carousel-thumb-v2-1200x1600-5d5f6bd3b206.jpg"
-                                    alt="thumnail">
+                <div class="col-md-2-4">
+                    <div>
+                        <a href="#">
+                            <div class="card bg-transparent">
+                                <div class="game_picture">
+                                    <div class="game_picture_wrapper">
+                                        <img class="img-fluid"
+                                            src="https://cdn1.epicgames.com/spt-assets/5d045544c8834efbab794fe891c6697a/trex-dinosaur-game-ngf4p.png?h=480&quality=medium&resize=1&w=360"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-text text-secondary game_base">BASE GAME</div>
+                                    <div class="card-text text-light game_title">T-Rex Dinosaur Game</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <div class="rounded-2 bg-primary text-white game_saleoff">-10%</div>
+                                        <div class="games_price">
+                                            <div class="text-decoration-line-through text-secondary game_old_price">đ10000
+                                            </div>
+                                            <div class="text-light game_new_price">đ7000</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <span class="game_title truncated">
-                                The Lord of the Rings: Return to Moria™
-                            </span>
-                        </div>
-                        <div class="game_product_thumb">
-                            <div class="game_product_avatar">
-                                <img class="img-fluid"
-                                    src="https://cdn2.unrealengine.com/egs-lotr-return-to-moria-carousel-thumb-v2-1200x1600-5d5f6bd3b206.jpg"
-                                    alt="thumnail">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-2-4">
+                    <div>
+                        <a href="#">
+                            <div class="card bg-transparent">
+                                <div class="game_picture">
+                                    <div class="game_picture_wrapper">
+                                        <img class="img-fluid"
+                                            src="https://cdn1.epicgames.com/spt-assets/5d045544c8834efbab794fe891c6697a/trex-dinosaur-game-ngf4p.png?h=480&quality=medium&resize=1&w=360"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-text text-secondary game_base">BASE GAME</div>
+                                    <div class="card-text text-light game_title">T-Rex Dinosaur Game</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <div class="rounded-2 bg-primary text-white game_saleoff">-10%</div>
+                                        <div class="games_price">
+                                            <div class="text-decoration-line-through text-secondary game_old_price">đ10000
+                                            </div>
+                                            <div class="text-light game_new_price">đ7000</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <span class="game_title truncated">
-                                The Lord of the Rings: Return to Moria™
-                            </span>
-                        </div>
-                        <div class="game_product_thumb">
-                            <div class="game_product_avatar">
-                                <img class="img-fluid"
-                                    src="https://cdn2.unrealengine.com/egs-lotr-return-to-moria-carousel-thumb-v2-1200x1600-5d5f6bd3b206.jpg"
-                                    alt="thumnail">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-2-4">
+                    <div>
+                        <a href="#">
+                            <div class="card bg-transparent">
+                                <div class="game_picture">
+                                    <div class="game_picture_wrapper">
+                                        <img class="img-fluid"
+                                            src="https://cdn1.epicgames.com/spt-assets/5d045544c8834efbab794fe891c6697a/trex-dinosaur-game-ngf4p.png?h=480&quality=medium&resize=1&w=360"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-text text-secondary game_base">BASE GAME</div>
+                                    <div class="card-text text-light game_title">T-Rex Dinosaur Game</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <div class="rounded-2 bg-primary text-white game_saleoff">-10%</div>
+                                        <div class="games_price">
+                                            <div class="text-decoration-line-through text-secondary game_old_price">đ10000
+                                            </div>
+                                            <div class="text-light game_new_price">đ7000</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <span class="game_title truncated">
-                                The Lord of the Rings: Return to Moria™
-                            </span>
-                        </div>
-                        <div class="game_product_thumb">
-                            <div class="game_product_avatar">
-                                <img class="img-fluid"
-                                    src="https://cdn2.unrealengine.com/egs-lotr-return-to-moria-carousel-thumb-v2-1200x1600-5d5f6bd3b206.jpg"
-                                    alt="thumnail">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-2-4">
+                    <div>
+                        <a href="#">
+                            <div class="card bg-transparent">
+                                <div class="game_picture">
+                                    <div class="game_picture_wrapper">
+                                        <img class="img-fluid"
+                                            src="https://cdn1.epicgames.com/spt-assets/5d045544c8834efbab794fe891c6697a/trex-dinosaur-game-ngf4p.png?h=480&quality=medium&resize=1&w=360"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-text text-secondary game_base">BASE GAME</div>
+                                    <div class="card-text text-light game_title">T-Rex Dinosaur Game</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <div class="rounded-2 bg-primary text-white game_saleoff">-10%</div>
+                                        <div class="games_price">
+                                            <div class="text-decoration-line-through text-secondary game_old_price">đ10000
+                                            </div>
+                                            <div class="text-light game_new_price">đ7000</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <span class="game_title truncated">
-                                The Lord of the Rings: Return to Moria™
-                            </span>
-                        </div>
-                        <div class="game_product_thumb">
-                            <div class="game_product_avatar">
-                                <img class="img-fluid"
-                                    src="https://cdn2.unrealengine.com/egs-lotr-return-to-moria-carousel-thumb-v2-1200x1600-5d5f6bd3b206.jpg"
-                                    alt="thumnail">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-2-4">
+                    <div>
+                        <a href="#">
+                            <div class="card bg-transparent">
+                                <div class="game_picture">
+                                    <div class="game_picture_wrapper">
+                                        <img class="img-fluid"
+                                            src="https://cdn1.epicgames.com/spt-assets/5d045544c8834efbab794fe891c6697a/trex-dinosaur-game-ngf4p.png?h=480&quality=medium&resize=1&w=360"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-text text-secondary game_base">BASE GAME</div>
+                                    <div class="card-text text-light game_title">T-Rex Dinosaur Game</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <div class="rounded-2 bg-primary text-white game_saleoff">-10%</div>
+                                        <div class="games_price">
+                                            <div class="text-decoration-line-through text-secondary game_old_price">đ10000
+                                            </div>
+                                            <div class="text-light game_new_price">đ7000</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <span class="game_title truncated">
-                                The Lord of the Rings: Return to Moria™
-                            </span>
-                        </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-2-4">
+                    <div>
+                        <a href="#">
+                            <div class="card bg-transparent">
+                                <div class="game_picture">
+                                    <div class="game_picture_wrapper">
+                                        <img class="img-fluid"
+                                            src="https://cdn1.epicgames.com/spt-assets/5d045544c8834efbab794fe891c6697a/trex-dinosaur-game-ngf4p.png?h=480&quality=medium&resize=1&w=360"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-text text-secondary game_base">BASE GAME</div>
+                                    <div class="card-text text-light game_title">T-Rex Dinosaur Game</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <div class="rounded-2 bg-primary text-white game_saleoff">-10%</div>
+                                        <div class="games_price">
+                                            <div class="text-decoration-line-through text-secondary game_old_price">đ10000
+                                            </div>
+                                            <div class="text-light game_new_price">đ7000</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
