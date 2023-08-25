@@ -16,6 +16,12 @@ a {
     text-decoration: none;
     color: black ;
 }
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 /* class */
 /* Truncate text */
 .truncated {
@@ -43,4 +49,16 @@ a {
 .overflow-x-scroll::-webkit-scrollbar-thumb {
     background-color: gray;
     border-radius: 2px;
+}
+
+/* Aspect ratio */
+/* Wrapper a image */
+.picture16x9 {
+    height: 1px;
+    padding-bottom: calc(9/16*100%);
+}
+
+.picture3x3 {
+    height: 1px;
+    padding-bottom: 100%;
 }

@@ -25,3 +25,8 @@ Route::prefix('admin')->group(function () {
     Route::get('games/edit/{id}', [GameController::class, 'edit'])->name('admin.game.edit');
     Route::put('games/update/{id}', [GameController::class, 'update'])->name('admin.game.update');
 });
+
+Route::prefix('games')->group(function () {
+    Route::view('/', 'clients.games')->name('clients.games');
+    Route::view('/1', 'clients.gamesDetail')->name('clients.gamesDetail');
+});
