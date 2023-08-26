@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('type_games', function (Blueprint $table) {
-            $table->id('game_type_id');
-            $table->string('gameID');
+        Schema::create('typegames', function (Blueprint $table) {
+            $table->id();
+
             $table->string('type game');
             $table->timestamps();
         });

@@ -19,10 +19,13 @@ return new class extends Migration
             $table->string('developer');
             $table->string('publisher');
             $table->string('image');
-            $table->string('genre');
+
             $table->string('price');
             $table->text('description');
             $table->timestamps();
+            $table->unsignedBigInteger('type_game'); // Khóa ngoại
+
+            $table->foreign('type_game')->references('id')->on('typegames');
         });
     }
 

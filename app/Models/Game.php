@@ -10,10 +10,7 @@ class Game extends Model
     use HasFactory;
 
     protected $table = 'games';
-    public function type_games()
-    {
-        return $this->hasMany(Type_Game::class, 'id');
-    }
+
     public function getGameId()
     {
         return  $this->attributes['id'];
@@ -48,11 +45,11 @@ class Game extends Model
     }
     public function getGenre()
     {
-        return $this->attributes['genre'];
+        return $this->attributes['type_game'];
     }
     public function setGenre($genre)
     {
-        $this->attributes['genre'] = $genre;
+        $this->attributes['type_game'] = $genre;
     }
     public function getPrice()
     {

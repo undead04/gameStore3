@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\GameController;
+use App\Http\Controllers\client\HomeController;
+use PhpParser\Node\Expr\FuncCall;
+
 use function Termwind\render;
 
 /*
@@ -16,9 +19,11 @@ use function Termwind\render;
 */
 
 
-Route::view('/', 'clients.home');
 
-Route::view('/admin', 'admin.home');
+
+Route::prefix('/')->group(function () {
+    Route::get('/', [HomeController::class, 'index']);
+});
 
 Route::prefix('admin')->group(function () {
     Route::view('/', 'admin.home')->name('admin.home');
@@ -27,4 +32,5 @@ Route::prefix('admin')->group(function () {
     Route::delete('/games/delete/{id}', [GameController::class, 'delete'])->name('admin.game.delete');
     Route::get('games/edit/{id}', [GameController::class, 'edit'])->name('admin.game.edit');
     Route::put('games/update/{id}', [GameController::class, 'update'])->name('admin.game.update');
+    Route::get('games/create', [GameController::class, 'create'])->name('admin.game.create');
 });

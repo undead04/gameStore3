@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Game;
+use App\Models\Type_Game;
+use Illuminate\Validation\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\Console\Input\Input;
@@ -15,31 +17,41 @@ class GameController extends Controller
         $viewData = [];
         $viewData['title'] = 'Admin Game Page - Store Game';
         $viewData['games'] = Game::all();
+
         return view('admin.game.games')->with('viewData', $viewData);
+    }
+    public function create()
+    {
+        $viewData = [];
+        $viewData['typeGame'] = Type_Game::all();
+        return view('admin.game.create')->with('viewData', $viewData);
     }
     public function store(Request $request)
     {
         $request->validate([
-            "name" => "required|max:255",
+            'name' => 'required|max:255|unique:games,name_game',
             "description" => "required",
             "price" => "required|numeric|gt:0",
             'developer' => 'required|min:5',
             'publisher' => 'required|min:5',
             'genre' => 'required',
-
+            'image' => 'image'
         ]);
 
+
         $newGame = new Game();
-        $newGame->SetNameGame($request->input('name'));
+        $newGame->setNameGame($request->input('name'));
         $newGame->setDescription($request->input('description'));
         $newGame->setPrice($request->input('price'));
         $newGame->setGenre($request->input('genre'));
         $newGame->setPublisher($request->input('publisher'));
+        $newGame->setImage("game.png");
         $newGame->setDeveloper($request->input('developer'));
-        $newGame->setImage('');
+
         $newGame->save();
+
         if ($request->hasFile('image')) {
-            $imageName = $newGame->getId() . "." . $request->file('image')->extension();
+            $imageName = $newGame->getGameId() . "." . $request->file('image')->extension();
             Storage::disk('public')->put(
                 $imageName,
                 file_get_contents($request->file('image')->getRealPath())
@@ -48,11 +60,12 @@ class GameController extends Controller
             $newGame->save();
         }
 
-        return back();
+
+        return redirect()->route('admin.game.games');
     }
     public function delete($id)
     {
-        Game::where('id', '=', $id)->delete();
+        Game::destroy($id);
         return back();
     }
     public function edit($id)
@@ -66,7 +79,7 @@ class GameController extends Controller
     public function update($id, Request $request)
     {
         $request->validate([
-            "name" => "required|max:255",
+            'name' => 'required|max:255',
             "description" => "required",
             "price" => "required|numeric|gt:0",
             'developer' => 'required|min:5',
