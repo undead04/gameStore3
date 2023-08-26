@@ -1,70 +1,79 @@
 @extends('layouts.admin')
 @section('table')
-    <form action="{{ route('admin.game.store') }}" method="post" class="mb-5">
-    @section('table')
+    <form action="{{ route('admin.game.store') }}" method="post" class="w-75 mx-auto data_form">
         @csrf
-
-
-
-        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Name Game:</label>
-        <div class="col-lg-10 col-md-6 col-sm-12">
-            <input name="name" value="{{ old('name') }}" type="text" class="form-control">
-            @error('name')
-                <span class="text-danger">{{ $message }}</span>
-            @enderror
-
+        <h1 class="mb-3"><span class="fa-solid fa-gamepad"></span> Game controller</h1>
+        <div class="form-group">
+            <label class="form-label">Name:</label>
+            <div class="flex-grow-1">
+                <input name="name" value="{{ old('name') }}" type="text"
+                    class="form-control bg-transparent text-light">
+                @error('name')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
         </div>
-        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Developer:</label>
-        <div class="col-lg-10 col-md-6 col-sm-12">
-            <input name="developer" value="{{ old('developer') }}" type="text" class="form-control">
-            @error('developer')
-                <span class="text-danger">{{ $message }}</span>
-            @enderror
+        <div class="form-group">
+            <label class="form-label">Developer:</label>
+            <div class="flex-grow-1">
+                <input name="developer" value="{{ old('developer') }}" type="text"
+                    class="form-control bg-transparent text-light">
+                @error('developer')
+                    <span class='text-danger'>{{ $message }}</span>
+                @enderror
+            </div>
         </div>
 
-        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Publisher:</label>
-        <div class="col-lg-10 col-md-6 col-sm-12">
-            <input name="publisher" value="{{ old('publisher') }}" type="text" class="form-control">
-            @error('publisher')
-                <span class="text-danger">{{ $message }}</span>
-            @enderror
+        <div class="form-group">
+            <label class="form-label">Publisher:</label>
+            <div class="flex-grow-1">
+                <input name="publisher" value="{{ old('publisher') }}" type="text"
+                    class="form-control bg-transparent text-light">
+                @error('publisher')
+                    <span class='text-danger'>{{ $message }}</span>
+                @enderror
+            </div>
         </div>
-        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Genre:</label>
-        <div class="col-lg-10 col-md-6 col-sm-12">
-
-            <select name="genre" id="" style="width: 100%">
-                @foreach ($viewData['typeGame'] as $type)
-                    <option value="{{ $type->getTypeId() }}">{{ $type->getTypeGame() }}</option>
-                @endforeach
-            </select>
-            @error('genre')
-                <span class="text-danger">{{ $message }}</span>
-            @enderror
+        <div class="form-group">
+            <label class="form-label">Genre:</label>
+            <div class="flex-grow-1">
+                <select name="genre" id="">
+                    @foreach ($viewData['typeGame'] as $type)
+                        <option value="{{ $type->getTypeId() }}">{{ $type->getTypeGame() }}</option>
+                    @endforeach
+                </select>
+                @error('genre')
+                    <span class='text-danger'>{{ $message }}</span>
+                @enderror
+            </div>
         </div>
-        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Price:</label>
-        <div class="col-lg-10 col-md-6 col-sm-12">
-            <input name="price" value="{{ old('price') }}" type="number" class="form-control">
-            @error('price')
-                <span class="text-danger">{{ $message }}</span>
-            @enderror
+        <div class="form-group">
+            <label class="form-label">Price:</label>
+            <div class="flex-grow-1">
+                <input name="price" value="{{ old('price') }}" type="number"
+                    class="form-control bg-transparent text-light">
+                @error('price')
+                    <span class='text-danger'>{{ $message }}</span>
+                @enderror
+            </div>
         </div>
-        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Image:</label>
-        <div class="col-lg-10 col-md-6 col-sm-12">
-            <input class="form-control" type="file" name="image">
+        <div class="form-group">
+            <label class="form-label">Image:</label>
+            <div class="flex-grow-1">
+                <input class="form-control bg-transparent text-light" type="file" name="image">
+            </div>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Description</label>
-            <textarea class="form-control" name="description" rows="3">{{ old('description') }}
-</textarea>
+            <textarea class="form-control bg-transparent text-light" name="description" rows="3">{{ old('description') }}
+        </textarea>
             @error('description')
-                <span class="text-danger">{{ $message }}</span>
+                <span class='text-danger'>{{ $message }}</span>
             @enderror
-
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <a href="{{ route('admin.game.games') }}" class="btn btn-primary">back</a>
 
-
+        <button class="btn btn-lg btn-submit btn-primary">Submit</button>
+        <a class="btn btn-lg btn-danger btn-submit" href="{{ route('admin.game.games') }}">Cancel</a>
     </form>
 @endsection

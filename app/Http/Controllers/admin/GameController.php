@@ -28,14 +28,16 @@ class GameController extends Controller
     }
     public function store(Request $request)
     {
+
         $request->validate([
+            'image' => 'image',
             'name' => 'required|max:255|unique:games,name_game',
             "description" => "required",
             "price" => "required|numeric|gt:0",
             'developer' => 'required|min:5',
             'publisher' => 'required|min:5',
             'genre' => 'required',
-            'image' => 'image'
+
         ]);
 
 
@@ -47,8 +49,8 @@ class GameController extends Controller
         $newGame->setPublisher($request->input('publisher'));
         $newGame->setImage("game.png");
         $newGame->setDeveloper($request->input('developer'));
-
         $newGame->save();
+
 
         if ($request->hasFile('image')) {
             $imageName = $newGame->getGameId() . "." . $request->file('image')->extension();
@@ -59,8 +61,6 @@ class GameController extends Controller
             $newGame->setImage($imageName);
             $newGame->save();
         }
-
-
         return redirect()->route('admin.game.games');
     }
     public function delete($id)
