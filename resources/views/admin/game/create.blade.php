@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('table')
-    <form action="{{ route('admin.game.store') }}" method="post" class="w-75 mx-auto data_form">
+    <form action="{{ route('admin.game.store') }}" method="post" class="w-75 mx-auto data_form" enctype="multipart/form-data">
         @csrf
         <h1 class="mb-3"><span class="fa-solid fa-gamepad"></span> Game controller</h1>
         <div class="form-group">

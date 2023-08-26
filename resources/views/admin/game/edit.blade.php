@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('table')
     <form action="{{ route('admin.game.update', ['id' => $viewData['game']->getGameId()]) }}" method="post"
-        class="w-75 mx-auto data_form">
+        enctype="multipart/form-data" class="w-75 mx-auto data_form">
         @csrf
         @method('PUT')
         <h1 class="mb-3">Edit games <span class="fa-solid fa-pen-to-square"></span></h1>
@@ -59,7 +59,8 @@
         <div class="form-group">
             <label class="form-label">Image<span><sup class="text-danger fw-bold">*</sup></span>:</label>
             <div class="flex-grow-1">
-                <input class="text-light bg-transparent form-control" type="file" name="image">
+                <input class="text-light bg-transparent form-control" type="file" name="image"
+                    value="{{ $viewData['game']->getIamge() }}">
             </div>
         </div>
 

@@ -28,15 +28,16 @@ class GameController extends Controller
     }
     public function store(Request $request)
     {
-
+        error_log('vo ddaay');
         $request->validate([
-            'image' => 'image',
+
             'name' => 'required|max:255|unique:games,name_game',
             "description" => "required",
             "price" => "required|numeric|gt:0",
             'developer' => 'required|min:5',
             'publisher' => 'required|min:5',
             'genre' => 'required',
+            'image' => 'image'
 
         ]);
 
@@ -47,13 +48,12 @@ class GameController extends Controller
         $newGame->setPrice($request->input('price'));
         $newGame->setGenre($request->input('genre'));
         $newGame->setPublisher($request->input('publisher'));
-        $newGame->setImage("game.png");
+        $newGame->setImage('');
         $newGame->setDeveloper($request->input('developer'));
         $newGame->save();
 
-
         if ($request->hasFile('image')) {
-            $imageName = $newGame->getGameId() . "." . $request->file('image')->extension();
+            $imageName = $request->file('image')->getClientOriginalName();
             Storage::disk('public')->put(
                 $imageName,
                 file_get_contents($request->file('image')->getRealPath())
@@ -61,6 +61,9 @@ class GameController extends Controller
             $newGame->setImage($imageName);
             $newGame->save();
         }
+
+
+
         return redirect()->route('admin.game.games');
     }
     public function delete($id)
@@ -85,6 +88,7 @@ class GameController extends Controller
             'developer' => 'required|min:5',
             'publisher' => 'required|min:5',
             'genre' => 'required',
+            'image' => 'image'
 
         ]);
 
@@ -98,14 +102,14 @@ class GameController extends Controller
         $oldGame->setImage('');
 
         if ($request->hasFile('image')) {
-            $imageName = $oldGame->getId() . "." . $request->file('image')->extension();
+            $imageName = $oldGame->getGameId() . "." . $request->file('image')->extension();
             Storage::disk('public')->put(
                 $imageName,
                 file_get_contents($request->file('image')->getRealPath())
             );
-            $oldGame->setImage($imageName);
+            $oldGame->setImage($oldGame->getGameId() . '.' . $request->file('image'));
         }
-
+        dd($imageName);
         $oldGame->save();
         return redirect()->route('admin.game.games');
     }

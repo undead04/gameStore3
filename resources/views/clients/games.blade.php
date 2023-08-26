@@ -12,11 +12,7 @@
                     @include('clients/parts/filter')
                     <div class="all-games">
                         <div class="row g-2">
-                            @for ($i = 0; $i < 25; $i++)
-                                <div class="col-md-2-4">
-                                    @include('clients/parts/gameItem')
-                                </div>
-                            @endfor
+
                         </div>
                     </div>
                 </div>

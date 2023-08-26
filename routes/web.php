@@ -5,6 +5,8 @@ use App\Http\Controllers\admin\GameController;
 use App\Http\Controllers\client\HomeController;
 use PhpParser\Node\Expr\FuncCall;
 
+
+
 use function Termwind\render;
 
 /*
@@ -36,6 +38,6 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::prefix('games')->group(function () {
-    Route::view('/', 'clients.games')->name('clients.games');
-    Route::view('/1', 'clients.gamesDetail')->name('clients.gamesDetail');
+
+    Route::get('/{id}', 'App\Http\Controllers\client\GameController@detail')->name('clients.gamesDetail');
 });

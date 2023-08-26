@@ -1,5 +1,5 @@
 @extends('layouts.games')
-@section('title', 'Game names | Details')
+@section('title', $viewData['title'])
 @section('content')
     <section class="bg-black text-white py-5">
         <div class="container-md">
@@ -7,7 +7,7 @@
                 <div class="col-md-7">
                     <div>
                         <span class="d-block game-details_title">
-                            Oirbo
+                            {{ $viewData['game']->getNameGame() }}
                         </span>
                         <div class="game-details_tabs">
                             <div class="game-details_overview">
@@ -16,19 +16,16 @@
                         </div>
                         <div class="game-details_avatar">
                             <div class="picture16x9">
-                                <img src="https://imgs.search.brave.com/uOoEMn0zXs8GaXlHZbB36JzOchzD05cXeD1UI-M5cHM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/c2hvcnRwaXhlbC5h/aS9jbGllbnQvcV9n/bG9zc3kscmV0X2lt/Zyx3XzEwMjQvaHR0/cHM6Ly9ha2dnYW1l/cy5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjAvMDYvT3Jp/Ym9zLTEwMjR4NTc2/LmpwZw"
-                                    alt="">
+                                <img src={{ '/storage/' . $viewData['game']->getIamge() }} alt="">
                             </div>
                         </div>
                         <div class="game-details_description">
-                            <p>As Oirbo you will explore a labyrinthian spacecraft and discover its mysteries and purpose.
-                                Navigate a huge Metroidvania-inspired, hand-drawn, 2D action platformer full of secrets to
-                                uncover, areas to explore, and enemies to dismantle.</p>
+                            <p>{{ $viewData['game']->getDescription() }}</p>
                         </div>
                         <div class="game-details_tags d-flex">
                             <div class="game-details_tag">
                                 <div>Genres</div>
-                                <a href="">Action-Adventure</a>,
+                                <a href="">{{ $viewData['type']->getTypeGame() }}</a>,
                                 <a href="">Exploration</a>,
                                 <a href="">Open world</a>
                             </div>
@@ -109,7 +106,7 @@
                             </li>
                             <li class="game-details_info">
                                 <span>Developer</span>
-                                <span>ImaginationOverflow</span>
+                                <span>{{ $viewData['game']->getDeveloper() }}</span>
                             </li>
                             <li class="game-details_info">
                                 <span>Publisher</span>
