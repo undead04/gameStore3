@@ -1,0 +1,324 @@
+.games-page {
+    background-image: url("https://furypixel.com/wp-content/uploads/2020/03/FuryPixel-Ori-and-the-Will-of-the-Wisps.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: 10px;
+    z-index: 0;
+}
+
+/*================================== Side bar  ===============================*/
+.sidebar-left {
+    background-color: transparent;
+    width: 308px;
+}
+
+.sidebar-left ul {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.sidebar-label {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    padding: 4px 12px;
+    height: 50px;
+    color: white;
+}
+.sidebar-item {
+    display: flex;
+    align-items: center;;
+    padding: 4px 12px;
+    height: 48px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border-bottom-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.sidebar-item:hover {
+    transform: translate(-5px);
+    box-shadow: 5px 5px 5px 0px rgba(179, 60, 230, 0.75);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(179, 60, 230, 0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(179, 60, 230, 0.75);
+    opacity: 0.8;
+    transition: all ease 300ms;
+}
+
+.sidebar-item + .sidebar-item {
+    border-top: 1px solid #9B38BD;
+}
+
+.sidebar-item a {
+    color: whitesmoke;
+}
+/* Game items */
+
+.games-item {
+    background-color: #666;
+    opacity: 1;
+}
+
+.games-item:hover {
+    opacity: 0.8;
+    transform: translateY(-4px);
+    box-shadow: 5px 5px 5px 0px rgba(193, 87, 238, 0.75);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(193, 87, 238, 0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(193, 87, 238, 0.75);
+    transition: all ease-in-out 300ms;
+}
+
+/* =============================== Game details =============================== */
+.game-details_title {
+    font-size: 3rem;
+    line-height: 35px;
+    letter-spacing: -0.3px;
+}
+
+.game-details_tabs {
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.game-details_overview span {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 600px;
+    border-bottom: 2px solid white;
+}
+
+.game-details_avatar {
+    width: 605px;
+}
+
+.game-details_avatar img {
+    width: 100%;
+}
+
+.game-details_description {
+    margin-top: 30px;
+    font-size: 1.6rem;
+}
+
+.game-details_tags {
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+.game-details_tag {
+    padding: 8px 12px;
+    width: 40%;
+    border-left: 1px solid #f5f5f5;
+}
+
+.game-details_tag div {
+    font-size: 1.4rem;
+    color: #f5f5f599;
+}
+
+.game-details_tag a {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #f5f5f5;
+    text-decoration: underline;
+}
+
+.game-details_tag a:hover {
+    text-decoration: none;
+}
+
+.game-details_notify {
+    margin: 30px 0;
+}
+
+.game-details_notify div {
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 18px;
+    color: #f5f5f599;
+}
+
+.game-details_notify-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+.game-details_notify-content {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+
+/* ======================================================================== */
+.game-details-side_wrapper {
+    margin-left: 20%;
+}
+
+.game-details-side_avatar {
+    width: 280px;
+}
+
+.limited-age_labels {
+    max-width: 50px;
+    border: 1px solid #666;
+}
+
+
+.game-details_categories  {
+    align-items: center;
+    margin-top: 15px;
+}
+
+.game-details_category + .game-details_category {
+    margin-left: 8px;
+}
+
+.game-details_prices {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.game-details_saleoff {
+    border-radius: 4px;
+    width: 45px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.game-details_oldprice,
+.game-details_curprice {
+    font-size: 1.4rem;
+}
+
+.game-details_saleoff-deadline {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.game-details_buynow + .game-details_addcart{
+    margin-left: 0;
+    margin-top: 15px;
+}
+
+.game-details_addcart, .game-details_buynow {
+    padding: 8px;
+}
+.game-details_support-infoes {
+    margin-top: 30px;
+}
+
+.game-details_info {
+    font-size: 1.4rem;
+    padding: 8px;
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* ================================= Filter bar =============================== */
+
+.filter_games {
+    border: 1px solid #666;
+    padding: 20px;
+    background-color: rgba(169, 104, 238, 0.5);
+}
+
+.filter_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    padding: 6px;
+    border-radius: 16px;
+    border: 1px solid white;
+    height: 40px;
+    width: 40px;
+    font-weight: 700;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.filter_icon:hover {
+    color: cyan;
+    transform: rotate(-90deg);
+    transition: all ease 500ms;
+}
+.select_item {
+    --filter-bar_height: 40px;
+    height: var(--filter-bar_height);
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: 10px;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+    background-color: transparent;
+    --bs-form-select-bg-img: none;
+    cursor: pointer;
+}
+
+
+.select_item:focus, 
+.select_item:hover {
+    outline: none;
+    border-color: cyan;
+    box-shadow: none;
+}
+
+
+.option_item {
+    background-color: rgba(0, 0, 139, 0.5);
+    padding: 4px;
+    cursor: pointer;
+}
+
+.filter_btn {
+    height: 40px;
+    min-width: 120px;
+    margin: 0 8px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.filter_btn:hover {
+    border-color: cyan!important;
+    color: cyan!important;
+    transition: all ease-in-out 500ms;
+}
+/* ============================= Select arrow ============================= */
+.select_group {
+    position: relative;
+    display: block;
+    width: 15%;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.select_group + .select_group {
+    margin-left: 8px;
+}
+
+.select_arrow {
+    position: absolute;
+    top: 14px;
+    right: 9px;
+    width: 9px;
+    height: 9px;
+    border: solid #fefefe;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}

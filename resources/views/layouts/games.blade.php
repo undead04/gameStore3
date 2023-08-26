@@ -16,6 +16,7 @@
     {{-- CSS --}}
     <link href="{{ asset('/css/global.css') }}" rel="stylesheet" />
     <link href="{{ asset('/css//clients/app.css') }}" rel="stylesheet" />
+    <link href="{{ asset('/css//clients/gamesDetail.css') }}" rel="stylesheet" />
 </head>
 
 <body>

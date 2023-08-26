@@ -19,11 +19,9 @@ use function Termwind\render;
 */
 
 
+Route::view('/', 'clients.home');
 
-
-Route::prefix('/')->group(function () {
-    Route::get('/', [HomeController::class, 'index']);
-});
+Route::view('/admin', 'admin.home');
 
 Route::prefix('admin')->group(function () {
     Route::view('/', 'admin.home')->name('admin.home');
@@ -33,4 +31,9 @@ Route::prefix('admin')->group(function () {
     Route::get('games/edit/{id}', [GameController::class, 'edit'])->name('admin.game.edit');
     Route::put('games/update/{id}', [GameController::class, 'update'])->name('admin.game.update');
     Route::get('games/create', [GameController::class, 'create'])->name('admin.game.create');
+});
+
+Route::prefix('games')->group(function () {
+    Route::view('/', 'clients.games')->name('clients.games');
+    Route::view('/1', 'clients.gamesDetail')->name('clients.gamesDetail');
 });

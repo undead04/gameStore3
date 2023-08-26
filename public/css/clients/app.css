@@ -3,8 +3,9 @@
 
 /* Wrapper */
 .head {
-    background-image: url("	https://cs-gameworld.myshopify.com/cdn/shop/t/5/assets/bg_image.jpg?v=13958289029611430451629426560");
+    background-image: url("https://th.bing.com/th/id/R.f19a232f7891fbf0c94ea2246b3c2ee5?rik=U7ZKwbsyOpSCAQ&pid=ImgRaw&r=0");
     background-size: cover;
+    background-position: center;
 }
 /* Sub nav */
 .subnav {
@@ -204,6 +205,7 @@
     display: flex;
     align-items: center;
     padding: 10px 0px 10px 6px;
+    margin-right: 4px;
     background-color: transparent;
     border-radius: 8px;
     cursor: pointer;
@@ -285,3 +287,5 @@
     width: 35px;
     height: 35px;
 }
+
+/*================================== Breadcumbs =================================== */

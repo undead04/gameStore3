@@ -7,8 +7,6 @@
 html {
     font-size: 62.5%;
 }
-
-
 /* Config */
 
 /* tag */
@@ -16,16 +14,29 @@ a {
     text-decoration: none;
     color: black ;
 }
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 /* class */
 /* Truncate text */
 .truncated {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     overflow: hidden;
 }
 
+.truncated-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
 /* 5 collums */
 .col-2-4, .col-md-2-4, .col-lg-2-4,.col-lg-2-4 {
     flex: 0 0 auto;
@@ -44,3 +55,16 @@ a {
     background-color: gray;
     border-radius: 2px;
 }
+
+/* Aspect ratio */
+/* Wrapper a image */
+.picture16x9 {
+    height: 1px;
+    padding-bottom: calc(9/16*100%);
+}
+
+.picture3x3 {
+    height: 1px;
+    padding-bottom: 100%;
+}
+

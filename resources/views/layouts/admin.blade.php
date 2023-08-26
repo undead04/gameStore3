@@ -15,7 +15,8 @@
 
     {{-- CSS --}}
     <link href="{{ asset('/css/global.css') }}" rel="stylesheet" />
-    <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('/css/form.css') }}">
+    <link href="{{ asset('/css/admin/admin.css') }}" rel="stylesheet" />
 </head>
 
 <body>
@@ -56,35 +57,14 @@
 
         </div>
     </section>
-    <section>
+    <section class="admin_area">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-md-3">
-                    <div class="admin_options">
-                        <div class="options_title">
-                            <div class="options_icon"><i class="fa-solid fa-bars"></i></div>
-                            <div class="options_label">Menu</div>
-                        </div>
-                        <a href="{{ route('admin.home') }}" class="options_group">
-                            <div class="options_icon"><i class="fa-solid fa-house-chimney"></i></div>
-                            <div class="options_lable">Home</div>
-                        </a>
-                        <a href="{{ route('admin.game.games') }}" class="options_group">
-                            <div class="options_icon"><i class="fa-solid fa-gamepad"></i></div>
-                            <div class="options_lable">Games</div>
-                        </a>
-                        <div class="options_group">
-                            <div class="options_icon"><i class="fa-solid fa-user"></i></div>
-                            <div class="options_lable">Users</div>
-                        </div>
-                        <div class="options_group">
-                            <div class="options_icon"><i class="fa-solid fa-coins"></i></div>
-                            <div class="options_lable">Benefit</div>
-                        </div>
-                    </div>
+                    @include('admin.parts.sidebar')
                 </div>
                 <div class="col-md-9">
-                    <div class="admin_table"> @yield('table')</div>
+                    <div class="admin_table">@yield('table')</div>
                 </div>
 
             </div>

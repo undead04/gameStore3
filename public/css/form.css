@@ -1,0 +1,19 @@
+/* ================================== Form =================================== */
+.data_form {
+    width: 75%;
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+.form-label {
+    min-width: 120px;
+    font-size: 1.8rem;
+}
+
+.form-control {
+    font-size: 1.6rem;
+    padding: 6px 4px;
+}
