@@ -20,10 +20,10 @@ class Type_Game extends Model
     }
     public function getTypeGame()
     {
-        return $this->attributes['type game'];
+        return $this->attributes['typeNames'];
     }
     public function setTypeGame($typeGame)
     {
-        $this->attributes['type game'] = $typeGame;
+        $this->attributes['typeNames'] = $typeGame;
     }
 }

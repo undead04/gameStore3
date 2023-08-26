@@ -12,8 +12,8 @@ class GameController extends Controller
     public function detail($id)
     {
         $viewData = [];
-        $viewData['title'] = 'Game names | Details';
         $viewData['game'] = Game::find($id);
+        $viewData['title'] = $viewData['game']->getNameGame() . ' | Details';
         $viewData['type'] = Type_Game::find($viewData['game']->getGenre());
 
         return view('clients.gamesDetail')->with('viewData', $viewData);

@@ -158,3 +158,18 @@
     min-width: 120px;
     font-size: 1.6rem;
 }
+
+/* ==================== Select tag =========================== */
+.select_item {
+    --filter-bar_height: 40px;
+    height: var(--filter-bar_height);
+    font-size: 1.6rem;
+    width: 100%;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 4px 8px;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+    background-color: transparent;
+    cursor: pointer;
+}

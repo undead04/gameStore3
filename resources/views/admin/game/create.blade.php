@@ -37,7 +37,8 @@
         <div class="form-group">
             <label class="form-label">Genre:</label>
             <div class="flex-grow-1">
-                <select name="genre" id="">
+                <select class="select_item" name="genre" id="">
+                    <option value="-1" class="d-none">Genre</option>
                     @foreach ($viewData['typeGame'] as $type)
                         <option value="{{ $type->getTypeId() }}">{{ $type->getTypeGame() }}</option>
                     @endforeach

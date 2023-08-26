@@ -91,6 +91,10 @@
     width: 605px;
 }
 
+.game-details_avatar div {
+    overflow: hidden;
+}
+
 .game-details_avatar img {
     width: 100%;
 }

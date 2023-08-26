@@ -25,6 +25,12 @@
                     <span>Benefit</span>
                 </a>
             </li>
+            <li class="sidebar-item">
+                <a href="{{ route('admin.game.genres') }}">
+                    <i class="text-danger fa-solid fa-bars-staggered"></i>
+                    <span>Genres</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

@@ -1,10 +1,10 @@
 <?php
 
+use PhpParser\Node\Expr\FuncCall;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\GameController;
 use App\Http\Controllers\client\HomeController;
-use PhpParser\Node\Expr\FuncCall;
-
+use App\Http\Controllers\admin\GenresController;
 
 
 use function Termwind\render;
@@ -35,6 +35,8 @@ Route::prefix('admin')->group(function () {
     Route::get('games/edit/{id}', [GameController::class, 'edit'])->name('admin.game.edit');
     Route::put('games/update/{id}', [GameController::class, 'update'])->name('admin.game.update');
     Route::get('games/create', [GameController::class, 'create'])->name('admin.game.create');
+    Route::get('genres', [GenresController::class, 'index'])->name('admin.game.genres');
+    Route::post('genres/store', [GenresController::class, 'addGenres'])->name('admin.genres.store');
 });
 
 Route::prefix('games')->group(function () {

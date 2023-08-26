@@ -16,7 +16,8 @@
                         </div>
                         <div class="game-details_avatar">
                             <div class="picture16x9">
-                                <img src={{ '/storage/' . $viewData['game']->getIamge() }} alt="">
+                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->getIamge() }}"
+                                    alt="">
                             </div>
                         </div>
                         <div class="game-details_description">
