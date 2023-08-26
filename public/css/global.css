@@ -7,8 +7,6 @@
 html {
     font-size: 62.5%;
 }
-
-
 /* Config */
 
 /* tag */
@@ -28,10 +26,17 @@ ul {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     overflow: hidden;
 }
 
+.truncated-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
 /* 5 collums */
 .col-2-4, .col-md-2-4, .col-lg-2-4,.col-lg-2-4 {
     flex: 0 0 auto;
@@ -62,3 +67,4 @@ ul {
     height: 1px;
     padding-bottom: 100%;
 }
+

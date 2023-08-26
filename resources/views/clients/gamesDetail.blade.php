@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <div class="d-flex flex-column ms-5">
+                    <div class="d-flex flex-column game-details-side_wrapper">
                         <div class="game-details-side_avatar">
                             <div class="picture16x9">
                                 <img class="img-fluid"

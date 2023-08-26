@@ -1,0 +1,160 @@
+.admin_area {
+    background-image: url("https://th.bing.com/th/id/R.ff42a0a846dc92c8d6be813188cb1c82?rik=CUhYepPBYjBNaw&pid=ImgRaw&r=0");
+    background-size: cover;
+    background-position: center;
+}
+
+.head {
+    background-image: url("	https://cs-gameworld.myshopify.com/cdn/shop/t/5/assets/bg_image.jpg?v=13958289029611430451629426560");
+    background-size: cover;
+}
+/* Sub nav */
+.subnav {
+    z-index: 1;
+    background-color: black;
+    height: 30px;
+    color: #969696;
+}
+
+.subnav_label {
+    font-size: 1rem;
+}
+/* Main nav */
+
+.headnav_services {
+    color: #969696;
+}
+
+.headnav_contacts span {
+    display: inline-block;
+    padding: 4px 2px;
+}
+
+.headnav_contacts span:hover {
+    color: aqua;
+    cursor: pointer;
+}
+
+.headnav_search {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    height: 30px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.headnav_search input{
+    flex: 1;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 8px;
+}
+
+.headnav_search span {
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: 6px 7px;
+    background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(245,245,245,1) 21%, rgba(226,226,226,1) 62%, rgba(226,226,226,1) 100%);
+    cursor: pointer;
+}
+
+
+/*================================= Side bar ==================================*/
+.sidebar-left {
+    background-color: transparent;
+    width: 308px;
+}
+
+.sidebar-left ul {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.sidebar-label {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    padding: 4px 12px;
+    height: 50px;
+    color: white;
+}
+.sidebar-item {
+    display: flex;
+    align-items: center;;
+    padding: 4px 12px;
+    height: 48px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border-top-right-radius: 16px;
+    background-color: rgb(255 255 255 / 0.3);
+    backdrop-filter: blur(2px);
+}
+
+.sidebar-item:hover {
+    transform: translate(-5px);
+    box-shadow: 5px 5px 5px 0px rgba(179, 60, 230, 0.75);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(179, 60, 230, 0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(179, 60, 230, 0.75);
+    opacity: 1;
+    transition: all ease 300ms;
+}
+
+.sidebar-item + .sidebar-item {
+    border-top: 1px solid #9B38BD;
+    margin-top: 4px;
+}
+
+.sidebar-item span {
+    color: whitesmoke;
+    opacity: 0.8;
+}
+
+.sidebar-item i {
+    min-width: 30px;
+}
+/* Game items */
+
+.games-item {
+    background-color: #666;
+    opacity: 1;
+}
+
+.games-item:hover {
+    opacity: 0.8;
+    transform: translateY(-4px);
+    box-shadow: 5px 5px 5px 0px rgba(193, 87, 238, 0.75);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(193, 87, 238, 0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(193, 87, 238, 0.75);
+    transition: all ease-in-out 300ms;
+}
+
+
+
+
+/* ================================== Table ====================================*/
+.admin_table {
+    font-size: 1.4rem;
+    margin-top: 20px;
+    background-color: rgb(255 255 255 / 0.3);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    color: whitesmoke;
+}
+
+.home_admin {
+   background-color: rgb(255 255 255 / 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* ================================= Button =================================*/
+.btn-submit {
+    margin-left: auto;
+    min-width: 120px;
+    font-size: 1.6rem;
+}
