@@ -12,7 +12,7 @@
                     <a class="d-inline-block mx-1" href="">GBP</a>
                 </div>
                 <div class="control-item">
-                    <a class="text-white fw-bolder" href="">LOGIN</a>
+                    <a class="text-white fw-bolder" href="{{ route('clients.login') }}">LOGIN</a>
                     <span class="d-inline-block mx-2">OR</span>
                     <a class="text-white fw-bolder" href="">REGISTER</a>
                 </div>

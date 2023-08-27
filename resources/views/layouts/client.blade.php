@@ -15,6 +15,9 @@
 
     {{-- CSS --}}
     <link href="{{ asset('/css/global.css') }}" rel="stylesheet" />
+    @if ('form')
+        @yield('form')
+    @endif
     <link href="{{ asset('/css//clients/app.css') }}" rel="stylesheet" />
 </head>
 

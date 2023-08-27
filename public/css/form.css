@@ -17,3 +17,57 @@
     font-size: 1.6rem;
     padding: 6px 4px;
 }
+
+/* ================================ Login form ================================= */
+
+.login-wrapper {
+    width: 340px;
+    background-image: linear-gradient(to top, #d391fa, #c364fa, #a230fa, #7b00fa);
+
+    backdrop-filter: blur(20px);
+}
+
+.login-form_input {
+    background-color: #D3DFEA;
+    font-size: 1.4rem;
+    color: gray;
+    border-radius: 8px;
+}
+
+.login-form_input:focus {
+    background-color: #F5F5F5;
+}
+
+.login-form_input ~ label {
+    color: gray;
+}
+
+.login_body {
+    display: flex;
+    flex-direction: column;
+}
+
+.login_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 4px 6px;
+    color: white;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    white-space: normal;
+    border-radius: 16px;
+    background-image: linear-gradient(to right, #d391fa, #c364fa, #a230fa, #7b00fa);
+}
+
+.login_btn:hover {
+    color: whitesmoke;
+    opacity: 0.7;
+    background-image: linear-gradient(to right, #7b00fa,#a230fa,#c364fa, #d391fa);
+    transition: all ease-in-out 500ms;
+}
+
+.login_btn span {
+    margin-top: 4px;
+}

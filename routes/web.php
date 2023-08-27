@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\GameController;
 use App\Http\Controllers\client\HomeController;
 use App\Http\Controllers\admin\GenresController;
-
+use App\Http\Controllers\client\LoginController;
 
 use function Termwind\render;
 
@@ -23,6 +23,7 @@ use function Termwind\render;
 
 Route::prefix('/')->group(function () {
     Route::get('', [HomeController::class, 'index'])->name('clients.games');
+    Route::get('/login', [LoginController::class, 'index'])->name('clients.login');
 });
 
 
