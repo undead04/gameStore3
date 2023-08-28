@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Game;
 use App\Models\Type_Game;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Validation\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -26,7 +27,7 @@ class GameController extends Controller
         $viewData['typeGame'] = Type_Game::all();
         return view('admin.game.create')->with('viewData', $viewData);
     }
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         error_log('vo ddaay');
         $request->validate([
@@ -37,9 +38,10 @@ class GameController extends Controller
             'developer' => 'required|min:5',
             'publisher' => 'required|min:5',
             'genre' => 'required',
-            'image' => 'image'
-
+            'image' => 'required',
+            'image.*' => 'mimes:jpeg,jpg,png,gif,csv,txt,pdf|max:2048'
         ]);
+
 
 
         $newGame = new Game();
