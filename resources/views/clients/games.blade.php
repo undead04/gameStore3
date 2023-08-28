@@ -1,5 +1,5 @@
 @extends('layouts.games')
-@section('title', 'Exploring game')
+@section('title', $viewData['title'])
 @section('content')
     <section class="games-page">
         <div class="container-fluid">
@@ -12,7 +12,7 @@
                     @include('clients/parts/filter')
                     <div class="all-games">
                         <div class="row g-2">
-
+                            @include('clients.parts.gameItem')
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         $viewData = [];
         $viewData['title'] = 'Home page | Web game store';
-        $viewData['game'] = Game::all();
+        $viewData['games'] = Game::all();
         return view('clients.home')->with('viewData', $viewData);
     }
 }

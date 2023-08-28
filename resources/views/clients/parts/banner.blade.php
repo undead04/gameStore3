@@ -36,97 +36,16 @@
 
             <div class="col-md-3">
                 <div class="product_wrapper text-white">
-                    <div class="game_product_thumb">
-                        <div class="game_product_avatar">
-                            <img class="img-fluid"
-                                src="https://cdn2.unrealengine.com/egs-lotr-return-to-moria-carousel-thumb-v2-1200x1600-5d5f6bd3b206.jpg"
-                                alt="thumnail">
+                    @foreach ($viewData['games'] as $game)
+                        <div class="game_product_thumb">
+                            <div class="game_product_avatar">
+                                <img class="img-fluid" src="{{ '/storage/' . $game->getIamge() }}" alt="thumnail">
+                            </div>
+                            <span class="game_title truncated">
+                                {{ $game->getNameGame() }}
+                            </span>
                         </div>
-                        <span class="game_title truncated">
-                            The Lord of the Rings: Return to Moria™
-                        </span>
-                    </div>
-                    <div class="game_product_thumb">
-                        <div class="game_product_avatar">
-                            <img class="img-fluid"
-                                src="https://cdn2.unrealengine.com/egs-lotr-return-to-moria-carousel-thumb-v2-1200x1600-5d5f6bd3b206.jpg"
-                                alt="thumnail">
-                        </div>
-                        <span class="game_title truncated">
-                            The Lord of the Rings: Return to Moria™
-                        </span>
-                    </div>
-                    <div class="game_product_thumb">
-                        <div class="game_product_avatar">
-                            <img class="img-fluid"
-                                src="https://cdn2.unrealengine.com/egs-lotr-return-to-moria-carousel-thumb-v2-1200x1600-5d5f6bd3b206.jpg"
-                                alt="thumnail">
-                        </div>
-                        <span class="game_title truncated">
-                            The Lord of the Rings: Return to Moria™
-                        </span>
-                    </div>
-                    <div class="game_product_thumb">
-                        <div class="game_product_avatar">
-                            <img class="img-fluid"
-                                src="https://cdn2.unrealengine.com/egs-lotr-return-to-moria-carousel-thumb-v2-1200x1600-5d5f6bd3b206.jpg"
-                                alt="thumnail">
-                        </div>
-                        <span class="game_title truncated">
-                            The Lord of the Rings: Return to Moria™
-                        </span>
-                    </div>
-                    <div class="game_product_thumb">
-                        <div class="game_product_avatar">
-                            <img class="img-fluid"
-                                src="https://cdn2.unrealengine.com/egs-lotr-return-to-moria-carousel-thumb-v2-1200x1600-5d5f6bd3b206.jpg"
-                                alt="thumnail">
-                        </div>
-                        <span class="game_title truncated">
-                            The Lord of the Rings: Return to Moria™
-                        </span>
-                    </div>
-                    <div class="game_product_thumb">
-                        <div class="game_product_avatar">
-                            <img class="img-fluid"
-                                src="https://cdn2.unrealengine.com/egs-lotr-return-to-moria-carousel-thumb-v2-1200x1600-5d5f6bd3b206.jpg"
-                                alt="thumnail">
-                        </div>
-                        <span class="game_title truncated">
-                            The Lord of the Rings: Return to Moria™
-                        </span>
-                    </div>
-
-                    <div class="game_product_thumb">
-                        <div class="game_product_avatar">
-                            <img class="img-fluid"
-                                src="https://cdn2.unrealengine.com/egs-lotr-return-to-moria-carousel-thumb-v2-1200x1600-5d5f6bd3b206.jpg"
-                                alt="thumnail">
-                        </div>
-                        <span class="game_title truncated">
-                            The Lord of the Rings: Return to Moria™
-                        </span>
-                    </div>
-                    <div class="game_product_thumb">
-                        <div class="game_product_avatar">
-                            <img class="img-fluid"
-                                src="https://cdn2.unrealengine.com/egs-lotr-return-to-moria-carousel-thumb-v2-1200x1600-5d5f6bd3b206.jpg"
-                                alt="thumnail">
-                        </div>
-                        <span class="game_title truncated">
-                            The Lord of the Rings: Return to Moria™
-                        </span>
-                    </div>
-                    <div class="game_product_thumb">
-                        <div class="game_product_avatar">
-                            <img class="img-fluid"
-                                src="https://cdn2.unrealengine.com/egs-lotr-return-to-moria-carousel-thumb-v2-1200x1600-5d5f6bd3b206.jpg"
-                                alt="thumnail">
-                        </div>
-                        <span class="game_title truncated">
-                            The Lord of the Rings: Return to Moria™
-                        </span>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

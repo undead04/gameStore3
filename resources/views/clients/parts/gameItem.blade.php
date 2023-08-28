@@ -1,4 +1,4 @@
-@foreach ($viewData['game'] as $game)
+@foreach ($viewData['games'] as $game)
     <div class="col-md-2-4">
         <div>
             <a href="{{ route('clients.gamesDetail', ['id' => $game->getGameId()]) }}">

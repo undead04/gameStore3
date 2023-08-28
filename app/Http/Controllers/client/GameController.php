@@ -18,4 +18,13 @@ class GameController extends Controller
 
         return view('clients.gamesDetail')->with('viewData', $viewData);
     }
+
+    public function allGames()
+    {
+        $viewData = [];
+        $viewData['title'] = 'Game Store 3' . ' | All games';
+        $viewData['games'] = Game::all();
+
+        return view('clients.games')->with('viewData', $viewData);
+    }
 }

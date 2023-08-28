@@ -3,6 +3,7 @@
 use PhpParser\Node\Expr\FuncCall;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\GameController;
+use App\Http\Controllers\client\GameController as ClientGameController;
 use App\Http\Controllers\client\HomeController;
 use App\Http\Controllers\admin\GenresController;
 use App\Http\Controllers\client\LoginController;
@@ -22,7 +23,7 @@ use function Termwind\render;
 
 
 Route::prefix('/')->group(function () {
-    Route::get('', [HomeController::class, 'index'])->name('clients.games');
+    Route::get('', [HomeController::class, 'index'])->name('clients.home');
     Route::get('/login', [LoginController::class, 'index'])->name('clients.login');
     Route::get('/register', [LoginController::class, 'register'])->name('clients.register');
 });
@@ -42,6 +43,6 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::prefix('games')->group(function () {
-
-    Route::get('/{id}', 'App\Http\Controllers\client\GameController@detail')->name('clients.gamesDetail');
+    Route::get('/', [ClientGameController::class, 'allGames'])->name('clients.games');
+    Route::get('/{id}', [ClientGameController::class, 'detail'])->name('clients.gamesDetail');
 });
