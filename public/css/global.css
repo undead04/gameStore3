@@ -44,6 +44,28 @@ ul {
 }
 
 
+/* Width */
+.w-90 {
+    width: 90%!important;
+}
+
+.w-40 {
+    width: 40%!important;
+}
+
+.w-30 {
+    width: 30%!important;
+}
+
+/* Background color */
+.bg-blur {
+    backdrop-filter: sepia(40%);
+}
+
+.bg-gradient {
+    background-image: linear-gradient(to right, #d391fa, #c364fa, #a230fa, #7b00fa)!important;
+}
+
 /* Scroll bar */
 
 .overflow-x-scroll::-webkit-scrollbar {

@@ -20,54 +20,66 @@
 
 /* ================================ Login form ================================= */
 
-.login-wrapper {
-    width: 340px;
-    background-image: linear-gradient(to top, #d391fa, #c364fa, #a230fa, #7b00fa);
-
-    backdrop-filter: blur(20px);
+.login-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 88vh;
+    width: 350px;
 }
 
+
 .login-form_input {
-    background-color: #D3DFEA;
-    font-size: 1.4rem;
-    color: gray;
-    border-radius: 8px;
+    height: 46px;
+    color: white;
+    background-color: transparent;
+    caret-color: darkorchid;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 16px;
+}
+
+.login-form_input[type="password"] {
+    visibility: visible;
+}
+
+.login-form_input::placeholder {
+    color: white;
 }
 
 .login-form_input:focus {
-    background-color: #F5F5F5;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border-color: darkorchid;
+    box-shadow: none;
 }
 
-.login-form_input ~ label {
-    color: gray;
-}
 
-.login_body {
-    display: flex;
-    flex-direction: column;
+.login-form_input + .login-form_input {
+    margin-top: 8px;
 }
 
 .login_btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 4px 6px;
-    color: white;
+    width: 100%;
+    margin-top: 8px;
     font-size: 1.6rem;
-    line-height: 1.6rem;
-    white-space: normal;
+    padding: 8px 0;
     border-radius: 16px;
-    background-image: linear-gradient(to right, #d391fa, #c364fa, #a230fa, #7b00fa);
 }
 
 .login_btn:hover {
-    color: whitesmoke;
-    opacity: 0.7;
-    background-image: linear-gradient(to right, #7b00fa,#a230fa,#c364fa, #d391fa);
-    transition: all ease-in-out 500ms;
+    background-color: white!important;
+    color: violet;
+    transition: all ease-in-out 300ms;
 }
 
-.login_btn span {
-    margin-top: 4px;
+.reg_brand {
+    font-size: 2.5rem;
+    padding: 6px;
+}
+
+.reg_brand:hover i {
+    color: violet;
+    transition: all ease-in-out 300ms;
 }

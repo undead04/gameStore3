@@ -24,6 +24,7 @@ use function Termwind\render;
 Route::prefix('/')->group(function () {
     Route::get('', [HomeController::class, 'index'])->name('clients.games');
     Route::get('/login', [LoginController::class, 'index'])->name('clients.login');
+    Route::get('/register', [LoginController::class, 'register'])->name('clients.register');
 });
 
 
