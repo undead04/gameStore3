@@ -29,7 +29,7 @@ class GameController extends Controller
     }
     public function store(Request $request): RedirectResponse
     {
-        error_log('vo ddaay');
+
         $request->validate([
 
             'name' => 'required|max:255|unique:games,name_game',
@@ -38,8 +38,8 @@ class GameController extends Controller
             'developer' => 'required|min:5',
             'publisher' => 'required|min:5',
             'genre' => 'required',
-            'image' => 'required',
-            'image.*' => 'mimes:jpeg,jpg,png,gif,csv,txt,pdf|max:2048'
+            'image' => 'image',
+
         ]);
 
 
@@ -55,10 +55,12 @@ class GameController extends Controller
         $newGame->save();
 
         if ($request->hasFile('image')) {
-            $imageName = $request->file('image')->getClientOriginalName();
+
+            $imageName = $$request->file('image')->getClientOriginalName();
             Storage::disk('public')->put(
                 $imageName,
-                file_get_contents($request->file('image')->getRealPath())
+                file_get_contents($$request->file('image')->getRealPath())
+
             );
             $newGame->setImage($imageName);
             $newGame->save();

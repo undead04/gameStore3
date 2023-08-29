@@ -6,7 +6,9 @@
                     <div class="game_picture">
                         <div class="game_picture_wrapper">
                             <img class="img-fluid" src="{{ '/storage/' . $game->getIamge() }}" alt="">
+
                         </div>
+                        {{ $game->getIamge()[2] }}
                     </div>
                     <div class="card-body">
                         <div class="card-text text-secondary game_base">BASE GAME</div>
