@@ -75,4 +75,20 @@ class Game extends Model
     {
         $this->attributes['image'] = $image;
     }
+    public function typeGame()
+    {
+        return $this->hasMany(Type_Game::class);
+    }
+    public function getTypeGames()
+    {
+        return $this->typeGame;
+    }
+    public function setTypeGames($typeGame)
+    {
+        $this->typeGame = $typeGame;
+    }
+    public function orderGame()
+    {
+        return $this->hasMany(Game_Order::class);
+    }
 }

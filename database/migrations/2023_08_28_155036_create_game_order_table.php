@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('game_orders', function (Blueprint $table) {
+        Schema::create('gameOrders', function (Blueprint $table) {
             $table->unsignedBigInteger('orderId'); // Khóa ngoại Orderid
             $table->foreign('orderId')->references('id')->on('orders');
             $table->unsignedBigInteger('gameId'); // Khóa ngoại Gameid
             $table->foreign('gameId')->references('id')->on('games');
-            $table->integer('quantity');
+            $table->integer('quantity')->default(1);
             $table->float('price');
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('game_order');
+        Schema::dropIfExists('gameOrders');
     }
 };

@@ -26,4 +26,16 @@ class Type_Game extends Model
     {
         $this->attributes['typeNames'] = $typeGame;
     }
+    public function game()
+    {
+        return $this->hasMany(Game::class);
+    }
+    public function getGame()
+    {
+        return $this->game;
+    }
+    public function setGame($game)
+    {
+        $this->game = $game;
+    }
 }

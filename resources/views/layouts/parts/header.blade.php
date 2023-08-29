@@ -10,6 +10,7 @@
                     <a class="d-inline-block mx-1" href="">EUR</a>
                     <a class="d-inline-block mx-1" href="">USD</a>
                     <a class="d-inline-block mx-1" href="">GBP</a>
+                    <a href="{{ route('cart.index') }}">Cart</a>
                 </div>
                 @guest
                     <a href="{{ route('login') }}" class="nav-link active me-2">Login</a>
@@ -22,6 +23,7 @@
                         @csrf
                     </form>
                 @endguest
+
             </div>
         </div>
     </nav>

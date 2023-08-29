@@ -8,7 +8,8 @@ use App\Http\Controllers\client\HomeController;
 use App\Http\Controllers\admin\GenresController;
 use App\Http\Controllers\client\LoginController;
 use Illuminate\Support\Facades\Auth;
-
+use PHPUnit\TextUI\XmlConfiguration\Group;
+use App\Http\Controllers\client\ShoppingController;
 use function Termwind\render;
 
 /*
@@ -25,8 +26,6 @@ use function Termwind\render;
 
 Route::prefix('/')->group(function () {
     Route::get('', [HomeController::class, 'index'])->name('clients.home');
-    Route::get('/login', [LoginController::class, 'index'])->name('clients.login');
-    Route::get('/register', [LoginController::class, 'register'])->name('clients.register');
 });
 Auth::routes();
 Route::get('home', function () {
@@ -34,19 +33,27 @@ Route::get('home', function () {
 });
 
 
-Route::prefix('admin')->group(function () {
-    Route::view('/', 'admin.home')->name('admin.home');
-    Route::get('/games', [GameController::class, 'index'])->name('admin.game.games');
-    Route::post('/games/store', [GameController::class, 'store'])->name('admin.game.store');
-    Route::delete('/games/delete/{id}', [GameController::class, 'delete'])->name('admin.game.delete');
-    Route::get('games/edit/{id}', [GameController::class, 'edit'])->name('admin.game.edit');
-    Route::put('games/update/{id}', [GameController::class, 'update'])->name('admin.game.update');
-    Route::get('games/create', [GameController::class, 'create'])->name('admin.game.create');
-    Route::get('genres', [GenresController::class, 'index'])->name('admin.game.genres');
-    Route::post('genres/store', [GenresController::class, 'addGenres'])->name('admin.genres.store');
+Route::middleware('admin')->group(function () {
+    Route::prefix('admin')->group(function () {
+        Route::view('/', 'admin.home')->name('admin.home');
+        Route::get('/games', [GameController::class, 'index'])->name('admin.game.games');
+        Route::post('/games/store', [GameController::class, 'store'])->name('admin.game.store');
+        Route::delete('/games/delete/{id}', [GameController::class, 'delete'])->name('admin.game.delete');
+        Route::get('games/edit/{id}', [GameController::class, 'edit'])->name('admin.game.edit');
+        Route::put('games/update/{id}', [GameController::class, 'update'])->name('admin.game.update');
+        Route::get('games/create', [GameController::class, 'create'])->name('admin.game.create');
+        Route::get('genres', [GenresController::class, 'index'])->name('admin.game.genres');
+        Route::post('genres/store', [GenresController::class, 'addGenres'])->name('admin.genres.store');
+    });
 });
 
 Route::prefix('games')->group(function () {
     Route::get('/', [ClientGameController::class, 'allGames'])->name('clients.games');
     Route::get('/{id}', [ClientGameController::class, 'detail'])->name('clients.gamesDetail');
+});
+Route::prefix('cart')->group(function () {
+    Route::get('', [ShoppingController::class, 'index'])->name('cart.index');
+    Route::post('add/{id}', [ShoppingController::class, 'add'])->name('cart.add'); //
+    Route::get('delete', [ShoppingController::class, 'delete'])->name('cart.delete'); //delete cart
+    Route::get('purchase', [ShoppingController::class, 'purchase'])->name('cart.purchase');;
 });

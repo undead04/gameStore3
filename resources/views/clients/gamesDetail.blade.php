@@ -94,7 +94,10 @@
                             BUY NOW
                         </div>
                         <div class="game-details_addcart w-75 btn btn-lg btn-outline-light text-center">
-                            ADD TO CART
+                            <form action="{{ route('cart.add', ['id' => $viewData['game']->getGameId()]) }}" method="post">
+                                @csrf
+                                <button type="submit">cart.add</button>
+                            </form>
                         </div>
                         <ul class="game-details_support-infoes">
                             <li class="game-details_info">
