@@ -61,7 +61,7 @@
         <div class="form-group">
             <label class="form-label">Image:</label>
             <div class="flex-grow-1">
-                <input class="form-control bg-transparent text-light" type="file" name="image[]" multiple>
+                <input class="form-control bg-transparent text-light" type="file" name="image">
             </div>
         </div>
 

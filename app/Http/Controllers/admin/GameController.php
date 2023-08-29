@@ -55,12 +55,10 @@ class GameController extends Controller
         $newGame->save();
 
         if ($request->hasFile('image')) {
-
-            $imageName = $$request->file('image')->getClientOriginalName();
+            $imageName = $newGame->getGameId() . "." . $request->file('image')->extension();
             Storage::disk('public')->put(
                 $imageName,
-                file_get_contents($$request->file('image')->getRealPath())
-
+                file_get_contents($request->file('image')->getRealPath())
             );
             $newGame->setImage($imageName);
             $newGame->save();
@@ -111,9 +109,11 @@ class GameController extends Controller
                 $imageName,
                 file_get_contents($request->file('image')->getRealPath())
             );
-            $oldGame->setImage($oldGame->getGameId() . '.' . $request->file('image'));
+            $oldGame->setImage($imageName);
+            $oldGame->save();
         }
-        dd($imageName);
+
+
         $oldGame->save();
         return redirect()->route('admin.game.games');
     }

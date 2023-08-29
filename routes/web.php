@@ -7,6 +7,7 @@ use App\Http\Controllers\client\GameController as ClientGameController;
 use App\Http\Controllers\client\HomeController;
 use App\Http\Controllers\admin\GenresController;
 use App\Http\Controllers\client\LoginController;
+use Illuminate\Support\Facades\Auth;
 
 use function Termwind\render;
 
@@ -27,7 +28,10 @@ Route::prefix('/')->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('clients.login');
     Route::get('/register', [LoginController::class, 'register'])->name('clients.register');
 });
-
+Auth::routes();
+Route::get('home', function () {
+    return redirect('/');
+});
 
 
 Route::prefix('admin')->group(function () {

@@ -11,15 +11,17 @@
                     <a class="d-inline-block mx-1" href="">USD</a>
                     <a class="d-inline-block mx-1" href="">GBP</a>
                 </div>
-                <div class="control-item">
-                    <a class="text-white fw-bolder" href="{{ route('clients.login') }}">LOGIN</a>
-                    <span class="d-inline-block mx-2">OR</span>
-                    <a class="text-white fw-bolder" href="">REGISTER</a>
-                </div>
-                <div class="control-item">
-                    <a class="text-white fw-bolder" href="">MY CART</a>
-                    <span>0 ITEMS</span>
-                </div>
+                @guest
+                    <a href="{{ route('login') }}" class="nav-link active me-2">Login</a>
+                    <a href="{{ route('register') }}" class="nav-link active">Register</a>
+                @else
+                    <form action="{{ route('logout') }}" id="logout" method="POST">
+                        <a role="button" class="nav-link active" onclick="document.getElementById('logout').submit()">
+                            Logout
+                        </a>
+                        @csrf
+                    </form>
+                @endguest
             </div>
         </div>
     </nav>

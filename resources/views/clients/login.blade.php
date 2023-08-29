@@ -26,7 +26,8 @@
                     Login
                 </div>
                 <div class="w-90 border-primary mx-auto login_form">
-                    <form action="">
+                    <form action="{{ route('login') }}" method="POST">
+                        @csrf
                         <input spellcheck="false" class="d-block form-control login-form_input" type="text"
                             placeholder="Email or phone number">
                         <input spellcheck="false" class="d-block form-control login-form_input" type="password"
