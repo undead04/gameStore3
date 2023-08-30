@@ -5,6 +5,7 @@ namespace App\Http\Controllers\client;
 use App\Http\Controllers\Controller;
 use App\Models\Game;
 use App\Models\Game_Order;
+use App\Models\GameOrder;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -66,7 +67,7 @@ class ShoppingController extends Controller
             $gameInCart = Game::findMany(array_keys($gameInSession));
             foreach ($gameInCart as $game) {
 
-                $item = new Game_Order();
+                $item = new GameOrder();
 
                 $item->setPrice($game->getPrice());
                 $item->setGameId($game->getGameId());

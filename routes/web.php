@@ -10,6 +10,7 @@ use App\Http\Controllers\client\LoginController;
 use Illuminate\Support\Facades\Auth;
 use PHPUnit\TextUI\XmlConfiguration\Group;
 use App\Http\Controllers\client\ShoppingController;
+use App\Http\Controllers\client\MyAcountController;
 use function Termwind\render;
 
 /*
@@ -29,7 +30,11 @@ Route::prefix('/')->group(function () {
 });
 Auth::routes();
 Route::get('home', function () {
-    return redirect('/');
+    if (Auth::user() && Auth::user()->getRole() == 'admin') {
+        return redirect()->route('admin.home');
+    } else {
+        return redirect('/');
+    }
 });
 
 
@@ -51,9 +56,12 @@ Route::prefix('games')->group(function () {
     Route::get('/', [ClientGameController::class, 'allGames'])->name('clients.games');
     Route::get('/{id}', [ClientGameController::class, 'detail'])->name('clients.gamesDetail');
 });
-Route::prefix('cart')->group(function () {
-    Route::get('', [ShoppingController::class, 'index'])->name('cart.index');
-    Route::post('add/{id}', [ShoppingController::class, 'add'])->name('cart.add'); //
-    Route::get('delete', [ShoppingController::class, 'delete'])->name('cart.delete'); //delete cart
-    Route::get('purchase', [ShoppingController::class, 'purchase'])->name('cart.purchase');;
+Route::middleware('auth')->group(function () {
+    Route::prefix('cart')->group(function () {
+        Route::get('', [ShoppingController::class, 'index'])->name('cart.index');
+        Route::post('add/{id}', [ShoppingController::class, 'add'])->name('cart.add'); //
+        Route::get('delete', [ShoppingController::class, 'delete'])->name('cart.delete'); //delete cart
+        Route::get('purchase', [ShoppingController::class, 'purchase'])->name('cart.purchase');
+        Route::get('myAcount', [MyAcountController::class, 'orders'])->name('cart.orders');
+    });
 });

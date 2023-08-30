@@ -32,6 +32,14 @@ class Order extends Model
     {
         $this->attributes['userId'] = $userId;
     }
+    public function getCreatedAt()
+    {
+        return $this->attributes['created_at'];
+    }
+    public function setCreatedAt($createAt)
+    {
+        $this->attributes['created_at'] = $createAt;
+    }
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -44,13 +52,14 @@ class Order extends Model
     {
         $this->user = $users;
     }
-    public function gameOrder()
+    public function gameOrders()
     {
-        return $this->hasMany(Game_Order::class);
+        return $this->hasMany(GameOrder::class, 'orderId');
     }
+
     public function getGameOrder()
     {
-        return $this->gameOrder;
+        return $this->gameOrders;
     }
     public function setGameOrder($gameOrder)
     {

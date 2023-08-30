@@ -77,7 +77,7 @@ class Game extends Model
     }
     public function typeGame()
     {
-        return $this->hasMany(Type_Game::class);
+        return $this->hasMany(Type_Game::class, 'type_game');
     }
     public function getTypeGames()
     {

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Game_Order extends Model
+class GameOrder extends Model
 {
     use HasFactory;
     protected $table = 'gameOrders';
@@ -43,16 +43,9 @@ class Game_Order extends Model
     }
     public function game()
     {
-        return $this->belongsTo(Game::class);
+        return $this->belongsTo(Game::class, 'gameId');
     }
-    public function getGame()
-    {
-        return $this->game;
-    }
-    public function setGame($game)
-    {
-        $this->game = $game;
-    }
+
     public function order()
     {
         return $this->belongsTo(Order::class);
