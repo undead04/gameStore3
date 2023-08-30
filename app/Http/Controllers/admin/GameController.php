@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Game;
+use App\Models\GameOrder;
 use App\Models\Type_Game;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Validation\Validator;
@@ -70,6 +71,7 @@ class GameController extends Controller
     }
     public function delete($id)
     {
+        GameOrder::where('gameid', $id)->delete();
         Game::destroy($id);
         return back();
     }
