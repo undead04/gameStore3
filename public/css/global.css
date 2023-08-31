@@ -98,4 +98,5 @@ ul {
 /* Card wrapper */
 .card_wrapper {
     padding: 40px 0;
+    box-shadow: 5px 5px 5px 5px darkslateblue!important;
 }
