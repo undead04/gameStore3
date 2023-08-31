@@ -13,10 +13,14 @@ class GenresController extends Controller
     {
         $viewData = [];
         $viewData['title'] = 'Admin Game Page - Genres';
-
-        return view('admin.game.genres')->with('viewData', $viewData);
+        $viewData['genres'] = Type_Game::all();
+        return view('admin.genre.genres')->with('viewData', $viewData);
     }
 
+    public function create()
+    {
+        return view('admin.genre.create');
+    }
     public function addGenres(Request $request)
     {
         $request->validate([
@@ -27,6 +31,31 @@ class GenresController extends Controller
         $newType->setTypeGame($request->input('typeName'));
         $newType->save();
 
-        return redirect()->route('admin.game.genres');
+        return redirect()->route('admin.genre.genres');
+    }
+    public function edit($id)
+    {
+        $viewData = [];
+
+        $viewData['title'] = 'Admin Edit Type Page';
+        $viewData['genre'] = Type_Game::findOrFail($id);
+        return view('admin.genre.edit')->with('viewData', $viewData);
+    }
+    public function update($id, Request $request)
+    {
+        $request->validate([
+            'typeName' => 'required|max:255'
+        ]);
+
+        $oldGame = Type_Game::find($id);
+        $oldGame->setTypeGame($request->input('typeName'));
+        $oldGame->save();
+        return redirect()->route('admin.genre.genres');
+    }
+
+    public function delete($id)
+    {
+        Type_Game::destroy($id);
+        return back();
     }
 }

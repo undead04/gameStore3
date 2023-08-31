@@ -1,5 +1,6 @@
 .admin_area {
-    background-image: url("https://th.bing.com/th/id/R.ff42a0a846dc92c8d6be813188cb1c82?rik=CUhYepPBYjBNaw&pid=ImgRaw&r=0");
+    background-color: #666;
+    background-image: linear-gradient(to right, black, gray, white);
     background-size: cover;
     background-position: center;
 }
@@ -73,6 +74,7 @@
 .sidebar-left ul {
     width: 100%;
     margin-bottom: 50px;
+    margin-left: 4px;
 }
 
 .sidebar-label {
@@ -85,27 +87,29 @@
 }
 .sidebar-item {
     display: flex;
-    align-items: center;;
-    padding: 4px 12px;
+    align-items: center;
     height: 48px;
     font-size: 1.6rem;
     cursor: pointer;
-    border-top-right-radius: 16px;
     background-color: rgb(255 255 255 / 0.3);
     backdrop-filter: blur(2px);
 }
 
+.sidebar-item a {
+    flex: 1;
+    padding: 10px;
+}
+
 .sidebar-item:hover {
-    transform: translate(-5px);
-    box-shadow: 5px 5px 5px 0px rgba(179, 60, 230, 0.75);
+    transform: translateX(20px);
+    /* box-shadow: 5px 5px 5px 0px rgba(179, 60, 230, 0.75);
     -webkit-box-shadow: 5px 5px 5px 0px rgba(179, 60, 230, 0.75);
-    -moz-box-shadow: 5px 5px 5px 0px rgba(179, 60, 230, 0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(179, 60, 230, 0.75); */
     opacity: 1;
     transition: all ease 300ms;
 }
 
 .sidebar-item + .sidebar-item {
-    border-top: 1px solid #9B38BD;
     margin-top: 4px;
 }
 
@@ -117,6 +121,7 @@
 .sidebar-item i {
     min-width: 30px;
 }
+
 /* Game items */
 
 .games-item {
@@ -140,9 +145,7 @@
 .admin_table {
     font-size: 1.4rem;
     margin-top: 20px;
-    background-color: rgb(255 255 255 / 0.3);
-    backdrop-filter: blur(10px);
-    padding: 30px;
+    min-height: 320px;
     color: whitesmoke;
 }
 

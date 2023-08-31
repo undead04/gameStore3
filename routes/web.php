@@ -47,8 +47,12 @@ Route::middleware('admin')->group(function () {
         Route::get('games/edit/{id}', [GameController::class, 'edit'])->name('admin.game.edit');
         Route::put('games/update/{id}', [GameController::class, 'update'])->name('admin.game.update');
         Route::get('games/create', [GameController::class, 'create'])->name('admin.game.create');
-        Route::get('genres', [GenresController::class, 'index'])->name('admin.game.genres');
+        Route::get('genres', [GenresController::class, 'index'])->name('admin.genre.genres');
         Route::post('genres/store', [GenresController::class, 'addGenres'])->name('admin.genres.store');
+        Route::get('genres/create', [GenresController::class, 'create'])->name('admin.genre.create');
+        Route::get('genres/edit/{id}', [GenresController::class, 'edit'])->name('admin.genre.edit');
+        Route::get('genres/update/{id}', [GenresController::class, 'update'])->name('admin.genre.update');
+        Route::delete('/genres/delete/{id}', [GenresController::class, 'delete'])->name('admin.genre.delete');
     });
 });
 

@@ -20,22 +20,32 @@
 
 /* ================================ Login form ================================= */
 
+.game_brand {
+    color: darkorchid;
+    font-size: 9rem;
+    top: 50%;
+    left: 50%;
+    transform: rotate(20deg) translateY(-20%) translateX(-52%);
+    filter: blur(5px);
+}
+
 .login-form-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 600px;
+    min-width: 550px;
+    min-height: 550px;
 }
 
 
 .login-form_input {
-    height: 46px;
+    height: 55px;
     color: white;
     background-color: transparent;
-    caret-color: darkorchid;
-    padding-left: 8px;
-    padding-right: 8px;
-    border-radius: 16px;
+    caret-color: darkblue;
+    padding-left: 25px;
+    padding-right: 0px;
+    border-radius: 25px;
     margin-top: 4px;
 }
 
@@ -51,7 +61,7 @@
     background-color: transparent;
     color: white;
     outline: none;
-    border-color: darkorchid;
+    border-color: darkblue;
     box-shadow: none;
 }
 
@@ -64,12 +74,13 @@
     font-size: 1.6rem;
     padding: 8px 0;
     margin: 0 16px;
-    border-radius: 16px;
+    border-radius: 25px;
 }
 
 .login_btn:hover {
-    background-color: white!important;
-    color: violet;
+    background-color: darkviolet!important;
+    border: 1px solid violet;
+    color: whitesmoke;
     transition: all ease-in-out 300ms;
 }
 

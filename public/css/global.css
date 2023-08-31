@@ -59,11 +59,11 @@ ul {
 
 /* Background color */
 .bg-blur {
-    backdrop-filter: sepia(40%);
+    backdrop-filter: blur(10px);
 }
 
 .bg-gradient {
-    background-image: linear-gradient(to right, #d391fa, #c364fa, #a230fa, #7b00fa)!important;
+    background-image: linear-gradient(to right, #c364fa, #a230fa, #7b00fa, darkviolet)!important;
 }
 
 /* Scroll bar */
