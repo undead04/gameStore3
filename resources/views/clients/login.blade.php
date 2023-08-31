@@ -21,25 +21,30 @@
         <div class="mx-auto text-center login-form-wrapper p-5">
             <div class="display-3 fw-bold text-light py-3 my-3 text-nowrap">Game Store</div>
             <div
-                class="bg-blur d-flex flex-column border-primary justify-content-around flex-grow-1 rounded-5 shadow-sm">
-                <div class="display-4 fw-bold mt-3 text-light">
+                class="bg-blur card_wrapper  d-flex flex-column border-primary justify-content-around flex-grow-1 rounded-5 shadow-sm">
+                <div class="display-4 fw-bold my-5 text-light">
                     Login
                 </div>
+
                 <div class="w-90 border-primary mx-auto login_form">
-                    <form action="{{ route('login') }}" method="POST">
-                        @csrf
-                        <input spellcheck="false" class="d-block form-control login-form_input" type="text"
-                            placeholder="Email or phone number">
-                        <input spellcheck="false" class="d-block form-control login-form_input" type="password"
-                            placeholder="Password">
-                        <button class="btn btn-outline-light btn-lg login_btn fw-bold">Log in</button>
-                        <div>
-                            <a class="text-light fw-bold" href="">Forgot your password?</a>
-                            <a class="text-light fw-bold" href="{{ route('clients.register') }}">Register</a>
-                        </div>
-                    </form>
+                    @yield('content')
                 </div>
+
+
+
+                {{-- <button type="submit" class="btn btn-primary">
+                    {{ __('Login') }}
+                </button>
+
+                @if (Route::has('password.request'))
+                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                        {{ __('Forgot Your Password?') }}
+                    </a>
+                @endif --}}
+
+
             </div>
+        </div>
         </div>
     </section>
 </body>

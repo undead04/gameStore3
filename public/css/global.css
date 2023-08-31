@@ -90,3 +90,12 @@ ul {
     padding-bottom: 100%;
 }
 
+/* Strong alert */
+.invalid-feedback {
+    text-align: left;
+}
+
+/* Card wrapper */
+.card_wrapper {
+    padding: 40px 0;
+}
