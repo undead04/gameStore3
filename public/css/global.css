@@ -34,7 +34,15 @@ ul {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.truncated-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
     overflow: hidden;
 }
 /* 5 collums */
@@ -78,6 +86,9 @@ ul {
     border-radius: 2px;
 }
 
+.carousel_multiple {
+    scroll-behavior: smooth;
+}
 /* Aspect ratio */
 /* Wrapper a image */
 .picture16x9 {
