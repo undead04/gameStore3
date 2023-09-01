@@ -21,6 +21,7 @@
     <link href="{{ asset('/css//clients/app.css') }}" rel="stylesheet" />
 </head>
 
+
 <body>
     {{-- Header  --}}
     @include('layouts.parts.header')

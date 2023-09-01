@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use PHPUnit\TextUI\XmlConfiguration\Group;
 use App\Http\Controllers\client\ShoppingController;
 use App\Http\Controllers\client\MyAcountController;
+use App\Http\Controllers\SearchController;
 use function Termwind\render;
 
 /*
@@ -24,6 +25,7 @@ use function Termwind\render;
 |
 */
 
+Route::get('search', [SearchController::class, 'getSearchAjax'])->name('search');
 
 Route::prefix('/')->group(function () {
     Route::get('', [HomeController::class, 'index'])->name('clients.home');

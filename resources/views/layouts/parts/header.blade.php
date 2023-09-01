@@ -43,11 +43,33 @@
                         <span>CHAT WITH US</span>
                     </div>
                     <div class="form-group headnav_search">
-                        <input type="text" placeholder="Search entire store here">
+                        <input type="text" placeholder="Search entire store here" id="searchGame" name="gameName">
                         <span><i class="fa-solid fa-magnifying-glass"></i></span>
+
                     </div>
+
+                    <div id="Games"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#searchGame').keyup(function() {
+            var query = $(this).val();
+            if (query != '') {
+
+                $.ajax({
+                    url: `{{ route('search') }}?key=` + query,
+                    method: "GET",
+                    success: function(data) {
+
+                        console.log(data);
+                    }
+                });
+            }
+        });
+    });
+</script>
