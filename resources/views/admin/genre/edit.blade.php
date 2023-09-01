@@ -1,8 +1,10 @@
 @extends('layouts.admin')
 @section('table')
-    <form action="{{ route('admin.genres.update') }}"
-        method="POST">
+    <form
+        action="{{ route('admin.genre.update', ['id' => $viewData['genre']->getTypeId()]) }}"
+        method="post">
         @csrf
+        @method('PUT')
         <h1 class="mb-3"><i
                 class="fa-solid fa-bars-staggered"></i> Genres
             Controller</h1>
@@ -10,7 +12,7 @@
             <label class="form-label">Type name:</label>
             <div class="flex-grow-1">
                 <input name="typeName"
-                    value="{{ $viewData['genre']->getName() }}"
+                    value="{{ $viewData['genre']->getTypeGame() }}"
                     type="text"
                     class="form-control bg-transparent text-light">
                 @error('name')
