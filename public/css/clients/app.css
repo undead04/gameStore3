@@ -79,108 +79,142 @@
 }
 
 /* Product banner */
-
-.product_banner_wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.product_banner {
-    border-radius: 16px;
-    height: auto;
-}
-
-.product_wallpaper {
-    position: relative;
-    background-image: url("https://cdn2.unrealengine.com/egs-ac-mirage-carousel-desktop-1920x1080-b74b6e380b4d.jpg?h=720&quality=medium&resize=1&w=1280");
-    padding-bottom: calc(9/16 * 100%);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-}
-
-.product_banner_body {
-    position: absolute;
-    top: 30%;
-    left: 30px;
+.banner_body  {
     width: 320px;
+    left: 32px;
+    bottom: 32px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: start;
+    align-items: start;
+    pointer-events: none;
+}
+
+.banner_brand {
+    width: 150px;
+    height: 55px;
     margin-bottom: 20px;
-}
-.product_banner_title {
-    width: 200px;
-    margin-right: auto;
-    margin-bottom: 5px;
-}
-
-.product_publish {
-    font-size: 1.2rem;
-    margin-top: 40px;
+    opacity: 1;
+    background-image: url("https://cdn2.unrealengine.com/egs-ac-mirage-carousel-logo-350x143-c22cafeefdfb.png");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: 300ms cubic-bezier(0.17, 0.17, 0.23, 1) 300ms 1 normal forwards running animation-10bfzmq;
 }
 
-.product_description {
-    margin-top: 10px;
-    font-size: 1.6rem;
+@media (min-width: 1024px){
+    .banner_brand {
+        height: 80px;
+        margin-bottom: 17px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .banner_brand {
+        width: 262px;
+        height: 145px;
+        margin-bottom: 25px;
+    }
+}
+
+.banner-head_description {
+    text-shadow: rgba(0, 0, 0, 0.25) 0.5px 0.5px 0.5px;
+    text-align: left;
+    transition: opacity 200ms cubic-bezier(0.42, 0, 0.58, 1) 0s;
+    opacity: 1;
+}
+
+
+.banner_isAvailabel {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 1.3333;
     font-weight: 500;
+    text-transform: uppercase;
+}
+
+.banner-text_wrapper {
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+}
+
+.banner_text {
     display: -webkit-box;
-    line-clamp: 4;
     overflow: hidden;
     word-break: break-word;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
 }
 
-.product_actions {
-    margin-top: 35px;
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.product_actions_buy {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
+.banner-buynow_offer {
+    font-size: 12px;
+    letter-spacing: 0.5px;
     font-weight: 500;
-    height: 50px;
-    min-width: 159px;
-}
-
-.btn + .btn {
-    margin-left: 16px;
-}
-
-.product_actions_addcart {
-    color: #f5f5f5;
     display: inline-flex;
+    position: relative;
+    border-radius: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-box-align: center;
     align-items: center;
+    -webkit-box-pack: center;
     justify-content: center;
-    height: 50px;
-    min-width: 159px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    transition: opacity 200ms ease;
-    opacity: 1;
+    line-height: 15px;
+    padding: 0px 20px;
     background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    height: 50px;
+    width: auto;
+    min-width: auto;
 }
 
-.product_actions_addcart:hover {
-    opacity: 0.5;
-}
-
-.icon-plus {
-    display: flex;
-    justify-content: center;
+.banner-addwishlist_offer {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    display: inline-flex;
+    position: relative;
+    border-radius: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-box-align: center;
     align-items: center;
-    width: 16px;
-    height: 16px;
-    border-radius: 999px;
-    border: 1px solid #f5f5f5;
-    margin-right: 8px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    line-height: 15px;
+    padding: 0px 20px;
+    height: 50px;
+    width: auto;
+    min-width: auto;
+    background-color: transparent;
+    color: rgb(245, 245, 245);
 }
-.icon-plus i {
-    margin-top: 1px;
+
+.offer_text {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
 }
+
 
 /* Side product banner */
 
