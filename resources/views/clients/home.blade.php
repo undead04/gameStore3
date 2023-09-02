@@ -16,11 +16,11 @@
             xSlideDOM.scrollLeft += (xSlideDOM
                 .offsetWidth * 0.2);
             if (xSlideDOM.scrollLeft == maxScollX) {
-                const scrollTimeOut = setTimeout(() => {
+                let scrollTimeOut = setTimeout(() => {
                     xSlideDOM.scrollLeft = 0;
+                    clearTimeout(scrollTimeOut);
                 }, 3000);
             }
-            clearTimeout(scrollTimeOut);
         }, 3000);
     </script>
 @endsection
