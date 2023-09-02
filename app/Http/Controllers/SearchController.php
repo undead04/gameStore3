@@ -13,9 +13,9 @@ class SearchController extends Controller
     {
         $viewData = [];
         $key = $request->all();
-        dd($key);
+
         $viewData['searchGame'] = Game::where('name_Game', 'like', '%' . $key['key'] . '%')->get();
 
-        return $viewData['searchGame'];
+        return view('layouts.search')->with('viewData', $viewData);
     }
 }
