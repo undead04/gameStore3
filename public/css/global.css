@@ -8,7 +8,10 @@ html {
     font-size: 62.5%;
 }
 /* Config */
-
+:root {
+    --search-height: 40px;
+    --search-width: 230px
+}
 /* tag */
 a {
     text-decoration: none;
