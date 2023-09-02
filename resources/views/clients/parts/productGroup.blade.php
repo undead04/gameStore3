@@ -18,6 +18,7 @@
                                 class="productGroup_price_label"><span
                                     class="text-decoration-underline">đ</span>{{ $viewData['games'][$i]->getPrice() }}</a>
                         </div>
+                        <div></div>
                     </div>
                 </div>
             @endfor
