@@ -22,6 +22,7 @@
                     <tbody>
                         @foreach ($order->gameOrders as $item)
                             <tr>
+
                                 <td>{{ $item->getOrderId() }}</td>
                                 <td>
                                     <a class="link-success"
