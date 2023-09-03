@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Game;
 use App\Models\GameOrder;
 use App\Models\Type_Game;
+use App\Models\TypeGame;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Validation\Validator;
 use Illuminate\Http\Request;
@@ -42,14 +43,18 @@ class GameController extends Controller
             'image' => 'image',
 
         ]);
-
-
+        $genres = $request->input('genre');
 
         $newGame = new Game();
+
+
+
+
+
         $newGame->setNameGame($request->input('name'));
         $newGame->setDescription($request->input('description'));
         $newGame->setPrice($request->input('price'));
-        $newGame->setGenre($request->input('genre'));
+        $newGame->setGenre(implode(',', $genres));
         $newGame->setPublisher($request->input('publisher'));
         $newGame->setImage('');
         $newGame->setDeveloper($request->input('developer'));
@@ -64,6 +69,12 @@ class GameController extends Controller
             $newGame->setImage($imageName);
             $newGame->save();
         }
+        foreach ($genres as $genre) {
+            $newTypeGame =  new TypeGame;
+            $newTypeGame->setGameId($newGame->getGameId());
+            $newTypeGame->setTypeId($genre);
+            $newTypeGame->save();
+        }
 
 
 
@@ -72,6 +83,7 @@ class GameController extends Controller
     public function delete($id)
     {
         GameOrder::where('gameid', $id)->delete();
+        TypeGame::where('gameId', $id)->delete();
         Game::destroy($id);
         return back();
     }

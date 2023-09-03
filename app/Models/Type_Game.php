@@ -38,4 +38,8 @@ class Type_Game extends Model
     {
         $this->game = $game;
     }
+    public function typeGame()
+    {
+        return $this->hasMany(typeGame::class);
+    }
 }

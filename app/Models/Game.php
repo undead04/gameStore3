@@ -45,11 +45,11 @@ class Game extends Model
     }
     public function getGenre()
     {
-        return $this->attributes['type_game'];
+        return $this->attributes['genre'];
     }
     public function setGenre($genre)
     {
-        $this->attributes['type_game'] = $genre;
+        $this->attributes['genre'] = $genre;
     }
     public function getPrice()
     {
@@ -77,15 +77,7 @@ class Game extends Model
     }
     public function typeGame()
     {
-        return $this->hasMany(Type_Game::class, 'type_game');
-    }
-    public function getTypeGames()
-    {
-        return $this->typeGame;
-    }
-    public function setTypeGames($typeGame)
-    {
-        $this->typeGame = $typeGame;
+        return $this->hasMany(TypeGame::class, 'gameId');
     }
     public function orderGame()
     {

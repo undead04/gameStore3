@@ -21,14 +21,14 @@
                             </div>
                         </div>
                         <div class="game-details_description">
-                            <p>{{ $viewData['game']->getDescription() }}</p>
+                            <p>Description</p>
                         </div>
                         <div class="game-details_tags d-flex">
                             <div class="game-details_tag">
                                 <div>Genres</div>
-                                <a href="">{{ $viewData['type']->getTypeGame() }}</a>,
-                                <a href="">Exploration</a>,
-                                <a href="">Open world</a>
+                                @foreach ($viewData['game']->typegame as $typeGame)
+                                    <a href="">{{ $typeGame->type->getTypeGame() }}</a>
+                                @endforeach
                             </div>
                             <div class="game-details_tag">
                                 <div>Feature</div>
