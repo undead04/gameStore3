@@ -49,11 +49,17 @@ ul {
     overflow: hidden;
 }
 /* 5 collums */
-.col-2-4, .col-md-2-4, .col-lg-2-4,.col-lg-2-4 {
+/* .col-2-4, .col-md-2-4, .col-lg-2-4,.col-lg-2-4 {
     flex: 0 0 auto;
     width: 20%;
-}
+} */
 
+@media (min-width: 768px) {
+    .col-md-2-4 {
+        flex: 0 0 auto;
+        width: 20%;
+    }
+  }
 
 /* Width */
 .w-90 {
@@ -113,4 +119,27 @@ ul {
 .card_wrapper {
     padding: 40px 0;
     box-shadow: 5px 5px 5px 5px darkslateblue!important;
+}
+
+/* Offcanvas*/
+.offcanvas-item {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+.offcanvas-item + .offcanvas-item {
+    border-top: 1px solid #696969;
+}
+
+.offcanvas-item:hover {
+    opacity: 0.5;
+    transition: all ease-in 200ms;
+}
+
+.offcanvas-link {
+    font-size: 2rem;
+    flex-grow: 1;
 }

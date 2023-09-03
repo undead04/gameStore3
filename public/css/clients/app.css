@@ -17,7 +17,6 @@
 }
 
 .web_options {
-    display: flex;
     align-items: center;
     height: 100%;
 }
@@ -137,8 +136,26 @@
     background: transparent;
     cursor: pointer;
 }
-.search_area {
+
+.wrapper_headnav {
+    display: flex;
     position: relative;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.headnav_item {
+    display: inline-flex;
+}
+
+.mobile_headnav_select {
+    font-size: 1.4rem;
+    max-width: 100px;
+    border: none;
+    outline: none;
+    height: 100%;
+    padding: 4px 6px;
+    margin-left: auto;
 }
 
 .search_results {
@@ -150,7 +167,7 @@
     display: block;
     top: calc(var(--search-height) + 4px);
     left: 0;
-    right: calc(-1 * var(--search-width));
+    right: 0;
     z-index: 3;
 }
 
@@ -180,6 +197,7 @@
     padding: 4px 8px;
     height: var(--search_title_height);
     font-size: 1.4rem;
+    margin-top: var(--search-height);
 }
 
 .search_result_title > * {
@@ -409,9 +427,11 @@
 }
 
 .game_title {
+    color: rgb(245, 245, 245);
     flex: 1;
     font-size: 1.2rem;
     word-wrap: break-word;
+    user-select: none;
 }
 /*================================== Game items =================================== */
 .game_picture {
@@ -455,6 +475,11 @@
 .game_picture.product_group {
     border-radius: 16px;
     overflow: hidden;
+}
+
+/* =============================== List group 3 collumns ====================== */
+.list-group + .list-group {
+    border-left: 1px solid #969696;
 }
 /*================================== Footer =================================== */
 .footer_wrapper {

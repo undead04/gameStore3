@@ -9,18 +9,18 @@
     <script>
         const xSlideDOM = document.querySelector(
             '.carousel_multiple');
-
-        console.log((xSlideDOM.offsetWidth * 0.2));
-        const maxScollX = xSlideDOM.scrollWidth - xSlideDOM.clientWidth;
-        setInterval(() => {
-            xSlideDOM.scrollLeft += (xSlideDOM
-                .offsetWidth * 0.2);
-            if (xSlideDOM.scrollLeft == maxScollX) {
-                let scrollTimeOut = setTimeout(() => {
-                    xSlideDOM.scrollLeft = 0;
-                    clearTimeout(scrollTimeOut);
-                }, 3000);
-            }
-        }, 3000);
+        if (xSlideDOM.clientWidth > 500) {
+            const maxScollX = xSlideDOM.scrollWidth - xSlideDOM.clientWidth;
+            setInterval(() => {
+                xSlideDOM.scrollLeft += (xSlideDOM
+                    .offsetWidth * 0.2);
+                if (xSlideDOM.scrollLeft == maxScollX) {
+                    let scrollTimeOut = setTimeout(() => {
+                        xSlideDOM.scrollLeft = 0;
+                        clearTimeout(scrollTimeOut);
+                    }, 3000);
+                }
+            }, 3000);
+        }
     </script>
 @endsection
