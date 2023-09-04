@@ -163,8 +163,6 @@
 
 /* ==================== Select tag =========================== */
 .select_item {
-    --filter-bar_height: 40px;
-    height: var(--filter-bar_height);
     font-size: 1.6rem;
     width: 100%;
     font-weight: 700;

@@ -426,12 +426,32 @@
     padding-bottom: calc(4/3*100%);
 }
 
+.game_product_body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.game_product_description > * {
+    font-size: 1.3rem;
+}
+
+.game_product_description {
+    padding: 0 6px;
+}
+
+.game_product_price + .game_product_price{
+    margin-left: 8px;
+}
 .game_title {
     color: rgb(245, 245, 245);
     flex: 1;
     font-size: 1.2rem;
     word-wrap: break-word;
     user-select: none;
+    padding: 0 6px;
 }
 /*================================== Game items =================================== */
 .game_picture {
@@ -519,3 +539,125 @@
 }
 
 /*================================== Breadcumbs =================================== */
+
+
+/*================================== Cart CSS =================================== */
+.cart_title {
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.cart_item {
+    border-radius: 6px;
+}
+
+.cart_item + .cart_item {
+    margin-top: 15px;
+}
+
+.cart_item_section {
+    display: flex;
+    padding: 20px;
+}
+
+.cart_item_avatar {
+}
+@media (min-width: 768px) {
+    .cart_item_avatar {
+        width: 83px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .cart_item_avatar {
+        width: 128px;
+    }
+}
+
+.cart_item_avatar > div {
+    height: 1px;
+    padding-bottom: calc(4/3*100%);
+    overflow: hidden;
+    border-radius: 8px;
+}
+.cart_item_body {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.cart_item_price {
+    font-size: 1.4rem;
+}
+
+.cart_item_title {
+    font-size: 1.6rem;
+}
+
+.game_release_date {
+    font-size: 1.2rem;
+}
+
+.cart_more_infoes {
+    font-size: 1.4rem;
+}
+
+.cart_more_infoes i {
+    font-size: 1.6rem;
+    margin-right: 8px;
+}
+
+.cart_item_actions {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    padding: 20px;
+    padding-top: 0;
+}
+
+.cart_item_actions a {
+    padding: 4px;
+}
+
+/* Cart payment */
+.pay_area  {
+
+}
+
+.payment_section {
+    padding: 20px;
+    padding-top: 0;
+}
+
+.payment_title {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+}
+
+.payment_body {
+
+}
+
+.payment_item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+}
+
+.payment_item + .payment_item {
+    margin-top: 15px;
+}
+
+.payment_price {
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin: 15px 0;
+}
+
+.payment_checkout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 4px 8px;
+    margin-top: 15px;
+}

@@ -89,14 +89,16 @@
                             class="list_header d-flex justify-content-between align-items-center">
 
                             <a class="games_title">
-                                <h2 class="text-white py-3">Trending</h2>
+                                <h2 class="text-white py-3">Top Sellers
+                                </h2>
                             </a>
 
                             <div
-                                class="btn btn-outline-secondary text-uppercase">
+                                class="btn btn-outline-secondary text-uppercase text-light px-5 py-3">
                                 View More
                             </div>
                         </div>
+                        {{-- 6 games per collumn --}}
                         <div class="game_product_thumb">
                             <div class="game_product_avatar">
                                 <div>
@@ -107,40 +109,25 @@
                                     </div>
                                 </div>
                             </div>
-                            <span class="game_title truncated">
-                                Division
-                            </span>
-                        </div>
-                        <div class="game_product_thumb">
-                            <div class="game_product_avatar">
-                                <div>
-                                    <div
-                                        class="d-flex align-items-center overflow-hidden">
-                                        <img class="img-fluid"
-                                            src="/storage/5.jpg" alt="thumnail">
-                                    </div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
                                 </div>
                             </div>
-                            <span class="game_title truncated">
-                                Division
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-9 col-md-4 list-group">
-                <div class="lists_wrapper p-4">
-                    <div>
-                        <div
-                            class="list_header d-flex justify-content-between align-items-center">
-
-                            <a class="games_title">
-                                <h2 class="text-white py-3">Trending</h2>
-                            </a>
-
-                            <div
-                                class="btn btn-outline-secondary text-uppercase">
-                                View More</div>
                         </div>
                         <div class="game_product_thumb">
                             <div class="game_product_avatar">
@@ -152,9 +139,25 @@
                                     </div>
                                 </div>
                             </div>
-                            <span class="game_title truncated">
-                                Division
-                            </span>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                         <div class="game_product_thumb">
                             <div class="game_product_avatar">
@@ -166,26 +169,25 @@
                                     </div>
                                 </div>
                             </div>
-                            <span class="game_title truncated">
-                                Division
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-9 col-md-4 list-group">
-                <div class="lists_wrapper p-4">
-                    <div>
-                        <div
-                            class="list_header d-flex justify-content-between align-items-center">
-
-                            <a class="games_title">
-                                <h2 class="text-white py-3">Trending</h2>
-                            </a>
-
-                            <div
-                                class="btn btn-outline-secondary text-uppercase">
-                                View More</div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                         <div class="game_product_thumb">
                             <div class="game_product_avatar">
@@ -197,9 +199,26 @@
                                     </div>
                                 </div>
                             </div>
-                            <span class="game_title truncated">
-                                Division
-                            </span>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                         <div class="game_product_thumb">
                             <div class="game_product_avatar">
@@ -212,9 +231,478 @@
                                     </div>
                                 </div>
                             </div>
-                            <span class="game_title truncated">
-                                Division
-                            </span>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game_product_thumb">
+                            <div class="game_product_avatar">
+                                <div>
+                                    <div
+                                        class="d-flex align-items-center overflow-hidden">
+                                        <img class="img-fluid"
+                                            src="/storage/5.jpg"
+                                            alt="thumnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9 col-md-4 list-group">
+                <div class="lists_wrapper p-4">
+                    <div>
+                        <div
+                            class="list_header d-flex justify-content-between align-items-center">
+
+                            <a class="games_title">
+                                <h2 class="text-white py-3">Most Played</h2>
+                            </a>
+
+                            <div
+                                class="btn btn-outline-secondary text-uppercase text-light px-5 py-3">
+                                View More</div>
+                        </div>
+                        {{-- 6 games per collumn --}}
+                        <div class="game_product_thumb">
+                            <div class="game_product_avatar">
+                                <div>
+                                    <div
+                                        class="d-flex align-items-center overflow-hidden">
+                                        <img class="img-fluid"
+                                            src="/storage/5.jpg"
+                                            alt="thumnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game_product_thumb">
+                            <div class="game_product_avatar">
+                                <div>
+                                    <div
+                                        class="d-flex align-items-center overflow-hidden">
+                                        <img class="img-fluid"
+                                            src="/storage/5.jpg"
+                                            alt="thumnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game_product_thumb">
+                            <div class="game_product_avatar">
+                                <div>
+                                    <div
+                                        class="d-flex align-items-center overflow-hidden">
+                                        <img class="img-fluid"
+                                            src="/storage/5.jpg"
+                                            alt="thumnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game_product_thumb">
+                            <div class="game_product_avatar">
+                                <div>
+                                    <div
+                                        class="d-flex align-items-center overflow-hidden">
+                                        <img class="img-fluid"
+                                            src="/storage/5.jpg"
+                                            alt="thumnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game_product_thumb">
+                            <div class="game_product_avatar">
+                                <div>
+                                    <div
+                                        class="d-flex align-items-center overflow-hidden">
+                                        <img class="img-fluid"
+                                            src="/storage/5.jpg"
+                                            alt="thumnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game_product_thumb">
+                            <div class="game_product_avatar">
+                                <div>
+                                    <div
+                                        class="d-flex align-items-center overflow-hidden">
+                                        <img class="img-fluid"
+                                            src="/storage/5.jpg"
+                                            alt="thumnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9 col-md-4 list-group">
+                <div class="lists_wrapper p-4">
+                    <div>
+                        <div
+                            class="list_header d-flex justify-content-between align-items-center">
+
+                            <a class="games_title">
+                                <h2 class="text-white py-3">Coming Soon</h2>
+                            </a>
+
+                            <div
+                                class="btn btn-outline-secondary text-uppercase text-light px-5 py-3">
+                                View More</div>
+                        </div>
+                        {{-- 6 games per collumn --}}
+                        <div class="game_product_thumb">
+                            <div class="game_product_avatar">
+                                <div>
+                                    <div
+                                        class="d-flex align-items-center overflow-hidden">
+                                        <img class="img-fluid"
+                                            src="/storage/5.jpg"
+                                            alt="thumnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game_product_thumb">
+                            <div class="game_product_avatar">
+                                <div>
+                                    <div
+                                        class="d-flex align-items-center overflow-hidden">
+                                        <img class="img-fluid"
+                                            src="/storage/5.jpg"
+                                            alt="thumnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game_product_thumb">
+                            <div class="game_product_avatar">
+                                <div>
+                                    <div
+                                        class="d-flex align-items-center overflow-hidden">
+                                        <img class="img-fluid"
+                                            src="/storage/5.jpg"
+                                            alt="thumnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game_product_thumb">
+                            <div class="game_product_avatar">
+                                <div>
+                                    <div
+                                        class="d-flex align-items-center overflow-hidden">
+                                        <img class="img-fluid"
+                                            src="/storage/5.jpg"
+                                            alt="thumnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game_product_thumb">
+                            <div class="game_product_avatar">
+                                <div>
+                                    <div
+                                        class="d-flex align-items-center overflow-hidden">
+                                        <img class="img-fluid"
+                                            src="/storage/5.jpg"
+                                            alt="thumnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game_product_thumb">
+                            <div class="game_product_avatar">
+                                <div>
+                                    <div
+                                        class="d-flex align-items-center overflow-hidden">
+                                        <img class="img-fluid"
+                                            src="/storage/5.jpg"
+                                            alt="thumnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game_product_body">
+                                <div class="game_title truncated">
+                                    Division
+                                </div>
+                                <div class="game_product_description">
+                                    <span class="badge bg-primary">-30%</span>
+                                    <span
+                                        class="game_product_price text-secondary">
+                                        <span
+                                            class="text-decoration-underline">đ</span>
+                                        <span>990,000</span>
+                                    </span>
+                                    <span
+                                        class="game_product_price text-light">
+                                        <span
+                                            class="text-decoration-underline text-light">đ</span>
+                                        <span>693,000</span>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

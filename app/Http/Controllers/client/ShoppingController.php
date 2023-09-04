@@ -39,7 +39,7 @@ class ShoppingController extends Controller
             'id' => $gameItem->getGameId(),
             'name' => $gameItem->getNameGame(),
             'price' => $gameItem->getPrice(),
-
+            'image' => $gameItem->getIamge(),
 
         ];
         session()->put('cart', $cart);

@@ -16,7 +16,8 @@
                         </div>
                         <div class="game-details_avatar">
                             <div class="picture16x9">
-                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->getIamge() }}"
+                                <img class="img-fluid"
+                                    src="{{ '/storage/' . $viewData['game']->getIamge() }}"
                                     alt="">
                             </div>
                         </div>
@@ -27,7 +28,8 @@
                             <div class="game-details_tag">
                                 <div>Genres</div>
                                 @foreach ($viewData['game']->typegame as $typeGame)
-                                    <a href="">{{ $typeGame->type->getTypeGame() }}</a>
+                                    <a
+                                        href="">{{ $typeGame->type->getTypeGame() }}</a>
                                 @endforeach
                             </div>
                             <div class="game-details_tag">
@@ -42,11 +44,14 @@
                                 <span class="game-details_notify-title">
                                     This is an Early Access Game
                                 </span>
-                                <p class="game-details_notify-content">Early Access games are still under development and
+                                <p class="game-details_notify-content">Early Access
+                                    games are still under development and
                                     may change significantly over time. As
-                                    a result, you may experience unforeseen issues or completely new gameplay elements while
+                                    a result, you may experience unforeseen issues
+                                    or completely new gameplay elements while
                                     playing this game.</p>
-                                <p class="game-details_notify-content">You can play now to experience the game while it's
+                                <p class="game-details_notify-content">You can play
+                                    now to experience the game while it's
                                     being built or wait until it offers a
                                     more complete experience.</p>
                                 <a href="">Learn more</a>
@@ -72,33 +77,42 @@
                         </div>
                         <div class="game-details_categories d-flex">
                             <div class="game-details_category">
-                                <div class="btn btn-sm btn-secondary">BASE GAME</div>
+                                <div class="btn btn-sm btn-secondary">BASE GAME
+                                </div>
                             </div>
                             <div class="game-details_category">
-                                <div class="btn btn-sm btn-secondary">EARLY ACCESS</div>
+                                <div class="btn btn-sm btn-secondary">EARLY ACCESS
+                                </div>
                             </div>
                         </div>
                         <div class="game-details_prices">
                             <div class="game-details_saleoff bg-primary">-15%</div>
-                            <div class="game-details_oldprice text-decoration-line-through text-secondary">
+                            <div
+                                class="game-details_oldprice text-decoration-line-through text-secondary">
                                 đ157,000
                             </div>
                             <div class="game-details_curprice">
-                                đ133,450
+                                <span
+                                    class="text-decoration-underline">đ</span><span>{{ $viewData['game']->getPrice() }}</span>
+                                {{-- {{ viewData['game']->getPrice() }} --}}
                             </div>
                         </div>
                         <div class="game-details_saleoff-deadline">
                             <span>Sale ends 8/28/2023 at 7:00 AM</span>
                         </div>
-                        <div class="game-details_buynow w-75 btn btn-lg btn-primary text-center">
+                        <div
+                            class="game-details_buynow w-75 btn btn-lg btn-primary text-center">
                             BUY NOW
                         </div>
-                        <div class="game-details_addcart w-75 btn btn-lg btn-outline-light text-center">
-                            <form action="{{ route('cart.add', ['id' => $viewData['game']->getGameId()]) }}" method="post">
-                                @csrf
-                                <button type="submit">cart.add</button>
-                            </form>
-                        </div>
+                        <form
+                            action="{{ route('cart.add', ['id' => $viewData['game']->getGameId()]) }}"
+                            method="post">
+                            @csrf
+                            <button type="submit"
+                                class="game-details_addcart w-75 btn btn-lg btn-outline-light text-center">
+                                ADD TO CART
+                            </button>
+                        </form>
                         <ul class="game-details_support-infoes">
                             <li class="game-details_info">
                                 <span>Epic reward</span>
