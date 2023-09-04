@@ -7,8 +7,9 @@
             <div class="select_group">
                 <select class="form-select select_item" name="genre" id="">
                     <option class="option_item d-none" value="">Genre</option>
-                    <option class="option_item" value=""></option>
-                    <option class="option_item" value=""></option>
+                    @foreach ($viewData['type'] as $type)
+                        <option value="{{ $type->getTypeId() }}">{{ $type->getTypeGame() }}</option>
+                    @endforeach
                 </select>
                 <div class="select_arrow">
                 </div>

@@ -24,7 +24,7 @@ class GameController extends Controller
         $viewData = [];
         $viewData['title'] = 'Game Store 3' . ' | All games';
         $viewData['games'] = Game::all();
-
+        $viewData['type'] = Type_Game::all();
         return view('clients.games')->with('viewData', $viewData);
     }
 }
