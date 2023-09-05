@@ -75,6 +75,22 @@ class Game extends Model
     {
         $this->attributes['image'] = $image;
     }
+    public function getCreateAt()
+    {
+        return $this->attributes['created_at'];
+    }
+    public function setCreateAt($createAt)
+    {
+        $this->attributes['created_at'] = $createAt;
+    }
+    public function getUpdateAt()
+    {
+        return $this->attributes['updated_at'];
+    }
+    public function setUpdateAt($updateAt)
+    {
+        $this->attributes['updated_at'] = $updateAt;
+    }
     public function typeGame()
     {
         return $this->hasMany(TypeGame::class, 'gameId');

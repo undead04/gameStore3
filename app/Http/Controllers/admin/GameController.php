@@ -68,7 +68,8 @@ class GameController extends Controller
 
                 $imageName = uniqid() . "."  . $image->extension();
 
-                Storage::put(
+                Storage::disk('public')->put(
+
 
                     $imageName,
 

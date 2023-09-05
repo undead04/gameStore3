@@ -16,7 +16,8 @@
                         </div>
                         <div class="game-details_avatar">
                             <div class="picture16x9">
-                                <img class="img-fluid" src="{{ '/storage/4.jpg' }}" alt="">
+                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->imageGame[0]->getImage() }}"
+                                    alt="">
                             </div>
 
                         </div>
@@ -42,16 +43,8 @@
                                 <span class="game-details_notify-title">
                                     This is an Early Access Game
                                 </span>
-                                <p class="game-details_notify-content">Early Access
-                                    games are still under development and
-                                    may change significantly over time. As
-                                    a result, you may experience unforeseen issues
-                                    or completely new gameplay elements while
-                                    playing this game.</p>
-                                <p class="game-details_notify-content">You can play
-                                    now to experience the game while it's
-                                    being built or wait until it offers a
-                                    more complete experience.</p>
+                                <p class="game-details_notify-content">{{ $viewData['game']->getDescription() }}</p>
+
                                 <a href="">Learn more</a>
                             </div>
                         </div>
@@ -110,8 +103,7 @@
                     <div class="d-flex flex-column game-details-side_wrapper">
                         <div class="game-details-side_avatar">
                             <div class="picture16x9">
-                                <img class="img-fluid"
-                                    src="https://cdn1.epicgames.com/spt-assets/2d4f1465e9254425b5b03c8a429d4d9b/oirbo-logo-k3yyp.png?h=270&quality=medium&resize=1&w=480"
+                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->imageGame[1]->getImage() }}"
                                     alt="">
                             </div>
                         </div>
@@ -171,11 +163,11 @@
                             </li>
                             <li class="game-details_info">
                                 <span>Publisher</span>
-                                <span>ImaginationOverflow</span>
+                                <span>{{ $viewData['game']->getPublisher() }}</span>
                             </li>
                             <li class="game-details_info">
                                 <span>Realease Date</span>
-                                <span>07/19/23</span>
+                                <span>{{ $viewData['game']->getCreateAt() }}</span>
                             </li>
                             <li class="game-details_info">
                                 <span>Platform</span>
