@@ -21,7 +21,7 @@
                                     alt="">
                             </div>
                         </div>
-                        <div class="game-details_description">
+                        <div class="game_details_title">
                             <p>Description</p>
                         </div>
                         <div class="game-details_tags d-flex">
@@ -57,6 +57,64 @@
                                 <a href="">Learn more</a>
                             </div>
                         </div>
+                        <div class="game-details_description">
+                            <p class="text-light">Assemble yourself in a hostile
+                                spacecraft where
+                                almost everything that moves is trying to get you.
+                                The reason? Yours to discover!</p>
+                            <p>Explore, fight, and learn your purpose in this
+                                galactic action-adventure.</p>
+                            <p>Oirbo is a 2D action-platformer adventure that takes
+                                place on a huge spacecraft divided into
+                                interconnected areas. Search in every section for
+                                the pieces that make out the history of the journey
+                                and enhance your skills and components to get to new
+                                heights.</p>
+                            <p>Explore a massive spaceship to find answers, but
+                                beware the army of robots that are coming for you;
+                                avoid them; fight them or simply outsmart them in
+                                this futuristic hand-drawn adventure in space!</p>
+                            <div>
+                                <div class="collapse mb-3"
+                                    id="game_details_description">
+                                    <ul class="game_details_description-list">
+                                        <li>Beautiful hand-drawn art</li>
+                                        <li>Classic platforming and combat system
+                                        </li>
+                                        <li>Classic platforming and combat system
+                                        </li>
+                                        <li>Not a single line of human text to read!
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button
+                                    class="btn bg-secondary-subtle w-100 btn-lg py-4 display-5 text-uppercase btn-viewMore fw-bold"
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#game_details_description"
+                                    aria-expanded="false"
+                                    aria-controls="game_details_description">
+                                    Show more
+                                </button>
+                            </div>
+                        </div>
+                        <div class="contact_group">
+                            <span class="game_details_title">Follow us</span>
+                            <div class="contact_group_body bg-dark">
+                                <a href="#" class="text-secondary"><i
+                                        class="fa-brands fa-twitter"></i></a>
+                                <a href="#" class="text-secondary"><i
+                                        class="fa-solid fa-earth-americas"></i></a>
+                                <a href="#" class="text-secondary"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="text-secondary"><i
+                                        class="fa-brands fa-facebook"></i></a>
+                                <a href="#" class="text-secondary"><i
+                                        class="fa-brands fa-youtube"></i></a>
+                                <a href="#" class="text-secondary"><i
+                                        class="fa-brands fa-discord"></i></a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -146,4 +204,12 @@
             </div>
         </div>
     </section>
+    <script>
+        const viewBtn = document.querySelector('.btn-viewMore');
+        viewBtn.onclick = () => {
+            viewBtn.innerText = viewBtn.innerText.toLowerCase() ===
+                "show more" ? "show less" :
+                "show more"
+        }
+    </script>
 @endsection
