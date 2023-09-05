@@ -46,9 +46,12 @@ class ShoppingController extends Controller
 
         return back();
     }
-    public function delete()
+    public function delete($id)
     {
-        session()->forget('cart');
+        $cart = session()->get('cart');
+
+        unset($cart[$id]);
+        session()->put('cart', $cart);
 
 
         return back();
@@ -72,7 +75,7 @@ class ShoppingController extends Controller
                 $item->setGameId($game->getGameId());
                 $item->setOrderId($order->getOrderId());
                 $item->save();
-                $total = $game->getPrice();
+                $total += $game->getPrice();
             }
             $order->setTotal($total);
             $order->save();

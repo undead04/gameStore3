@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Game;
 use App\Models\GameOrder;
+use App\Models\Image;
 use App\Models\Type_Game;
 use App\Models\TypeGame;
 use Illuminate\Http\RedirectResponse;
@@ -40,10 +41,11 @@ class GameController extends Controller
             'developer' => 'required|min:5',
             'publisher' => 'required|min:5',
             'genre' => 'required',
-            'image' => 'image',
+
 
         ]);
         $genres = $request->input('genre');
+        $images = $request->file('image');
 
         $newGame = new Game();
 
@@ -61,13 +63,29 @@ class GameController extends Controller
         $newGame->save();
 
         if ($request->hasFile('image')) {
-            $imageName = $newGame->getGameId() . "." . $request->file('image')->extension();
-            Storage::disk('public')->put(
-                $imageName,
-                file_get_contents($request->file('image')->getRealPath())
-            );
-            $newGame->setImage($imageName);
+            $imageNames = [];
+            foreach ($images as $image) {
+
+                $imageName = uniqid() . "."  . $image->extension();
+
+                Storage::put(
+
+                    $imageName,
+
+                    file_get_contents($image->getRealPath())
+
+                );
+
+                $imageNames[] = $imageName;
+            }
+            $newGame->setImage(implode(',', $imageNames));
             $newGame->save();
+            foreach ($imageNames as $image) {
+                $newImage = new Image();
+                $newImage->setGameId($newGame->getGameId());
+                $newImage->setImage($image);
+                $newImage->save();
+            }
         }
         foreach ($genres as $genre) {
             $newTypeGame =  new TypeGame;
@@ -84,6 +102,7 @@ class GameController extends Controller
     {
         GameOrder::where('gameid', $id)->delete();
         TypeGame::where('gameId', $id)->delete();
+        Image::where('gameId', $id)->delete();
         Game::destroy($id);
         return back();
     }
@@ -93,6 +112,7 @@ class GameController extends Controller
 
         $viewData['title'] = 'Admin Edit Pages';
         $viewData['game'] = Game::findOrFail($id);
+        $viewData['typeGame'] = Type_Game::all();
         return view('admin.game.edit')->with('viewData', $viewData);
     }
     public function update($id, Request $request)
@@ -107,12 +127,13 @@ class GameController extends Controller
             'image' => 'image'
 
         ]);
+        $genres = $request->input('genre');
 
         $oldGame = Game::find($id);
         $oldGame->SetNameGame($request->input('name'));
         $oldGame->setDescription($request->input('description'));
         $oldGame->setPrice($request->input('price'));
-        $oldGame->setGenre($request->input('genre'));
+        $oldGame->setGenre(implode(',', $genres));
         $oldGame->setPublisher($request->input('publisher'));
         $oldGame->setDeveloper($request->input('developer'));
         $oldGame->setImage('');
@@ -126,9 +147,15 @@ class GameController extends Controller
             $oldGame->setImage($imageName);
             $oldGame->save();
         }
+        foreach ($genres as $genre) {
+            $newTypeGame =  new TypeGame;
+            $newTypeGame->setGameId($oldGame->getGameId());
+            $newTypeGame->setTypeId($genre);
+            $newTypeGame->save();
+        }
 
 
-        $oldGame->save();
+
         return redirect()->route('admin.game.games');
     }
 }

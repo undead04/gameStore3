@@ -83,4 +83,8 @@ class Game extends Model
     {
         return $this->hasMany(Game_Order::class);
     }
+    public function imageGame()
+    {
+        return $this->hasMany(Image::class, 'gameId');
+    }
 }

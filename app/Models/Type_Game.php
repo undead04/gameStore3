@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Type_Game extends Model
 {
     use HasFactory;
-    protected $table = 'typegames';
+    protected $table = 'types';
     public function getTypeId()
     {
         return $this->attributes['id'];

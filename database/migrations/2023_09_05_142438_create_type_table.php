@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('type_games', function (Blueprint $table) {
-            $table->unsignedBigInteger('gameId'); // Khóa ngoại GameID
-            $table->foreign('gameId')->references('id')->on('games');
-            $table->unsignedBigInteger('typeId'); // Khóa ngoại typeId
-            $table->foreign('typeId')->references('id')->on('typegames');
+        Schema::create('types', function (Blueprint $table) {
+            $table->id();
+
+            $table->string('typeNames');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_games');
+        Schema::dropIfExists('types');
     }
 };

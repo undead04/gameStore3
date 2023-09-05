@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->float('total');
+            $table->double('total');
             $table->unsignedBigInteger('userId'); // Khóa ngoại
 
             $table->foreign('userId')->references('id')->on('users');
