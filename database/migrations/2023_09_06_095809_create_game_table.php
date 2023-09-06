@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->string('name_Game');
-            $table->string('developer');
+            $table->unsignedBigInteger('developerId'); // Khóa ngoại developerId
+            $table->foreign('developerId')->references('id')->on('developers');
             $table->string('publisher');
             $table->string('image');
             $table->string('genre');

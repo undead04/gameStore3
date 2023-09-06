@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Developer;
 use App\Models\Game;
 use App\Models\GameOrder;
 use App\Models\Image;
@@ -28,6 +29,7 @@ class GameController extends Controller
     {
         $viewData = [];
         $viewData['typeGame'] = Type_Game::all();
+        $viewData['developer'] = Developer::all();
         return view('admin.game.create')->with('viewData', $viewData);
     }
     public function store(Request $request): RedirectResponse
@@ -38,55 +40,33 @@ class GameController extends Controller
             'name' => 'required|max:255|unique:games,name_game',
             "description" => "required",
             "price" => "required|numeric|gt:0",
-            'developer' => 'required|min:5',
+            'developer' => 'required',
             'publisher' => 'required|min:5',
             'genre' => 'required',
+            'image' => 'image'
 
 
         ]);
         $genres = $request->input('genre');
-        $images = $request->file('image');
-
         $newGame = new Game();
-
-
-
-
-
         $newGame->setNameGame($request->input('name'));
         $newGame->setDescription($request->input('description'));
         $newGame->setPrice($request->input('price'));
         $newGame->setGenre(implode(',', $genres));
         $newGame->setPublisher($request->input('publisher'));
         $newGame->setImage('');
-        $newGame->setDeveloper($request->input('developer'));
+        $newGame->setDeveloperId($request->input('developer'));
         $newGame->save();
 
         if ($request->hasFile('image')) {
-            $imageNames = [];
-            foreach ($images as $image) {
+            $imageName = uniqid() . "."  . $request->file('image')->extension();
 
-                $imageName = uniqid() . "."  . $image->extension();
-
-                Storage::disk('public')->put(
-
-
-                    $imageName,
-
-                    file_get_contents($image->getRealPath())
-
-                );
-
-                $imageNames[] = $imageName;
-            }
-            $newGame->setImage(implode(',', $imageNames));
+            Storage::disk('public')->put(
+                $imageName,
+                file_get_contents($request->file('image')->getRealPath())
+            );
+            $newGame->setImage($imageName);
             $newGame->save();
-            foreach ($imageNames as $image) {
-                $newImage = new Image();
-                $newImage->setGameId($newGame->getGameId());
-                $newImage->setImage($image);
-                $newImage->save();
-            }
         }
         foreach ($genres as $genre) {
             $newTypeGame =  new TypeGame;
@@ -94,16 +74,13 @@ class GameController extends Controller
             $newTypeGame->setTypeId($genre);
             $newTypeGame->save();
         }
-
-
-
         return redirect()->route('admin.game.games');
     }
     public function delete($id)
     {
         GameOrder::where('gameid', $id)->delete();
         TypeGame::where('gameId', $id)->delete();
-        Image::where('gameId', $id)->delete();
+
         Game::destroy($id);
         return back();
     }

@@ -7,6 +7,7 @@ use App\Http\Controllers\client\GameController as ClientGameController;
 use App\Http\Controllers\client\HomeController;
 use App\Http\Controllers\admin\GenresController;
 use App\Http\Controllers\client\LoginController;
+use App\Http\Controllers\admin\DeveloperController;
 use Illuminate\Support\Facades\Auth;
 use PHPUnit\TextUI\XmlConfiguration\Group;
 use App\Http\Controllers\client\ShoppingController;
@@ -55,6 +56,12 @@ Route::middleware('admin')->group(function () {
         Route::get('genres/edit/{id}', [GenresController::class, 'edit'])->name('admin.genre.edit');
         Route::put('genres/update/{id}', [GenresController::class, 'update'])->name('admin.genre.update');
         Route::delete('/genres/delete/{id}', [GenresController::class, 'delete'])->name('admin.genre.delete');
+        Route::get('/developer', [DeveloperController::class, 'index'])->name('admin.developer.index'); //trang developer
+        Route::get('/developer/create', [DeveloperController::class, 'create'])->name('admin.developer.create'); //trang developer
+        Route::post('/developer/store', [DeveloperController::class, 'store'])->name('admin.developer.store'); //sữ lý trang developer
+        Route::delete('/developer/delete/{id}', [DeveloperController::class, 'delete'])->name('admin.developer.delete'); //xóa dữ liệu
+        Route::get('developer/edit/{id}', [DeveloperController::class, 'edit'])->name('admin.developer.edit'); //chuyển tới trange edit
+        Route::put('developer/update/{id}', [DeveloperController::class, 'update'])->name('admin.developer.update'); //update
     });
 });
 

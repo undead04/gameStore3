@@ -17,11 +17,17 @@
         <div class="form-group">
             <label class="form-label">Developer:</label>
             <div class="flex-grow-1">
-                <input name="developer" value="{{ old('developer') }}" type="text"
-                    class="form-control bg-transparent text-light">
+                <select class="select_item" name="developer">
+                    <option value="-1" disabled class="d-none">Genre</option>
+                    @foreach ($viewData['developer'] as $developer)
+                        <option value="{{ $developer->getDeveloperId() }}">
+                            {{ $developer->getDeveloperName() }}</option>
+                    @endforeach
+                </select>
                 @error('developer')
                     <span class='text-danger'>{{ $message }}</span>
                 @enderror
+
             </div>
         </div>
 
@@ -63,7 +69,7 @@
         <div class="form-group">
             <label class="form-label">Image:</label>
             <div class="flex-grow-1">
-                <input class="form-control bg-transparent text-light" type="file" name="image[]" multiple>
+                <input class="form-control bg-transparent text-light" type="file" name="image">
             </div>
         </div>
 

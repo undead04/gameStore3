@@ -27,13 +27,13 @@ class Game extends Model
     {
         $this->attributes['name_Game'] = $name;
     }
-    public function getDeveloper()
+    public function getDeveloperId()
     {
-        return $this->attributes['developer'];
+        return $this->attributes['developerId'];
     }
-    public function setDeveloper($developer)
+    public function setDeveloperId($developer)
     {
-        $this->attributes['developer'] = $developer;
+        $this->attributes['developerId'] = $developer;
     }
     public function getPublisher()
     {
@@ -99,8 +99,8 @@ class Game extends Model
     {
         return $this->hasMany(Game_Order::class);
     }
-    public function imageGame()
+    public function developer()
     {
-        return $this->hasMany(Image::class, 'gameId');
+        return $this->belongsTo(Developer::class, 'developerId');
     }
 }
