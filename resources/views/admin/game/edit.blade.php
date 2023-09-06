@@ -19,11 +19,17 @@
         <div class="form-group">
             <label class="form-label">Developer<span><sup class="text-danger fw-bold">*</sup></span>:</label>
             <div class="flex-grow-1">
-                <input name="developer" value="{{ $viewData['game']->getDeveloper() }}" type="text"
-                    class="text-light bg-transparent form-control">
+                <select class="select_item" name="developer">
+                    <option value="-1" disabled class="d-none">Genre</option>
+                    @foreach ($viewData['developer'] as $developer)
+                        <option value="{{ $developer->getDeveloperId() }}">
+                            {{ $developer->getDeveloperName() }}</option>
+                    @endforeach
+                </select>
                 @error('developer')
                     <span class='text-danger'>{{ $message }}</span>
                 @enderror
+
             </div>
         </div>
 

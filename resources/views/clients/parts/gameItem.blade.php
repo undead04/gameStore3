@@ -5,8 +5,7 @@
                 <div class="card bg-dark games-item">
                     <div class="game_picture">
                         <div class="game_picture_wrapper">
-                            <img class="img-fluid" src="{{ '/storage/' . $game->imageGame[0]->getImage() }}"
-                                alt="">
+                            <img class="img-fluid" src="{{ '/storage/' . $game->getIamge() }}" alt="">
 
                         </div>
 

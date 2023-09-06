@@ -42,8 +42,7 @@
                                             {{ $order->getOrderId() }}
                                         </td>
                                         <td>
-                                            <table
-                                                class="table-dark table-striped w-100">
+                                            <table class="table-dark table-striped w-100">
                                                 <col style="width: 20%" />
                                                 <col style="width: 60%" />
                                                 <col style="width: 20%" />
@@ -57,7 +56,7 @@
                                                                 </a>
                                                             </td>
                                                             <td>
-                                                                {{ $item->game->getDeveloper() }}
+                                                                {{ $item->game->developer->getDeveloperName() }}
                                                             </td>
                                                             <td>${{ $item->getPrice() }}
                                                             </td>

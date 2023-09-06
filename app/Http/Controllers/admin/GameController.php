@@ -91,6 +91,7 @@ class GameController extends Controller
         $viewData['title'] = 'Admin Edit Pages';
         $viewData['game'] = Game::findOrFail($id);
         $viewData['typeGame'] = Type_Game::all();
+        $viewData['developer'] = Developer::all();
         return view('admin.game.edit')->with('viewData', $viewData);
     }
     public function update($id, Request $request)
@@ -99,7 +100,7 @@ class GameController extends Controller
             'name' => 'required|max:255',
             "description" => "required",
             "price" => "required|numeric|gt:0",
-            'developer' => 'required|min:5',
+            'developer' => 'required',
             'publisher' => 'required|min:5',
             'genre' => 'required',
             'image' => 'image'
@@ -113,7 +114,7 @@ class GameController extends Controller
         $oldGame->setPrice($request->input('price'));
         $oldGame->setGenre(implode(',', $genres));
         $oldGame->setPublisher($request->input('publisher'));
-        $oldGame->setDeveloper($request->input('developer'));
+        $oldGame->setDeveloperId($request->input('developer'));
         $oldGame->setImage('');
 
         if ($request->hasFile('image')) {

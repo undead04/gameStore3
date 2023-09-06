@@ -25,9 +25,9 @@ class TypeGame extends Model
     {
         return $this->attributes['typeId'] = $typeId;
     }
-    public function game()
+    public function games()
     {
-        return $this->belongsTo(Game::class);
+        return $this->belongsTo(Game::class, 'gameId');
     }
     public function type()
     {

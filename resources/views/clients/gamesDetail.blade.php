@@ -16,7 +16,7 @@
                         </div>
                         <div class="game-details_avatar">
                             <div class="picture16x9">
-                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->imageGame[0]->getImage() }}"
+                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->getIamge() }}"
                                     alt="">
                             </div>
 
@@ -43,7 +43,8 @@
                                 <span class="game-details_notify-title">
                                     This is an Early Access Game
                                 </span>
-                                <p class="game-details_notify-content">{{ $viewData['game']->getDescription() }}</p>
+                                <p class="game-details_notify-content">
+                                    {{ $viewData['game']->developer->getDeveloperName() }}</p>
 
                                 <a href="">Learn more</a>
                             </div>
@@ -103,7 +104,8 @@
                     <div class="d-flex flex-column game-details-side_wrapper">
                         <div class="game-details-side_avatar">
                             <div class="picture16x9">
-                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->imageGame[1]->getImage() }}"
+                                <img class="img-fluid"
+                                    src="{{ '/storage/' . $viewData['game']->developer->getDeveloperImage() }}"
                                     alt="">
                             </div>
                         </div>
@@ -159,7 +161,7 @@
                             </li>
                             <li class="game-details_info">
                                 <span>Developer</span>
-                                <span>{{ $viewData['game']->getDeveloper() }}</span>
+                                <span>{{ $viewData['game']->developer->getDeveloperName() }}</span>
                             </li>
                             <li class="game-details_info">
                                 <span>Publisher</span>

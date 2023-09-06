@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Game;
 use App\Models\Type_Game;
+use App\Models\TypeGame;
 use Illuminate\Http\Request;
 
 class GenresController extends Controller
@@ -56,7 +57,8 @@ class GenresController extends Controller
 
     public function delete($id)
     {
-        Game::where('type_game', $id)->delete();
+        TypeGame::where('typeId', $id)->delete();
+
         Type_Game::destroy($id);
         return back();
     }
