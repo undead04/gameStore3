@@ -162,7 +162,7 @@
 
                 });
             } else {
-                $('#listGames').html('')
+                $('#ListGames').html('');
             }
 
         });

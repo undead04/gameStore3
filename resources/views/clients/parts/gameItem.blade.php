@@ -1,11 +1,11 @@
-@foreach ($viewData['games'] as $game)
+@foreach ($viewData['bestSaler'] as $gameSaler)
     <div class="col-9 col-md-2-4">
         <div>
-            <a href="{{ route('clients.gamesDetail', ['id' => $game->getGameId()]) }}">
+            <a href="{{ route('clients.gamesDetail', ['id' => $gameSaler->getGameId()]) }}">
                 <div class="card bg-dark games-item">
                     <div class="game_picture">
                         <div class="game_picture_wrapper">
-                            <img class="img-fluid" src="{{ '/storage/' . $game->getIamge() }}" alt="">
+                            <img class="img-fluid" src="{{ '/storage/' . $gameSaler->getIamge() }}" alt="">
 
                         </div>
 
@@ -14,7 +14,7 @@
                         <div class="card-text text-secondary game_base">BASE GAME
                         </div>
                         <div class="card-text text-light game_title truncated">
-                            {{ $game->getNameGame() }}</div>
+                            {{ $gameSaler->getNameGame() }}</div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <div class="rounded-2 bg-primary text-white game_saleoff">
                                 -10%</div>
@@ -23,7 +23,7 @@
                                     đ10000
                                 </div>
                                 <div class="text-light game_new_price">
-                                    {{ $game->getPrice() }}</div>
+                                    {{ $gameSaler->getPrice() }}</div>
                             </div>
                         </div>
                     </div>
