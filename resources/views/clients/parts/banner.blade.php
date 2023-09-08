@@ -74,7 +74,7 @@
 
             <div class="col-md-3 d-none d-md-block">
                 <div class="product_wrapper text-white">
-                    @foreach ($viewData['games'] as $game)
+                    @foreach ($viewData['paner'] as $game)
                         <div class="game_product_thumb">
                             <div class="game_product_avatar">
                                 <div>

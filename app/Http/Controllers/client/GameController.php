@@ -13,6 +13,7 @@ class GameController extends Controller
     {
         $viewData = [];
         $viewData['game'] = Game::find($id);
+
         $viewData['title'] = $viewData['game']->getNameGame() . ' | Details';
         $viewData['type'] = Type_Game::find($viewData['game']->getGenre());
 

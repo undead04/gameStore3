@@ -9,7 +9,7 @@
             @foreach ($viewData['gameAction'] as $gameAction)
                 <div class="col-12 col-md-4">
                     <div class="pb-3">
-                        <a href="{{ route('clients.gamesDetail', ['id' => $gameAction->getGameId()]) }}"
+                        <a href="{{ route('clients.gamesDetail', ['id' => $gameAction['gameId']]) }}"
                             class="card bg-transparent text-light">
                             <div class="game_picture product_group">
                                 <div class="game_picture_wrapper txf">

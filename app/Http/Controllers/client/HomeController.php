@@ -19,7 +19,7 @@ class HomeController extends Controller
         $viewData = [];
         $viewData['title'] = 'Home page | Web game store';
         $viewData['paner'] = Game::query()->orderBy('price', 'desc')->take(3)->get();
-        $viewData['games'] = Game::all();
+
         $viewData['bestSaler'] = Game::join('gameorders', 'games.id', '=', 'gameorders.gameId')
             ->select(
                 'games.id',
