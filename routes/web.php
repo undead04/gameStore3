@@ -68,6 +68,7 @@ Route::middleware('admin')->group(function () {
 Route::prefix('games')->group(function () {
     Route::get('/', [ClientGameController::class, 'allGames'])->name('clients.games');
     Route::get('/{id}', [ClientGameController::class, 'detail'])->name('clients.gamesDetail');
+    Route::get('viewMore/{type}', [ClientGameController::class, 'viewMore'])->name('clients.viewMore');
 });
 Route::middleware('auth')->group(function () {
     Route::prefix('cart')->group(function () {

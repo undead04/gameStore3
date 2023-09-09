@@ -4,16 +4,22 @@
             <div class="col-md-9 product_banner_wrapper">
                 <div id="carouselBanner" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
+                        @for ($i = 0; $i < count($viewData['paner']); $i++)
+                            @if ($i == 0)
+                                <button type="button" data-bs-target="#carouselBanner"
+                                    data-bs-slide-to="{{ $i }}" class="active" aria-current="true"
+                                    aria-label="Slide {{ $i }}">
+                                </button>
+                            @else
+                                <button type="button" data-bs-target="#carouselBanner"
+                                    data-bs-slide-to="{{ $i }}" aria-label="Slide {{ $i }}">
+                                </button>
+                            @endif
+                        @endfor
                     </div>
                     <div class="carousel-inner carousel_wrapper">
                         @foreach ($viewData['paner'] as $games)
-                            <div class="carousel-item active">
+                            <div class="carousel-item  ">
                                 <img src="{{ '/storage/' . $games->getIamge() }}" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block banner_body">
                                     <div class="banner_description">
@@ -93,4 +99,16 @@
             </div>
         </div>
     </div>
+    <script>
+        const firstCarouselElement = document.querySelectorAll(".carousel-item");
+
+        for (let i = 0; i < firstCarouselElement.length; i++) {
+
+            if (firstCarouselElement[i].classList.contains("carousel-item")) {
+
+                firstCarouselElement[i].classList.add("active");
+                break;
+            }
+        }
+    </script>
 </section>

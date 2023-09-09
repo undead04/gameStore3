@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         $viewData = [];
         $viewData['title'] = 'Home page | Web game store';
-        $viewData['paner'] = Game::query()->orderBy('price', 'desc')->take(3)->get();
+        $viewData['paner'] = Game::query()->orderBy('price', 'desc')->take(6)->get();
 
         $viewData['bestSaler'] = Game::join('gameorders', 'games.id', '=', 'gameorders.gameId')
             ->select(
@@ -43,21 +43,10 @@ class HomeController extends Controller
             ->where('types.typeNames', 'Action')
             ->take(3)->get();
 
-        $viewData['gameAdventure'] = Game::join('type_games', 'games.id', '=', 'type_games.gameId')
-            ->join('types', 'type_games.typeId', '=', 'types.id')
-            ->where('types.typeNames', 'Adventure')
+        $viewData['gameAd-si-ro'] = Type_Game::where('typeNames', 'Adventure')
+            ->orWhere('typeNames', 'Role-playing')
+            ->orWhere('typeNames', 'Simulation')->get();
 
-            ->take(6)->get();
-        $viewData['gameSimulation'] = Game::join('type_games', 'games.id', '=', 'type_games.gameId')
-            ->join('types', 'type_games.typeId', '=', 'types.id')
-            ->where('types.typeNames', 'Simulation')
-
-            ->take(6)->get();
-        $viewData['gameRole-playing'] = Game::join('type_games', 'games.id', '=', 'type_games.gameId')
-            ->join('types', 'type_games.typeId', '=', 'types.id')
-            ->where('types.typeNames', 'Role-playing')
-
-            ->take(6)->get();
         return view('clients.home')->with('viewData', $viewData);
     }
 }

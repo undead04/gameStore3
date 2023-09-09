@@ -16,7 +16,6 @@ class GameController extends Controller
 
         $viewData['title'] = $viewData['game']->getNameGame() . ' | Details';
         $viewData['type'] = Type_Game::find($viewData['game']->getGenre());
-
         return view('clients.gamesDetail')->with('viewData', $viewData);
     }
 
@@ -27,5 +26,14 @@ class GameController extends Controller
         $viewData['games'] = Game::all();
         $viewData['type'] = Type_Game::all();
         return view('clients.games')->with('viewData', $viewData);
+    }
+    public function viewMore($type)
+    {
+        $viewData = [];
+        $viewData['type'] = Type_Game::where('typeNames', $type)->first();
+
+
+        $viewData['title'] = $viewData['type']->getTypeGame() . ' | viewMore';
+        return view('clients.viewMore')->with('viewData', $viewData);
     }
 }
