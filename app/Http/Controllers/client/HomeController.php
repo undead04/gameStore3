@@ -38,15 +38,16 @@ class HomeController extends Controller
             )
             ->orderBy('totalQuantity', 'desc')
             ->take(10)->get();
-        $viewData['gameAction'] = Game::join('type_games', 'games.id', '=', 'type_games.gameId')
-            ->join('types', 'type_games.typeId', '=', 'types.id')
-            ->where('types.typeNames', 'Action')
-            ->take(3)->get();
+        $viewData['gameAction'] = Type_Game::where('typeNames', 'Action')->get();
+        $viewData['gameStrategy'] = Type_Game::where('typeNames', 'Strategy')->get();
+        $viewData['gameSports'] = Type_Game::where('typeNames', 'Sports')->get();
 
         $viewData['gameAd-si-ro'] = Type_Game::where('typeNames', 'Adventure')
             ->orWhere('typeNames', 'Role-playing')
             ->orWhere('typeNames', 'Simulation')->get();
-
+        $viewData['gameMM-Ca-Ho'] = Type_Game::where('typeNames', 'MMO')
+            ->orWhere('typeNames', 'Card Game')
+            ->orWhere('typeNames', 'Horror')->get();
         return view('clients.home')->with('viewData', $viewData);
     }
 }

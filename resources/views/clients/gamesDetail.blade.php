@@ -44,7 +44,7 @@
                                     This is an Early Access Game
                                 </span>
                                 <p class="game-details_notify-content">
-                                    {{ $viewData['game']->developer->getDeveloperName() }}</p>
+                                    {{ $viewData['game']->getDescription() }}</p>
 
                                 <a href="">Learn more</a>
                             </div>
