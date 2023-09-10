@@ -1,7 +1,11 @@
 @extends('layouts.admin')
 
 @section('table')
-    <div class="w-90 mt-3 mx-auto">
+    <div class="mx-auto text-end"><a href="{{ route('admin.game.create') }}"
+            class="btn btn-lg btn-submit btn-primary rounded-0">Add
+            new
+            game</a></div>
+    <div class="mt-3 mx-auto">
         <table class="table table-striped table-bordered">
             <col style="width: 5%" />
             <col style="width: 20%" />
@@ -29,7 +33,8 @@
                                 {{ $game->getGameId() }}</th>
                             <td>{{ $game->getNameGame() }}</td>
                             <td>{{ $game->getPublisher() }}</td>
-                            <td>{{ $game->getPrice() }}</td>
+                            <td>₫{{ number_format($game->getPrice(), 0, '.', ',') }}</span>
+                            </td>
                             <td>
                                 <form
                                     action="{{ route('admin.game.delete', ['id' => $game->getGameId()]) }}"
@@ -40,23 +45,16 @@
                                             class="fa-solid fa-pen-to-square"></i></a>
                                     @csrf
                                     @method('DELETE')
-                                    <button
-                                        class="btn btn-danger ms-2"><i
+                                    <button class="btn btn-danger ms-2"><i
                                             class="fa-solid fa-trash-can"></i></button>
                                 </form>
                             </td>
                         </tr>
                     @endforeach
                 @endif
-
-
             </tbody>
         </table>
 
     </div>
-    <div class="w-90 mx-auto text-end"><a
-            href="{{ route('admin.game.create') }}"
-            class="btn btn-lg btn-submit btn-primary rounded-0">Add
-            new
-            game</a></div>
+
 @endsection

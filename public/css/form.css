@@ -1,7 +1,4 @@
 /* ================================== Form =================================== */
-.data_form {
-    width: 75%;
-}
 
 .form_wrapper {
     display: flex;
@@ -20,13 +17,14 @@
     margin-bottom: 8px;
 }
 .form-label {
-    min-width: 120px;
+    min-width: 150px;
     font-size: 1.8rem;
 }
 
 .form-control {
     font-size: 1.6rem;
     padding: 6px 4px;
+    color: black;
 }
 
 .form_title {

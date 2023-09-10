@@ -30,6 +30,7 @@ Route::get('search', [SearchController::class, 'getSearchAjax'])->name('search')
 
 Route::prefix('/')->group(function () {
     Route::get('', [HomeController::class, 'index'])->name('clients.home');
+    Route::view('distribution', 'clients.distribution')->name('clients.distribution');
 });
 Auth::routes();
 Route::get('home', function () {

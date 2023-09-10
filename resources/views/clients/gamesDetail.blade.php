@@ -2,6 +2,8 @@
 @section('title', $viewData['title'])
 @section('content')
     <section class="bg-black text-white py-5">
+        <link href="{{ asset('/css//clients/gamesDetail.css') }}" rel="stylesheet" />
+
         <div class="container-md">
             <div class="row">
                 <div class="col-md-7">
@@ -16,7 +18,8 @@
                         </div>
                         <div class="game-details_avatar">
                             <div class="picture16x9">
-                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->getIamge() }}"
+                                <img class="img-fluid"
+                                    src="{{ '/storage/' . $viewData['game']->getIamge() }}"
                                     alt="">
                             </div>
 
@@ -28,7 +31,8 @@
                             <div class="game-details_tag">
                                 <div>Genres</div>
                                 @foreach ($viewData['game']->typegame as $typeGame)
-                                    <a href="">{{ $typeGame->type->getTypeGame() }}</a>
+                                    <a
+                                        href="">{{ $typeGame->type->getTypeGame() }}</a>
                                 @endforeach
                             </div>
                             <div class="game-details_tag">
@@ -67,7 +71,8 @@
                                 avoid them; fight them or simply outsmart them in
                                 this futuristic hand-drawn adventure in space!</p>
                             <div>
-                                <div class="collapse mb-3" id="game_details_description">
+                                <div class="collapse mb-3"
+                                    id="game_details_description">
                                     <ul class="game_details_description-list">
                                         <li>Beautiful hand-drawn art</li>
                                         <li>Classic platforming and combat system
@@ -80,8 +85,10 @@
                                 </div>
                                 <button
                                     class="btn bg-secondary-subtle w-100 btn-lg py-4 display-5 text-uppercase btn-viewMore fw-bold"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#game_details_description"
-                                    aria-expanded="false" aria-controls="game_details_description">
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#game_details_description"
+                                    aria-expanded="false"
+                                    aria-controls="game_details_description">
                                     Show more
                                 </button>
                             </div>
@@ -89,12 +96,18 @@
                         <div class="contact_group">
                             <span class="game_details_title">Follow us</span>
                             <div class="contact_group_body bg-dark">
-                                <a href="#" class="text-secondary"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#" class="text-secondary"><i class="fa-solid fa-earth-americas"></i></a>
-                                <a href="#" class="text-secondary"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#" class="text-secondary"><i class="fa-brands fa-facebook"></i></a>
-                                <a href="#" class="text-secondary"><i class="fa-brands fa-youtube"></i></a>
-                                <a href="#" class="text-secondary"><i class="fa-brands fa-discord"></i></a>
+                                <a href="#" class="text-secondary"><i
+                                        class="fa-brands fa-twitter"></i></a>
+                                <a href="#" class="text-secondary"><i
+                                        class="fa-solid fa-earth-americas"></i></a>
+                                <a href="#" class="text-secondary"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="text-secondary"><i
+                                        class="fa-brands fa-facebook"></i></a>
+                                <a href="#" class="text-secondary"><i
+                                        class="fa-brands fa-youtube"></i></a>
+                                <a href="#" class="text-secondary"><i
+                                        class="fa-brands fa-discord"></i></a>
                             </div>
                         </div>
 
@@ -127,23 +140,26 @@
                             </div>
                         </div>
                         <div class="game-details_prices">
-                            <div class="game-details_saleoff bg-primary">-15%</div>
-                            <div class="game-details_oldprice text-decoration-line-through text-secondary">
-                                đ157,000
+                            <div class="game-details_saleoff bg-primary">-25%</div>
+                            <div
+                                class="game-details_oldprice text-decoration-line-through text-secondary">
+                                <span>₫{{ number_format($viewData['game']->getPrice() * 1.25, 0, '.', ',') }}</span>
+
                             </div>
                             <div class="game-details_curprice">
-                                <span
-                                    class="text-decoration-underline">đ</span><span>{{ $viewData['game']->getPrice() }}</span>
-                                {{-- {{ viewData['game']->getPrice() }} --}}
+                                <span>₫{{ number_format($viewData['game']->getPrice(), 0, '.', ',') }}</span>
                             </div>
                         </div>
                         <div class="game-details_saleoff-deadline">
                             <span>Sale ends 8/28/2023 at 7:00 AM</span>
                         </div>
-                        <div class="game-details_buynow w-75 btn btn-lg btn-primary text-center">
+                        <div
+                            class="game-details_buynow w-75 btn btn-lg btn-primary text-center">
                             BUY NOW
                         </div>
-                        <form action="{{ route('cart.add', ['id' => $viewData['game']->getGameId()]) }}" method="post">
+                        <form
+                            action="{{ route('cart.add', ['id' => $viewData['game']->getGameId()]) }}"
+                            method="post">
                             @csrf
                             <button type="submit"
                                 class="game-details_addcart w-75 btn btn-lg btn-outline-light text-center">
@@ -175,8 +191,6 @@
                                 <span>Platform</span>
                                 <span>Window</span>
                             </li>
-
-
                         </ul>
                     </div>
                 </div>

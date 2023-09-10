@@ -3,10 +3,10 @@
         <div>
             <div class="list_header d-flex justify-content-between align-items-center">
 
-                <a class="games_title">
+                <span>
                     <h2 class="text-white py-3">{{ $types->getTypeGame() }}
                     </h2>
-                </a>
+                </span>
 
                 <a class="btn btn-outline-secondary text-uppercase text-light px-5 py-3"
                     href="{{ route('clients.viewMore', ['type' => $types->getTypeGame()]) }}">
@@ -19,7 +19,8 @@
                     <div class="game_product_avatar">
                         <div>
                             <div class="d-flex align-items-center overflow-hidden">
-                                <img class="img-fluid" src="{{ '/storage/' . $typeGames->games->getIamge() }}"
+                                <img class="img-fluid"
+                                    src="{{ '/storage/' . $typeGames->games->getIamge() }}"
                                     alt="thumnail">
                             </div>
                         </div>
@@ -29,15 +30,24 @@
                             {{ $typeGames->games->getNameGame() }}
                         </div>
                         <div class="game_product_description">
-                            <span class="badge bg-primary">-30%</span>
-                            <span class="game_product_price text-secondary">
-                                <span class="text-decoration-underline">đ</span>
-                                <span>990,000</span>
+                            {{-- <span class="badge bg-primary">{{ $typeGames->games->getPrice() == 0 ? '' :  '-25%'}}</span>
+                            <span class={{ $typeGames->games->getPrice() == 0 ? 'd-none' :  implode(" ", array('game_product_price', 'text-secondary'))}}>
+                                <span>₫{{ $typeGames->games->getPrice() == 0 ? '' :  $typeGames->games->getPrice() * 1.25}}</span>
                             </span>
                             <span class="game_product_price text-light">
-                                <span class="text-decoration-underline text-light">đ</span>
-                                <span>{{ $typeGames->games->getPrice() }}</span>
+                                <span>{{ $typeGames->games->getPrice() == 0 ? 'Free' :  number_format($typeGames->games->getPrice(), 0, '.', ',')}}</span>
+                            </span> --}}
+                            @if ($typeGames->games->getPrice() == 0)
+                                <span class="game_product_price text-light">Free</span>
+                            @else
+                                <span class="badge bg-primary">-25%</span>
+                                <span class="game_product_price text-secondary">
+                                <span>₫{{number_format($typeGames->games->getPrice() * 1.25, 0, '.', ',')}}</span>
                             </span>
+                            <span class="game_product_price text-light">
+                                ₫{{number_format($typeGames->games->getPrice(), 0, '.', ',')}}
+                            </span>
+                            @endif
                         </div>
                     </div>
                 </div>

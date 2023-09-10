@@ -1,18 +1,19 @@
 <section class="bg-black pb-5">
     @foreach ($viewData['gameAction'] as $types)
-        <div class="list_header d-flex justify-content-between align-items-center">
-
-            <a class="games_title">
-                <h2 class="text-white py-3">{{ $types->getTypeGame() }}
-                </h2>
-            </a>
-
-            <a class="btn btn-outline-secondary text-uppercase text-light px-5 py-3"
-                href="{{ route('clients.viewMore', ['type' => $types->getTypeGame()]) }}">
-                view More
-            </a>
-        </div>
         <div class="container-md mb-3">
+            <div
+                class="list_header d-flex justify-content-between align-items-center">
+
+                <a class="">
+                    <h2 class="text-white py-3">{{ $types->getTypeGame() }}
+                    </h2>
+                </a>
+
+                <a class="btn btn-outline-secondary text-uppercase text-light px-5 py-3"
+                    href="{{ route('clients.viewMore', ['type' => $types->getTypeGame()]) }}">
+                    view More
+                </a>
+            </div>
             <div class="row g-0 g-md-5">
                 @foreach ($types->typeGame->take(4) as $typeGames)
                     <div class="col-12 col-md-3">
@@ -22,19 +23,28 @@
                                 <div class="game_picture product_group">
                                     <div class="game_picture_wrapper txf">
                                         <img src="{{ '/storage/' . $typeGames->games->getIamge() }}"
-                                            class="card-img-top rounded-4" alt="{{ $typeGames->games->getNameGame() }}">
+                                            class="card-img-top rounded-4"
+                                            alt="{{ $typeGames->games->getNameGame() }}">
                                     </div>
                                 </div>
                                 <div class="card-body mt-3">
-                                    <h5 class="card-title display-6 truncated">
+                                    <h5
+                                        class="card-title productGroup_item_title truncated">
                                         {{ $typeGames->games->getNameGame() }}
                                     </h5>
-                                    <p class="card-text truncated-3 productGroup_description lead">
+                                    <p
+                                        class="card-text truncated-3 productGroup_description">
                                         {{ $typeGames->games->getDescription() }}
                                     </p>
-                                    <a href="#" class="productGroup_price_label"><span
-                                            class="text-decoration-underline">đ</span>{{ $typeGames->games->getPrice() }}
-                                    </a>
+                                    @if ($typeGames->games->getPrice() == 0)
+                                        <span
+                                            class="productGroup_price_label">Free</span>
+                                    @else
+                                        <span
+                                            class="productGroup_price_label"><span>
+                                                ₫{{ $typeGames->games->getPrice() }}
+                                            </span>
+                                    @endif
                                 </div>
                             </a>
                         </div>

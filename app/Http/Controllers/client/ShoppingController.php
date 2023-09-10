@@ -26,7 +26,6 @@ class ShoppingController extends Controller
             });
         }
         $viewData["total"] = $total;
-
         $viewData["games"] = $gameInSession;
 
         return view('cart.index')->with("viewData", $viewData);

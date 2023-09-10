@@ -7,6 +7,7 @@ use App\Models\Game;
 use App\Models\Type_Game;
 use App\Models\TypeGame;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Mockery\Matcher\Type;
 

@@ -12,7 +12,7 @@
 
 .brand_img {
     width: 150px;
-    margin-top: 8px;
+    margin-top: 6px;
     margin-right: 8px;
 }
 
@@ -58,6 +58,22 @@
     font-size: 2rem;
 }
 
+.user_options li a {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 4px 8px;
+    font-size: 1.4rem;
+}
+
+.user_options li:hover {
+    opacity: 0.7;
+    transition: all ease 300ms;
+}
+
+.user_options li i {
+    min-width: 25px;
+}
 .web_search {
 
 }
@@ -138,7 +154,6 @@
 }
 
 .wrapper_headnav {
-    display: flex;
     position: relative;
     align-items: center;
     justify-content: flex-start;
@@ -470,18 +485,24 @@
 }
 
 .game_title,.game_old_price,.game_new_price {
+    display: block;
+    line-height: 20px;
     font-size: 1.4rem;
 }
 
-
-.game_saleoff {
-    text-align: center;
-    padding: 5px 10px;
+.game_price {
+    font-size: 1.4rem;
+    padding: 0;
+    min-height: 43px;
 }
 
 /* ================================== Game group 3 ============================ */
 .productGroup_description {
     min-height: 45px;
+    color: rgba(245, 245, 245, 0.6);
+    font-size: 1.4rem;
+    line-height: 20px;
+    min-height: 60px;
 }
 
 .productGroup_price_label {
@@ -495,6 +516,12 @@
 .game_picture.product_group {
     border-radius: 16px;
     overflow: hidden;
+}
+
+.productGroup_item_title {
+    font-size: 1.6rem;
+    line-height: 20px;
+    letter-spacing: 0.2px;
 }
 
 /* =============================== List group 3 collumns ====================== */
@@ -543,6 +570,7 @@
 
 /*================================== Cart, Order CSS =================================== */
 .cart_title, .order_title {
+    color: rgb(245, 245, 245);
     font-weight: 500;
     font-size: 3rem;
 }

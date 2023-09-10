@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 @section('table')
-    <div class="w-90 mt-3 mx-auto">
+    <div class="w-100 mx-auto text-end"><a href="{{ route('admin.genre.create') }}"
+            class="btn btn-lg btn-submit btn-primary rounded-0">Add
+            new
+            genres</a></div>
+    <div class="w-100 mt-3 mx-auto table-responsive">
         <table class="table table-striped table-bordered">
             <col style="width: 10%" />
             <col style="width: 80%" />
@@ -33,8 +37,7 @@
                                             class="fa-solid fa-pen-to-square"></i></a>
                                     @csrf
                                     @method('DELETE')
-                                    <button
-                                        class="btn btn-danger ms-2"><i
+                                    <button class="btn btn-danger ms-2"><i
                                             class="fa-solid fa-trash-can"></i></button>
                                 </form>
                             </td>
@@ -47,9 +50,4 @@
         </table>
 
     </div>
-    <div class="w-90 mx-auto text-end"><a
-            href="{{ route('admin.genre.create') }}"
-            class="btn btn-lg btn-submit btn-primary rounded-0">Add
-            new
-            genres</a></div>
 @endsection

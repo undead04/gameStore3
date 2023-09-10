@@ -39,7 +39,7 @@ class GameController extends Controller
 
             'name' => 'required|max:255|unique:games,name_game',
             "description" => "required",
-            "price" => "required|numeric|gt:0",
+            "price" => "required|numeric|gte:0",
             'developer' => 'required',
             'publisher' => 'required|min:5',
             'genre' => 'required',
@@ -99,7 +99,7 @@ class GameController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             "description" => "required",
-            "price" => "required|numeric|gt:0",
+            "price" => "required|numeric|gte:0",
             'developer' => 'required',
             'publisher' => 'required|min:5',
             'genre' => 'required',

@@ -2,6 +2,8 @@
 @section('title', $viewData['title'])
 @section('content')
     <section class="games-page">
+        <link href="{{ asset('/css//clients/games.css') }}" rel="stylesheet" />
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3">

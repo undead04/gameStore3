@@ -1,44 +1,66 @@
 @extends('layouts.games')
 @section('title', $viewData['title'])
 @section('content')
-    <div class="container">
-        <div class="row g-5">
-            <h1>{{ $viewData['type']->getTypeGame() }}</h1>
-            @foreach ($viewData['type']->typeGame as $types)
-                <div class="col-9 col-md-3">
-                    <div>
-                        <a href="{{ route('clients.gamesDetail', ['id' => $types->games->getGameId()]) }}">
-                            <div class="card bg-dark games-item">
-                                <div class="game_picture">
-                                    <div class="game_picture_wrapper">
-                                        <img class="img-fluid" src="{{ '/storage/' . $types->games->getIamge() }}"
-                                            alt="">
+    <section class="bg-dark py-5">
+        <div class="container-md">
+            <div class="row g-5">
+                <h1 class="display-3 fw-normal text-light">
+                    {{ $viewData['type']->getTypeGame() }}</h1>
+                @foreach ($viewData['type']->typeGame as $types)
+                    <div class="col-9 col-md-3">
+                        <div>
+                            <a
+                                href="{{ route('clients.gamesDetail', ['id' => $types->games->getGameId()]) }}">
+                                <div class="card bg-dark game_item">
+                                    <div class="game_picture">
+                                        <div class="game_picture_wrapper">
+                                            <img class="img-fluid"
+                                                src="{{ '/storage/' . $types->games->getIamge() }}"
+                                                alt="">
+
+                                        </div>
 
                                     </div>
-
-                                </div>
-                                <div class="card-body">
-                                    <div class="card-text text-secondary game_base">BASE GAME
-                                    </div>
-                                    <div class="card-text text-light game_title truncated">
-                                        {{ $types->games->getNameGame() }}</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <div class="rounded-2 bg-primary text-white game_saleoff">
-                                            -10%</div>
-                                        <div class="games_price">
-                                            <div class="text-decoration-line-through text-secondary game_old_price">
-                                                đ10000
-                                            </div>
-                                            <div class="text-light game_new_price">
-                                                {{ $types->games->getPrice() }}</div>
+                                    <div class="card-body">
+                                        <div
+                                            class="card-text text-secondary game_base">
+                                            BASE GAME
+                                        </div>
+                                        <div
+                                            class="card-text text-light game_title truncated">
+                                            {{ $types->games->getNameGame() }}</div>
+                                        <div
+                                            class="card-footer d-flex align-items-center justify-content-between">
+                                            @if ($types->games->getPrice() == 0)
+                                                <div></div>
+                                                <div
+                                                    class="text-light badge bg-secondary game_new_price">
+                                                    Free
+                                                </div>
+                                            @else
+                                                <div
+                                                    class="rounded-2 text-white badge bg-primary badge-lg game_new_price">
+                                                    -25%
+                                                </div>
+                                                <div class="games_price">
+                                                    <div
+                                                        class="text-decoration-line-through text-secondary game_old_price">
+                                                        <span>₫{{ number_format($types->games->getPrice() * 1.25, 0, '.', ',') }}</span>
+                                                    </div>
+                                                    <div
+                                                        class="text-light game_new_price">
+                                                        <span>₫{{ number_format($types->games->getPrice(), 0, '.', ',') }}</span>
+                                                    </div>
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
+    </section>
 @endsection

@@ -1,80 +1,18 @@
 .admin_area {
-    background-color: #666;
-    background-image: linear-gradient(to right, black, gray, white);
+    background-color: white;
     background-size: cover;
     background-position: center;
+    font-size: 1.6rem;
 }
-
-.head {
-    background-image: url("	https://cs-gameworld.myshopify.com/cdn/shop/t/5/assets/bg_image.jpg?v=13958289029611430451629426560");
-    background-size: cover;
-}
-/* Sub nav */
-.subnav {
-    z-index: 1;
-    background-color: black;
-    height: 30px;
-    color: #969696;
-}
-
-.subnav_label {
-    font-size: 1rem;
-}
-/* Main nav */
-
-.headnav_services {
-    color: #969696;
-}
-
-.headnav_contacts span {
-    display: inline-block;
-    padding: 4px 2px;
-}
-
-.headnav_contacts span:hover {
-    color: aqua;
-    cursor: pointer;
-}
-
-.headnav_search {
-    display: flex;
-    justify-content: space-between;
-    width: 320px;
-    height: 30px;
-    background-color: white;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.headnav_search input{
-    flex: 1;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 8px;
-}
-
-.headnav_search span {
-    display: flex;
-    font-size: 1.2rem;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    padding: 6px 7px;
-    background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(245,245,245,1) 21%, rgba(226,226,226,1) 62%, rgba(226,226,226,1) 100%);
-    cursor: pointer;
-}
-
 
 /*================================= Side bar ==================================*/
 .sidebar-left {
     background-color: transparent;
 }
 
-.sidebar-left ul {
+.admin-list {
     width: 100%;
     margin-bottom: 50px;
-    margin-left: 4px;
 }
 
 .sidebar-label {
@@ -91,8 +29,8 @@
     height: 48px;
     font-size: 1.6rem;
     cursor: pointer;
-    background-color: rgb(255 255 255 / 0.3);
-    backdrop-filter: blur(2px);
+    background-color: white;
+    /* backdrop-filter: blur(2px); */
 }
 
 .sidebar-item a {
@@ -101,20 +39,17 @@
 }
 
 .sidebar-item:hover {
-    transform: translateX(20px);
-    /* box-shadow: 5px 5px 5px 0px rgba(179, 60, 230, 0.75);
-    -webkit-box-shadow: 5px 5px 5px 0px rgba(179, 60, 230, 0.75);
-    -moz-box-shadow: 5px 5px 5px 0px rgba(179, 60, 230, 0.75); */
-    opacity: 1;
+    background-color: rgb(245, 245, 245);
     transition: all ease 300ms;
 }
 
 .sidebar-item + .sidebar-item {
     margin-top: 4px;
+    border-top: 1px solid rgb(245, 245, 245);
 }
 
 .sidebar-item span {
-    color: whitesmoke;
+    color: dark;
     opacity: 0.8;
 }
 
@@ -146,12 +81,10 @@
     font-size: 1.4rem;
     margin-top: 20px;
     min-height: 320px;
-    color: whitesmoke;
 }
 
 .home_admin {
-   background-color: rgb(255 255 255 / 0.3);
-  backdrop-filter: blur(10px);
+    color: black;
 }
 
 /* ================================= Button =================================*/
@@ -168,8 +101,6 @@
     font-weight: 700;
     border-radius: 4px;
     padding: 4px 8px;
-    border: 1px solid whitesmoke;
-    color: whitesmoke;
     background-color: transparent;
     cursor: pointer;
 }

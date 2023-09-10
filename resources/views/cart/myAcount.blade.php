@@ -42,7 +42,8 @@
                                             {{ $order->getOrderId() }}
                                         </td>
                                         <td>
-                                            <table class="table-dark table-striped w-100">
+                                            <table
+                                                class="table-dark table-striped w-100">
                                                 <col style="width: 20%" />
                                                 <col style="width: 60%" />
                                                 <col style="width: 20%" />
@@ -99,9 +100,11 @@
 
                                     </tr> --}}
                                 @empty
-                                    <td colspan="3" class="text-danger fw-bold">
-                                        Seems to be that you have not purchased
-                                        anything in our store =(.
+                                    <td colspan="3" class="text-light fw-bold">
+                                        You have no orders. <a
+                                            class="text-secondary"
+                                            href="{{ route('clients.games') }}">Take
+                                            a look?</a>
                                     </td>
                                 @endforelse
                             </tbody>
@@ -113,47 +116,4 @@
             </div>
         </div>
     </section>
-
-    {{-- Cái order cũ --}}
-    {{-- @forelse ($viewData["orders"] as $order)
-        <div class="card mb-4">
-            <div class="card-header">
-                Order #{{ $order->getOrderId() }}
-            </div>
-            <div class="card-body">
-                <b>Date:</b> {{ $order->getCreatedAt() }}<br />
-                <b>Total:</b> ${{ $order->getTotal() }}<br />
-                <table class="table table-bordered table-striped text-center mt-3">
-                    <thead>
-                        <tr>
-                            <th scope="col">Item ID</th>
-                            <th scope="col">Product Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($order->gameOrders as $item)
-                            <tr>
-
-                                <td>{{ $item->getOrderId() }}</td>
-                                <td>
-                                    <a class="link-success"
-                                        href="{{ route('clients.gamesDetail', ['id' => $item->getGameId()]) }}">
-                                        {{ $item->game->getNameGame() }}
-                                    </a>
-                                </td>
-                                <td>${{ $item->getPrice() }}</td>
-                                <td>{{ $item->getQuantity() }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    @empty
-        <div class="alert alert-danger" role="alert">
-            Seems to be that you have not purchased anything in our store =(.
-        </div>
-    @endforelse --}}
 @endsection
