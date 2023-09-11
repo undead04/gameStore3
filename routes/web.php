@@ -77,6 +77,7 @@ Route::middleware('auth')->group(function () {
         Route::post('add/{id}', [ShoppingController::class, 'add'])->name('cart.add'); //
         Route::get('delete/{id}', [ShoppingController::class, 'delete'])->name('cart.delete'); //delete cart
         Route::get('purchase', [ShoppingController::class, 'purchase'])->name('cart.purchase');
+        Route::post('purchaseNow/{id}', [ShoppingController::class, 'purchaseNow'])->name('cart.purchaseNow'); //mua ngay
         Route::get('myAcount', [MyAcountController::class, 'orders'])->name('cart.orders');
     });
 });

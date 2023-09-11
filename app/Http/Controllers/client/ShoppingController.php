@@ -91,4 +91,30 @@ class ShoppingController extends Controller
             return redirect()->route('cart.index');
         }
     }
+    public function purchaseNow($id)
+    {
+        $game = Game::find($id);
+
+        $userId = Auth::user()->getId();
+        $order = new Order();
+        $order->setUserId($userId);
+        $order->setTotal($game->getPrice());
+        $order->save();
+
+
+        $item = new GameOrder();
+        $item->setPrice($game->getPrice());
+        $item->setGameId($game->getGameId());
+        $item->setOrderId($order->getOrderId());
+        $item->save();
+        $order->save();
+
+        $newBalance = Auth::user()->getBalance() - $game->getPrice();
+        Auth::user()->setBalance($newBalance);
+        Auth::user()->save();
+
+
+
+        return redirect()->back();
+    }
 }
