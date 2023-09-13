@@ -1,13 +1,10 @@
 <div class="col-9 col-md-2-4">
     <div>
-        <a
-            href="{{ route('clients.gamesDetail', ['id' => $games->getGameId()]) }}">
+        <a href="{{ route('clients.gamesDetail', ['id' => $games->getGameId()]) }}">
             <div class="card bg-dark games-item">
                 <div class="game_picture">
                     <div class="game_picture_wrapper">
-                        <img class="img-fluid"
-                            src="{{ '/storage/' . $games->getIamge() }}"
-                            alt="">
+                        <img class="img-fluid" src="{{ '/storage/' . $games->getImage() }}" alt="">
 
                     </div>
 
@@ -17,24 +14,21 @@
                     </div>
                     <div class="card-text text-light game_title truncated ps-0">
                         {{ $games->getNameGame() }}</div>
-                    <div
-                        class="card-footer game_price d-flex align-items-center justify-content-between">
+                    <div class="card-footer game_price d-flex align-items-center justify-content-between">
                         @if ($games->getPrice() == 0)
                             <div></div>
                             <div class="game_price text-light">
-                                <span
-                                    class="game_new_price fw-bold mt-3">Free</span>
+                                <span class="game_new_price fw-bold mt-3">Free</span>
                             </div>
                         @else
                             <div class="bg-primary badge py-2 px-3 fs-5">
                                 -25%</div>
                             <div class="game_price">
-                                <div
-                                    class="text-decoration-line-through text-secondary game_old_price">
+                                <div class="text-decoration-line-through text-secondary game_old_price">
                                     <span>₫{{ number_format($games->getPrice() * 1.25, 0, '.', ',') }}</span>
                                 </div>
                                 <div class="text-light game_new_price">
-                                    <span>₫{{ number_format($games->getPrice() * 1.25, 0, '.', ',') }}</span>
+                                    <span>₫{{ number_format($games->getPrice(), 0, '.', ',') }}</span>
                                 </div>
                             </div>
                         @endif

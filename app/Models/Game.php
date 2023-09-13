@@ -27,13 +27,13 @@ class Game extends Model
     {
         $this->attributes['name_Game'] = $name;
     }
-    public function getDeveloperId()
+    public function getDeveloper()
     {
-        return $this->attributes['developerId'];
+        return $this->attributes['developer'];
     }
-    public function setDeveloperId($developer)
+    public function setDeveloper($developer)
     {
-        $this->attributes['developerId'] = $developer;
+        $this->attributes['developer'] = $developer;
     }
     public function getPublisher()
     {
@@ -67,13 +67,43 @@ class Game extends Model
     {
         $this->attributes['description'] = $description;
     }
-    public function getIamge()
+    public function getImage()
     {
         return $this->attributes['image'];
     }
+
     public function setImage($image)
     {
         $this->attributes['image'] = $image;
+    }
+
+    public function getImagePaner()
+    {
+        return $this->attributes['image-paner'];
+    }
+
+    public function setImagePaner($image_paner)
+    {
+        $this->attributes['image-paner'] = $image_paner;
+    }
+
+    public function getImageLogo()
+    {
+        return $this->attributes['image-logo'];
+    }
+
+    public function setImageLogo($image_logo)
+    {
+        $this->attributes['image-logo'] = $image_logo;
+    }
+    public function getDiscount()
+    {
+        return $this->attributes['discount'];
+    }
+
+    public function setDiscount($discount)
+    {
+        $this->attributes['discount'] = $discount;
     }
     public function getCreateAt()
     {
@@ -98,9 +128,5 @@ class Game extends Model
     public function orderGame()
     {
         return $this->hasMany(Game_Order::class);
-    }
-    public function developer()
-    {
-        return $this->belongsTo(Developer::class, 'developerId');
     }
 }

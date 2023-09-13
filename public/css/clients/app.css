@@ -462,7 +462,6 @@
 }
 .game_title {
     color: rgb(245, 245, 245);
-    flex: 1;
     font-size: 1.2rem;
     word-wrap: break-word;
     user-select: none;
@@ -485,7 +484,6 @@
 }
 
 .game_title,.game_old_price,.game_new_price {
-    display: block;
     line-height: 20px;
     font-size: 1.4rem;
 }
