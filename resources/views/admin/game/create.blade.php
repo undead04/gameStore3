@@ -58,7 +58,7 @@
         <div class="form-group">
             <label class="form-label">Price<sup class="text-danger fw-bold">*</sup></span>:</label>
             <div class="flex-grow-1">
-                <input name="price" value="{{ old('price') }}" type="number"
+                <input name="price" value="{{ old('price') }}" type="number" step="0.01"
                     class="form-control bg-transparent text-primary">
                 @error('price')
                     <span class='text-danger'>{{ $message }}</span>

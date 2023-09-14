@@ -20,7 +20,8 @@
                     <div class="carousel-inner carousel_wrapper">
                         @foreach ($viewData['paner'] as $games)
                             <div class="carousel-item  ">
-                                <img src="{{ '/storage/' . $games->getImage() }}" class="d-block w-100" alt="...">
+                                <img src="{{ '/storage/' . $games->getImagePaner() }}" class="d-block w-100"
+                                    alt="...">
                                 <div class="carousel-caption d-none d-md-block banner_body">
                                     <div class="banner_description">
                                         <div class="banner_brand">

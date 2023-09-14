@@ -18,7 +18,7 @@
                         </div>
                         <div class="game-details_avatar">
                             <div class="picture16x9">
-                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->getIamge() }}"
+                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->getImagePaner() }}"
                                     alt="">
                             </div>
 
@@ -106,8 +106,7 @@
                     <div class="d-flex flex-column game-details-side_wrapper">
                         <div class="game-details-side_avatar">
                             <div class="picture16x9">
-                                <img class="img-fluid"
-                                    src="{{ '/storage/' . $viewData['game']->developer->getDeveloperImage() }}"
+                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->getImageLogo() }}"
                                     alt="">
                             </div>
                         </div>
@@ -166,7 +165,7 @@
                             </li>
                             <li class="game-details_info">
                                 <span>Developer</span>
-                                <span>{{ $viewData['game']->developer->getDeveloperName() }}</span>
+                                <span>{{ $viewData['game']->getDeveloper() }}</span>
                             </li>
                             <li class="game-details_info">
                                 <span>Publisher</span>
