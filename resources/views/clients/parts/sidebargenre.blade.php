@@ -1,4 +1,4 @@
-<div>
+{{-- <div>
     <div class="d-flex flex-column sidebar-left align-items-start justify-content-between">
         <ul class="main-list">
             <li class="sidebar-item"><a href=""><i class="fa-solid fa-house"></i> Home</a></li>
@@ -21,4 +21,4 @@
             <li class="brand-item sidebar-item"><a href="#">Valorant</a></li>
         </ul>
     </div>
-</div>
+</div> --}}

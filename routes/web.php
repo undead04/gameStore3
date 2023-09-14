@@ -8,6 +8,7 @@ use App\Http\Controllers\client\HomeController;
 use App\Http\Controllers\admin\GenresController;
 use App\Http\Controllers\client\LoginController;
 use App\Http\Controllers\admin\DeveloperController;
+use App\Http\Controllers\client\FilterController;
 use Illuminate\Support\Facades\Auth;
 use PHPUnit\TextUI\XmlConfiguration\Group;
 use App\Http\Controllers\client\ShoppingController;
@@ -62,6 +63,7 @@ Route::middleware('admin')->group(function () {
 
 Route::prefix('games')->group(function () {
     Route::get('/', [ClientGameController::class, 'allGames'])->name('clients.games');
+    Route::post('/', [FilterController::class, 'filter'])->name('clients.games.filter');
     Route::get('/{id}', [ClientGameController::class, 'detail'])->name('clients.gamesDetail');
     Route::get('viewMore/{type}', [ClientGameController::class, 'viewMore'])->name('clients.viewMore');
 });
