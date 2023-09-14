@@ -15,41 +15,37 @@
             </div>
             {{-- 6 games per collumn --}}
             @foreach ($types->typeGame->take(6) as $typeGames)
-                <div class="game_product_thumb">
-                    <div class="game_product_avatar">
-                        <div>
-                            <div class="d-flex align-items-center overflow-hidden">
-                                <img class="img-fluid" src="{{ '/storage/' . $typeGames->games->getImage() }}"
-                                    alt="thumnail">
+                <a href="{{ route('clients.gamesDetail', ['id' => $typeGames->games->getGameId()]) }}">
+                    <div class="game_product_thumb">
+                        <div class="game_product_avatar">
+                            <div>
+                                <div class="d-flex align-items-center overflow-hidden">
+                                    <img class="img-fluid" src="{{ '/storage/' . $typeGames->games->getImage() }}"
+                                        alt="thumnail">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game_product_body">
+                            <div class="game_title truncated">
+                                {{ $typeGames->games->getNameGame() }}
+                            </div>
+                            <div class="game_product_description">
+
+                                @if ($typeGames->games->getPrice() == 0)
+                                    <span class="game_product_price text-light">Free</span>
+                                @else
+                                    <span class="badge bg-primary">{{ $typeGames->games->getDiscount() . '%' }}</span>
+                                    <span class="game_product_price text-secondary">
+                                        <span>₫{{ number_format($typeGames->games->getPrice(), 3, '.', ',') }}</span>
+                                    </span>
+                                    <span class="game_product_price text-light">
+                                        ₫{{ number_format($typeGames->games->getPrice() - ($typeGames->games->getPrice() * $typeGames->games->getDiscount()) / 100, 3, '.', ',') }}
+                                    </span>
+                                @endif
                             </div>
                         </div>
                     </div>
-                    <div class="game_product_body">
-                        <div class="game_title truncated">
-                            {{ $typeGames->games->getNameGame() }}
-                        </div>
-                        <div class="game_product_description">
-                            {{-- <span class="badge bg-primary">{{ $typeGames->games->getPrice() == 0 ? '' :  '-25%'}}</span>
-                            <span class={{ $typeGames->games->getPrice() == 0 ? 'd-none' :  implode(" ", array('game_product_price', 'text-secondary'))}}>
-                                <span>₫{{ $typeGames->games->getPrice() == 0 ? '' :  $typeGames->games->getPrice() * 1.25}}</span>
-                            </span>
-                            <span class="game_product_price text-light">
-                                <span>{{ $typeGames->games->getPrice() == 0 ? 'Free' :  number_format($typeGames->games->getPrice(), 0, '.', ',')}}</span>
-                            </span> --}}
-                            @if ($typeGames->games->getPrice() == 0)
-                                <span class="game_product_price text-light">Free</span>
-                            @else
-                                <span class="badge bg-primary">-25%</span>
-                                <span class="game_product_price text-secondary">
-                                    <span>₫{{ number_format($typeGames->games->getPrice() * 1.25, 0, '.', ',') }}</span>
-                                </span>
-                                <span class="game_product_price text-light">
-                                    ₫{{ number_format($typeGames->games->getPrice(), 0, '.', ',') }}
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-                </div>
+                </a>
             @endforeach
         </div>
     </div>

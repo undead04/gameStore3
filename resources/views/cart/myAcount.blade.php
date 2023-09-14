@@ -42,8 +42,7 @@
                                             {{ $order->getOrderId() }}
                                         </td>
                                         <td>
-                                            <table
-                                                class="table-dark table-striped w-100">
+                                            <table class="table-dark table-striped w-100">
                                                 <col style="width: 20%" />
                                                 <col style="width: 60%" />
                                                 <col style="width: 20%" />
@@ -57,7 +56,7 @@
                                                                 </a>
                                                             </td>
                                                             <td>
-                                                                {{ $item->game->developer->getDeveloperName() }}
+                                                                {{ $item->game->getDeveloper() }}
                                                             </td>
                                                             <td>${{ $item->getPrice() }}
                                                             </td>
@@ -101,8 +100,7 @@
                                     </tr> --}}
                                 @empty
                                     <td colspan="3" class="text-light fw-bold">
-                                        You have no orders. <a
-                                            class="text-secondary"
+                                        You have no orders. <a class="text-secondary"
                                             href="{{ route('clients.games') }}">Take
                                             a look?</a>
                                     </td>

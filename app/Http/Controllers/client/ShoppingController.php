@@ -22,7 +22,7 @@ class ShoppingController extends Controller
         if ($gameInSession) {
 
             $total = array_reduce($gameInSession, function ($total, $item) {
-                return $total + $item['price'];
+                return $total + $item['price'] - ($item['price'] * $item['discount']) / 100;
             });
         }
         $viewData["total"] = $total;
@@ -38,7 +38,8 @@ class ShoppingController extends Controller
             'id' => $gameItem->getGameId(),
             'name' => $gameItem->getNameGame(),
             'price' => $gameItem->getPrice(),
-            'image' => $gameItem->getIamge(),
+            'discount' => $gameItem->getDiscount(),
+            'image' => $gameItem->getImage(),
 
         ];
         session()->put('cart', $cart);
@@ -70,11 +71,11 @@ class ShoppingController extends Controller
 
                 $item = new GameOrder();
 
-                $item->setPrice($game->getPrice());
+                $item->setPrice($game->getPrice() - ($game->getPrice() * $game->getDiscount() / 100));
                 $item->setGameId($game->getGameId());
                 $item->setOrderId($order->getOrderId());
                 $item->save();
-                $total += $game->getPrice();
+                $total += $game->getPrice() - ($game->getPrice() * $game->getDiscount() / 100);
             }
             $order->setTotal($total);
             $order->save();

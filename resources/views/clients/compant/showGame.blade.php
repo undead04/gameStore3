@@ -25,7 +25,7 @@
                                 -25%</div>
                             <div class="game_price">
                                 <div class="text-decoration-line-through text-secondary game_old_price">
-                                    <span>₫{{ number_format($games->getPrice() * 1.25, 0, '.', ',') }}</span>
+                                    <span>₫{{ number_format($games->getPrice(), 0, '.', ',') }}</span>
                                 </div>
                                 <div class="text-light game_new_price">
                                     <span>₫{{ number_format($games->getPrice(), 0, '.', ',') }}</span>
