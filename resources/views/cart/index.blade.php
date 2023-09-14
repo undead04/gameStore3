@@ -21,8 +21,23 @@
                                             <div class="badge bg-secondary text-uppercase">
                                                 base game</div>
                                             <div class="cart_item_price">
-                                                <span class="text-decoration-underline">đ</span>
-                                                <span class="">{{ $game['price'] }}</span>
+                                                @if ($game['discount'] == 100 || $game['price'] == 0)
+                                                    <span class="">Free</span>
+                                                @else
+                                                    @if ($game['discount'] > 0)
+                                                        <div
+                                                            class="text-decoration-line-through text-secondary game_old_price">
+                                                            đ{{ number_format($game['price'], 3, '.', ',') }}
+                                                        </div>
+                                                        <div class="text-light game_new_price">
+                                                            {{ number_format($game['price'] - ($game['price'] * $game['discount']) / 100, 3, '.', ',') }}
+                                                        </div>
+                                                    @else
+                                                        <div class="text-light game_new_price">
+                                                            đ{{ number_format($game['price'], 3, '.', ',') }}
+                                                        </div>
+                                                    @endif
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="d-flex">
@@ -67,11 +82,13 @@
                             <div class="payment_body">
                                 <div class="payment_item">
                                     <span>Price</span>
-                                    <span><span class="text-decoration-underline">đ</span>{{ $viewData['total'] }}</span>
+                                    <span><span
+                                            class="text-decoration-underline">đ</span>{{ number_format($viewData['total'], 3, '.', ',') }}</span>
                                 </div>
                                 <div class="payment_item">
                                     <span>Sale discount</span>
-                                    <span>{{ $game['discount'] . '%' }}</span>
+                                    <span><span>-</span><span
+                                            class="text-decoration-underline">đ</span>{{ number_format($viewData['discount'], 3, '.', ',') }}</span>
                                 </div>
                                 <div class="payment_item">
                                     <span>Taxes</span>
@@ -81,7 +98,8 @@
                                 <hr>
                                 <div class="payment_item payment_price">
                                     <span>Subtotal</span>
-                                    <span><span class="text-decoration-underline">đ</span>{{ $viewData['total'] }}</span>
+                                    <span><span
+                                            class="text-decoration-underline">đ</span>{{ number_format($viewData['totalPrice'], 3, '.', ',') }}</span>
                                 </div>
                                 <a href="{{ route('cart.purchase') }}"
                                     class="btn btn-primary btn-lg text-uppercase w-100 payment_checkout">

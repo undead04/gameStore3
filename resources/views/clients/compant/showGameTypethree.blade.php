@@ -31,16 +31,23 @@
                             </div>
                             <div class="game_product_description">
 
-                                @if ($typeGames->games->getPrice() == 0)
+                                @if ($typeGames->games->getPrice() == 0 || $typeGames->games->getDiscount() == 100)
                                     <span class="game_product_price text-light">Free</span>
                                 @else
-                                    <span class="badge bg-primary">{{ $typeGames->games->getDiscount() . '%' }}</span>
-                                    <span class="game_product_price text-secondary">
-                                        <span>₫{{ number_format($typeGames->games->getPrice(), 3, '.', ',') }}</span>
-                                    </span>
-                                    <span class="game_product_price text-light">
-                                        ₫{{ number_format($typeGames->games->getPrice() - ($typeGames->games->getPrice() * $typeGames->games->getDiscount()) / 100, 3, '.', ',') }}
-                                    </span>
+                                    @if ($typeGames->games->getDiscount() > 0)
+                                        <span
+                                            class="badge bg-primary">{{ '-' . $typeGames->games->getDiscount() . '%' }}</span>
+                                        <span class="game_product_price text-secondary text-decoration-line-through">
+                                            <span>₫{{ number_format($typeGames->games->getPrice(), 3, '.', ',') }}</span>
+                                        </span>
+                                        <span class="game_product_price text-light">
+                                            ₫{{ number_format($typeGames->games->getPrice() - ($typeGames->games->getPrice() * $typeGames->games->getDiscount()) / 100, 3, '.', ',') }}
+                                        </span>
+                                    @else
+                                        <span class="game_product_price text-light">
+                                            <span>₫{{ number_format($typeGames->games->getPrice(), 3, '.', ',') }}</span>
+                                        </span>
+                                    @endif
                                 @endif
                             </div>
                         </div>

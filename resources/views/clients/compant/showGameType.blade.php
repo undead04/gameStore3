@@ -35,16 +35,27 @@
                                         {{ $typeGames->games->getNameGame() }}
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <div class="bg-primary badge py-2 px-3 fs-5">
-                                            -10%</div>
-                                        <div class="games_price">
-                                            <div class="text-decoration-line-through text-secondary game_old_price">
-                                                đ10000
-                                            </div>
-                                            <div class="text-light game_new_price">
-                                                {{ $typeGames->games->getPrice() }}
-                                            </div>
-                                        </div>
+                                        @if ($typeGames->games->getPrice() == 0 || $typeGames->games->getDiscount() == 100)
+                                            <span class="game_product_price text-light">Free</span>
+                                        @else
+                                            @if ($typeGames->games->getDiscount() > 0)
+                                                <div class="bg-primary badge py-2 px-3 fs-5">
+                                                    {{ '-' . $typeGames->games->getDiscount() . '%' }}</div>
+                                                <div class="games_price">
+                                                    <div
+                                                        class="text-decoration-line-through text-secondary game_old_price">
+                                                        đ{{ number_format($typeGames->games->getPrice(), 3, '.', ',') }}
+                                                    </div>
+                                                    <div class="text-light game_new_price">
+                                                        {{ number_format($typeGames->games->getPrice() - ($typeGames->games->getPrice() * $typeGames->games->getDiscount()) / 100, 3, '.', ',') }}
+                                                    </div>
+                                                </div>
+                                            @else
+                                                <div class=" text-light game_new_price">
+                                                    đ{{ number_format($typeGames->games->getPrice(), 3, '.', ',') }}
+                                                </div>
+                                            @endif
+                                        @endif
                                     </div>
                                 </div>
                             </div>
