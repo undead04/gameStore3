@@ -30,7 +30,7 @@
                                                             đ{{ number_format($game['price'], 3, '.', ',') }}
                                                         </div>
                                                         <div class="text-light game_new_price">
-                                                            {{ number_format($game['price'] - ($game['price'] * $game['discount']) / 100, 3, '.', ',') }}
+                                                            đ{{ number_format($game['price'] - ($game['price'] * $game['discount']) / 100, 3, '.', ',') }}
                                                         </div>
                                                     @else
                                                         <div class="text-light game_new_price">

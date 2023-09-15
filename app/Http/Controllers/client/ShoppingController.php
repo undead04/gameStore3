@@ -17,7 +17,7 @@ class ShoppingController extends Controller
     public function index()
     {
         $total = 0;
-
+        $totalDiscount = 0;
         $gameInSession = session()->get("cart");
         if ($gameInSession) {
 
