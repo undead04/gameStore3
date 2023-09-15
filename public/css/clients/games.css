@@ -1,8 +1,4 @@
 .games-page {
-    background-image: url("https://furypixel.com/wp-content/uploads/2020/03/FuryPixel-Ori-and-the-Will-of-the-Wisps.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    backdrop-filter: 10px;
     z-index: 0;
 }
 
@@ -61,84 +57,89 @@
 
 .games-item:hover {
     opacity: 0.8;
-    transform: translateY(-4px);
-    box-shadow: 5px 5px 5px 0px rgba(193, 87, 238, 0.75);
-    -webkit-box-shadow: 5px 5px 5px 0px rgba(193, 87, 238, 0.75);
-    -moz-box-shadow: 5px 5px 5px 0px rgba(193, 87, 238, 0.75);
     transition: all ease-in-out 300ms;
 }
+/* Filter================================================================== */
 
-/* ================================= Filter bar =============================== */
-
-.filter_games {
-    border: 1px solid #666;
-    padding: 20px;
-    background-color: rgba(169, 104, 238, 0.5);
+.filter_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 54px;
+    font-size: 1.6rem;
 }
 
-.filter_icon {
+.filter_search {
+    height: 40px;
+    font-size: 1.4rem;
+    border-radius: 4px;
+    background-color: #666;
+}
+
+.filter_search > div {
+    display: flex;
+    align-items: center;
+}
+.filter_search span {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 2rem;
-    padding: 6px;
-    border-radius: 16px;
-    border: 1px solid white;
     height: 40px;
     width: 40px;
-    font-weight: 700;
-    margin-right: 20px;
-    cursor: pointer;
 }
 
-.filter_icon:hover {
-    color: cyan;
-    transform: rotate(-90deg);
-    transition: all ease 500ms;
-}
-.select_item {
-    --filter-bar_height: 40px;
-    height: var(--filter-bar_height);
-    font-size: 1.6rem;
-    font-weight: 700;
-    border-radius: 10px;
-    border: 1px solid whitesmoke;
-    color: whitesmoke;
-    background-color: transparent;
-    --bs-form-select-bg-img: none;
-    cursor: pointer;
-}
-
-
-.select_item:focus, 
-.select_item:hover {
-    outline: none;
-    border-color: cyan;
-    box-shadow: none;
-}
-
-
-.option_item {
-    background-color: rgba(0, 0, 139, 0.5);
-    padding: 4px;
-    cursor: pointer;
-}
-
-.filter_btn {
+.filter_search input {
+    flex: 1;
     height: 40px;
-    min-width: 120px;
-    margin: 0 8px;
-    cursor: pointer;
-    font-size: 1.4rem;
-    font-weight: 700;
-    border-radius: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    background-color: #666;
+    color: white;
 }
 
-.filter_btn:hover {
-    border-color: cyan!important;
-    color: cyan!important;
-    transition: all ease-in-out 500ms;
+.filter_search input:hover {
+    border: none;
+    outline: none;
+}
+
+.filter_genre {
+    display: flex;
+}
+
+.collapse_filter {
+    flex: 1;
+}
+
+.collapse_filter button {
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    width: 100%;
+}
+
+.collapse_items {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 1.4rem;
+    cursor: pointer;
+ }
+
+.collapse_items:hover {
+    opacity: 0.7;
+    transition: all ease 200ms;
+}
+
+.collapse_items > label {
+    flex: 1;
+    padding: 12px 8px;
+}
+
+.collapse_items.active {
+    opacity: 0.7;
 }
 /* ============================= Select arrow ============================= */
 .select_group {

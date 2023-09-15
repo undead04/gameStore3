@@ -13,7 +13,6 @@ class GameController extends Controller
     {
         $viewData = [];
         $viewData['game'] = Game::find($id);
-
         $viewData['title'] = $viewData['game']->getNameGame() . ' | Details';
         $viewData['type'] = Type_Game::find($viewData['game']->getGenre());
         return view('clients.gamesDetail')->with('viewData', $viewData);
@@ -25,6 +24,7 @@ class GameController extends Controller
         $viewData['title'] = 'Game Store 3' . ' | All games';
         $viewData['games'] = Game::all();
         $viewData['type'] = Type_Game::all();
+        $viewData['oldCheck'] = [];
         return view('clients.games')->with('viewData', $viewData);
     }
     public function viewMore($type)
