@@ -17,20 +17,15 @@ class ShoppingController extends Controller
     public function index()
     {
         $total = 0;
-        $totalDiscount = 0;
+
         $gameInSession = session()->get("cart");
         if ($gameInSession) {
 
             $total = array_reduce($gameInSession, function ($total, $item) {
-                return $total + $item['price'];
-            });
-            $totalDiscount = array_reduce($gameInSession, function ($total, $item) {
-                return $total + $item['discount'] * $item['price'] / 100;
+                return $total + $item['price'] - ($item['price'] * $item['discount']) / 100;
             });
         }
         $viewData["total"] = $total;
-        $viewData['discount'] = $totalDiscount;
-        $viewData['totalPrice'] = $total - $totalDiscount;
         $viewData["games"] = $gameInSession;
         return view('cart.index')->with("viewData", $viewData);
     }

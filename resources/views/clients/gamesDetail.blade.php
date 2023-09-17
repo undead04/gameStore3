@@ -105,31 +105,17 @@
                             </div>
                         </div>
                         <div class="game-details_prices">
-                            @if (
-                                $viewData['game']->getDiscount() == 100 ||
-                                    $viewData['game']->getPrice() == 0)
-                                <div class="game-details_curprice">
-                                    <span>Free</span>
-                                </div>
-                            @else
-                                @if ($viewData['game']->getDiscount() > 0)
-                                    <div class="game-details_saleoff bg-primary">
-                                        {{ '-' . $viewData['game']->getDiscount() . '%' }}
-                                    </div>
-                                    <div
-                                        class="game-details_oldprice text-decoration-line-through text-secondary">
-                                        <span>₫{{ number_format($viewData['game']->getPrice(), 3, '.', ',') }}</span>
+                            <div class="badge py-3 px-4 bg-primary fs-secondary">
+                                -25%
+                            </div>
+                            <div
+                                class="fs-primary text-decoration-line-through text-secondary ms-2">
+                                <span>₫{{ number_format($viewData['game']->getPrice() * 1.25, 0, '.', ',') }}</span>
 
-                                    </div>
-                                    <div class="game-details_curprice">
-                                        <span>₫{{ number_format($viewData['game']->getPrice() - ($viewData['game']->getPrice() * $viewData['game']->getDiscount()) / 100, 3, '.', ',') }}</span>
-                                    </div>
-                                @else
-                                    <div class="game-details_curprice">
-                                        <span>₫{{ number_format($viewData['game']->getPrice(), 3, '.', ',') }}</span>
-                                    </div>
-                                @endif
-                            @endif
+                            </div>
+                            <div class="fs-secondary ms-2">
+                                <span>₫{{ number_format($viewData['game']->getPrice(), 0, '.', ',') }}</span>
+                            </div>
                         </div>
                         <div class="game-details_saleoff-deadline">
                             <span>Sale ends 8/28/2023 at 7:00 AM</span>
