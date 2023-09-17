@@ -13,21 +13,17 @@
                                 <div class="cart_item_section">
                                     <div class="cart_item_avatar">
                                         <div>
-                                            <img src="{{ '/storage/' . $game['image'] }}"
-                                                alt="" class="img-fluid">
+                                            <img src="{{ '/storage/' . $game['image'] }}" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                     <div class="cart_item_body">
-                                        <div
-                                            class="d-flex justify-content-between align-items-center h4">
-                                            <div
-                                                class="badge bg-secondary text-uppercase">
+                                        <div class="d-flex justify-content-between align-items-center h4">
+                                            <div class="badge bg-secondary text-uppercase">
                                                 base game</div>
 
                                             <div class="cart_item_price">
                                                 @if (!$game['discount'] == 0)
-                                                    <div
-                                                        class="text-secondary text-uppercase text-decoration-line-through">
+                                                    <div class="text-secondary text-uppercase text-decoration-line-through">
                                                         ₫{{ number_format($game['price'], 0, '.', ',') }}
                                                     </div>
                                                 @endif
@@ -43,14 +39,12 @@
                                             </div>
                                         </div>
                                         <div class="d-flex mb-5">
-                                            <div
-                                                class="game_release_date text-secondary">
+                                            <div class="game_release_date text-secondary">
                                                 Available <span>9/8/2023</span>
                                             </div>
                                         </div>
                                         <div class="d-block mt-5 cart_more_infoes">
-                                            <span><i
-                                                    class="fa-solid fa-gem"></i></span>
+                                            <span><i class="fa-solid fa-gem"></i></span>
                                             <span>Earn 5% back in Epic
                                                 Rewards</span>
                                         </div>
@@ -62,10 +56,8 @@
                                         </div> --}}
                                     </div>
                                 </div>
-                                <div
-                                    class="d-flex flex-grow-1 cart_item_actions justify-content-between text-secondary">
-                                    <span><i
-                                            class="fa-brands fa-windows"></i></span>
+                                <div class="d-flex flex-grow-1 cart_item_actions justify-content-between text-secondary">
+                                    <span><i class="fa-brands fa-windows"></i></span>
                                     <a href="{{ route('cart.delete', ['id' => $game['id']]) }}"
                                         class="text-decoration-underline text-secondary">
                                         Remove
@@ -86,6 +78,10 @@
                                         ₫{{ number_format($viewData['total'], 0, '.', ',') }}</span>
                                 </div>
                                 <div class="payment_item">
+                                    <span>Sale Discount</span>
+                                    <span>-₫{{ number_format($viewData['discount'], 0, '.', ',') }}</span>
+                                </div>
+                                <div class="payment_item">
                                     <span>Taxes</span>
                                     <span class="text-secondary">Calculated at
                                         Checkout</span>
@@ -93,7 +89,7 @@
                                 <hr>
                                 <div class="payment_item payment_price">
                                     <span>Subtotal</span>
-                                    <span>₫{{ number_format($viewData['total'], 0, '.', ',') }}</span>
+                                    <span>₫{{ number_format($viewData['totalPrice'], 0, '.', ',') }}</span>
                                 </div>
                                 <a href="{{ route('cart.purchase') }}"
                                     class="btn btn-primary btn-lg text-uppercase w-100 payment_checkout">
@@ -105,11 +101,9 @@
                 </div>
             @else
                 <div class="mx-auto w-75 text-center text-light">
-                    <div class="text-light"><i class="fa-regular fa-face-sad-tear"
-                            style="font-size: 10rem"></i></div>
+                    <div class="text-light"><i class="fa-regular fa-face-sad-tear" style="font-size: 10rem"></i></div>
                     <span class="d-block display-3 mt-5">Your cart is empty</span>
-                    <a href="{{ route('clients.home') }}"
-                        class="d-block lead text-secondary display-4">Shop for
+                    <a href="{{ route('clients.home') }}" class="d-block lead text-secondary display-4">Shop for
                         Games & Apps</a>
                 </div>
             @endif

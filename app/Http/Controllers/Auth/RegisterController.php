@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule as ValidationRule;
+use TijsVerkoyen\CssToInlineStyles\Css\Rule\Rule as RuleRule;
 
 class RegisterController extends Controller
 {
@@ -49,8 +52,16 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $inputName = [];
+        foreach (User::all() as $names) {
+            $inputName[] = $names->getName();
+        }
+
+
+
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);

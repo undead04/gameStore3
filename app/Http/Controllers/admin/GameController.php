@@ -40,7 +40,7 @@ class GameController extends Controller
             'name' => 'required|max:255',
             "description" => "required",
             "price" => "required|numeric|gte:0",
-            "discount" => "required|numeric|gte:0",
+            "discount" => "required|numeric|gte:0|max:100",
             'developer' => 'required',
             'publisher' => 'required|min:5',
             'genre' => 'required',
@@ -116,7 +116,7 @@ class GameController extends Controller
             'name' => 'required|max:255',
             "description" => "required",
             "price" => "required|numeric|gte:0",
-            "discount" => "required|numeric|gte:0",
+            "discount" => "required|numeric|gte:0|max:100",
             'developer' => 'required',
             'publisher' => 'required|min:5',
             'genre' => 'required',
@@ -157,7 +157,7 @@ class GameController extends Controller
             $imageName = uniqid() . "."  . $request->file('imagePaner')->extension();
             Storage::disk('public')->put(
                 $imageName,
-                file_get_contents($request->file('imageMain')->getRealPath())
+                file_get_contents($request->file('imagePaner')->getRealPath())
             );
             $oldGame->setImagePaner($imageName);
         }
