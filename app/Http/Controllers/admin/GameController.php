@@ -157,7 +157,7 @@ class GameController extends Controller
             $imageName = uniqid() . "."  . $request->file('imagePaner')->extension();
             Storage::disk('public')->put(
                 $imageName,
-                file_get_contents($request->file('imageMain')->getRealPath())
+                file_get_contents($request->file('imagePaner')->getRealPath())
             );
             $oldGame->setImagePaner($imageName);
         }

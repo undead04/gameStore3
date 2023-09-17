@@ -30,28 +30,35 @@
                                             class="card-text text-light fs-secondary truncated">
                                             {{ $types->games->getNameGame() }}</div>
                                         <div
-                                            class="card-footer ps-0 d-flex align-items-center justify-content-between">
-                                            @if ($types->games->getPrice() == 0)
+                                            class="card-footer d-flex align-items-center justify-content-between">
+                                            @if ($types->games->getPrice() == 0 || $types->games->getDiscount() == 100)
                                                 <div></div>
                                                 <div
                                                     class="text-light badge bg-secondary game_new_price">
                                                     Free
                                                 </div>
                                             @else
-                                                <div
-                                                    class="rounded-2 text-white badge bg-primary badge-lg game_new_price">
-                                                    -25%
-                                                </div>
-                                                <div class="games_price">
+                                                @if ($types->games->getDiscount() > 0)
                                                     <div
-                                                        class="text-decoration-line-through text-secondary game_old_price">
-                                                        <span>₫{{ number_format($types->games->getPrice() * 1.25, 0, '.', ',') }}</span>
+                                                        class="rounded-2 text-white badge bg-primary badge-lg game_new_price">
+                                                        {{ '-' . $types->games->getDiscount() . '%' }}
                                                     </div>
+                                                    <div class="games_price">
+                                                        <div
+                                                            class="text-decoration-line-through text-secondary game_old_price">
+                                                            <span>₫{{ number_format($types->games->getPrice(), 3, '.', ',') }}</span>
+                                                        </div>
+                                                        <div
+                                                            class="text-light game_new_price">
+                                                            <span>₫{{ number_format($types->games->getPrice() - ($types->games->getPrice() * $types->games->getDiscount()) / 100, 3, '.', ',') }}</span>
+                                                        </div>
+                                                    </div>
+                                                @else
                                                     <div
                                                         class="text-light game_new_price">
-                                                        <span>₫{{ number_format($types->games->getPrice(), 0, '.', ',') }}</span>
+                                                        <span>₫{{ number_format($types->games->getPrice(), 3, '.', ',') }}</span>
                                                     </div>
-                                                </div>
+                                                @endif
                                             @endif
                                         </div>
                                     </div>
