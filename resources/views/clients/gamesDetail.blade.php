@@ -98,7 +98,7 @@
                             </div>
                         </div>
                         <div class="game-details_prices">
-                            @if ($viewData['game']->getDiscount() == 100 || $viewData['game']->getPrice() == 0)
+                            @if ($viewData['game']->getPrice() == 0)
                                 <div class="game-details_curprice">
 
                                 </div>
