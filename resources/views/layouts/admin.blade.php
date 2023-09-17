@@ -23,38 +23,56 @@
 
 <body>
 
-    {{-- <form action="{{ route('logout') }}"
-                                    id="logout" method="POST">
-                                    <a role="button" class="nav-link active "
-                                        onclick="document.getElementById('logout').submit()">
-                                        Logout
-                                    </a>
-                                    @csrf
-                                </form> --}}
-    <section class="admin_area bg-blur h-100">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+    <section class="admin_area">
+
+        <nav class="navbar navbar-expand-lg bg-info text-light">
             <div class="container-fluid">
-                <a class="navbar-brand fs-3" style="width: 60px" href="/">
-                    <img src="{{ '/form.svg' }}" alt="Logo"
-                        class="img-fluid" />
-                </a>
-                <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="btn btn-info text-light btn_admin admin_nav_item"
+                    type="button" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#adminSidebar" aria-controls="adminSidebar">
+                    <i class="fa-solid fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse justify-content-md-end"
-                    id="navbarNav">
-                    <ul class="navbar-nav">
-                        @include('admin.parts.sidebar')
-                    </ul>
+                {{-- class="btn btn-primary" >
+                Button with data-bs-target --}}
+                <div class="text-center">
+                    <span class="display-4">Admin page - Game Store</span>
                 </div>
+                <div class="text-light admin_nav_item">
+                    <div class="admin_avatar">
+                        AD
+                    </div>
+                </div>
+
             </div>
         </nav>
+    </section>
+    <section class="">
+        <div class="offcanvas offcanvas-start admin_sidebar" tabindex="-1"
+            id="adminSidebar">
+            <div class="w-100">
+                {{-- <div style="width: 200px; height: 60px"
+                    class="mx-auto overflow-hidden d-flex align-items-center pt-4">
+                    <img src="logo.svg" class="img-fluid" alt="">
+                </div>
+                <div class="fs-big text-center">Game Store 3</div> --}}
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title display-3"
+                        id="offcanvasExampleLabel">Game
+                        Store 3</h5>
+                    <button type="button" class="btn-close"
+                        data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                @include('admin.parts.sidebar')
+            </div>
+        </div>
+    </section>
+    <section class="py-5">
         <div class="container-md">
-            <div class="admin_table col-auto">
-                @yield('table')
+            <div class="row">
+                <div class="admin_table col">
+                    @yield('table')
+                </div>
             </div>
         </div>
     </section>

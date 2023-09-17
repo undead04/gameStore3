@@ -13,12 +13,13 @@
                         </span>
                         <div class="game-details_tabs">
                             <div class="game-details_overview">
-                                <span> Overview</span>
+                                <span>Overview</span>
                             </div>
                         </div>
                         <div class="game-details_avatar">
                             <div class="picture16x9">
-                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->getImagePaner() }}"
+                                <img class="img-fluid"
+                                    src="{{ '/storage/' . $viewData['game']->getImagePaner() }}"
                                     alt="">
                             </div>
 
@@ -30,7 +31,8 @@
                             <div class="game-details_tag">
                                 <div>Genres</div>
                                 @foreach ($viewData['game']->typegame as $typeGame)
-                                    <a href="">{{ $typeGame->type->getTypeGame() }}</a>
+                                    <a
+                                        href="">{{ $typeGame->type->getTypeGame() }}</a>
                                 @endforeach
                             </div>
                             <div class="game-details_tag">
@@ -43,7 +45,7 @@
                         <div class="game-details_notify">
                             <div>
                                 <span class="game-details_notify-title">
-                                    This is an Early Access Game
+                                    {{ $viewData['game']->getNameGame() }}
                                 </span>
                                 <p class="game-details_notify-content">
                                     {{ $viewData['game']->getDescription() }}</p>
@@ -52,24 +54,9 @@
                             </div>
                         </div>
                         <div class="game-details_description">
-                            <p class="text-light">Assemble yourself in a hostile
-                                spacecraft where
-                                almost everything that moves is trying to get you.
-                                The reason? Yours to discover!</p>
-                            <p>Explore, fight, and learn your purpose in this
-                                galactic action-adventure.</p>
-                            <p>Oirbo is a 2D action-platformer adventure that takes
-                                place on a huge spacecraft divided into
-                                interconnected areas. Search in every section for
-                                the pieces that make out the history of the journey
-                                and enhance your skills and components to get to new
-                                heights.</p>
-                            <p>Explore a massive spaceship to find answers, but
-                                beware the army of robots that are coming for you;
-                                avoid them; fight them or simply outsmart them in
-                                this futuristic hand-drawn adventure in space!</p>
                             <div>
-                                <div class="collapse mb-3" id="game_details_description">
+                                <div class="collapse mb-3"
+                                    id="game_details_description">
                                     <ul class="game_details_description-list">
                                         <li>Beautiful hand-drawn art</li>
                                         <li>Classic platforming and combat system
@@ -82,31 +69,23 @@
                                 </div>
                                 <button
                                     class="btn bg-secondary-subtle w-100 btn-lg py-4 display-5 text-uppercase btn-viewMore fw-bold"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#game_details_description"
-                                    aria-expanded="false" aria-controls="game_details_description">
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#game_details_description"
+                                    aria-expanded="false"
+                                    aria-controls="game_details_description">
                                     Show more
                                 </button>
                             </div>
                         </div>
-                        <div class="contact_group">
-                            <span class="game_details_title">Follow us</span>
-                            <div class="contact_group_body bg-dark">
-                                <a href="#" class="text-secondary"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#" class="text-secondary"><i class="fa-solid fa-earth-americas"></i></a>
-                                <a href="#" class="text-secondary"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#" class="text-secondary"><i class="fa-brands fa-facebook"></i></a>
-                                <a href="#" class="text-secondary"><i class="fa-brands fa-youtube"></i></a>
-                                <a href="#" class="text-secondary"><i class="fa-brands fa-discord"></i></a>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <div class="d-flex flex-column game-details-side_wrapper">
+                    <div
+                        class="d-flex flex-column pt-5 pt-md-0 ps-md-5 px-3 px-md-0 game-details-side_wrapper">
                         <div class="game-details-side_avatar">
                             <div class="picture16x9">
-                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->getImageLogo() }}"
+                                <img class="img-fluid"
+                                    src="{{ '/storage/' . $viewData['game']->getImageLogo() }}"
                                     alt="">
                             </div>
                         </div>
@@ -117,45 +96,50 @@
                                     alt="">
                             </div>
                         </div>
-                        <div class="game-details_categories d-flex">
-                            <div class="game-details_category">
-                                <div class="btn btn-sm btn-secondary">BASE GAME
-                                </div>
+                        <div class="mt-4 align-items-center  d-flex">
+                            <div class="badge bg-secondary p-2">
+                                BASE GAME
                             </div>
-                            <div class="game-details_category">
-                                <div class="btn btn-sm btn-secondary">EARLY ACCESS
-                                </div>
+                            <div class="badge bg-secondary p-2 ms-2">
+                                EARLY ACCESS
                             </div>
                         </div>
                         <div class="game-details_prices">
-                            <div class="game-details_saleoff bg-primary">-25%</div>
-                            <div class="game-details_oldprice text-decoration-line-through text-secondary">
+                            <div class="badge py-3 px-4 bg-primary fs-secondary">
+                                -25%
+                            </div>
+                            <div
+                                class="fs-primary text-decoration-line-through text-secondary ms-2">
                                 <span>₫{{ number_format($viewData['game']->getPrice() * 1.25, 0, '.', ',') }}</span>
 
                             </div>
-                            <div class="game-details_curprice">
+                            <div class="fs-secondary ms-2">
                                 <span>₫{{ number_format($viewData['game']->getPrice(), 0, '.', ',') }}</span>
                             </div>
                         </div>
                         <div class="game-details_saleoff-deadline">
                             <span>Sale ends 8/28/2023 at 7:00 AM</span>
                         </div>
-                        <form action="{{ route('cart.purchaseNow', ['id' => $viewData['game']->getGameId()]) }}"
+                        <form
+                            action="{{ route('cart.purchaseNow', ['id' => $viewData['game']->getGameId()]) }}"
                             method="post">
                             @csrf
-                            <button type="submit" class="game-details_buynow w-75 btn btn-lg btn-primary text-center">
+                            <button type="submit"
+                                class="game-details_buynow w-100 btn btn-lg btn-primary text-center">
                                 BUY NOW
                             </button>
                         </form>
-                        <form action="{{ route('cart.add', ['id' => $viewData['game']->getGameId()]) }}" method="post">
+                        <form
+                            action="{{ route('cart.add', ['id' => $viewData['game']->getGameId()]) }}"
+                            method="post">
                             @csrf
                             <button type="submit"
-                                class="game-details_addcart w-75 btn btn-lg btn-outline-light text-center">
+                                class="game-details_addcart w-100 btn btn-lg btn-outline-light text-center">
                                 ADD TO CART
                             </button>
                         </form>
                         <ul class="game-details_support-infoes">
-                            <li class="game-details_info">
+                            <li class="game-details_info w-100 w-md-75">
                                 <span>Epic reward</span>
                                 <span>5% back</span>
                             </li>
@@ -180,6 +164,27 @@
                                 <span>Window</span>
                             </li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="contact_group">
+                        <span class="game_details_title">Follow us</span>
+                        <div class="contact_group_body py-5 p-md-5 bg-dark">
+                            <a href="#" class="text-secondary"><i
+                                    class="fa-brands fa-twitter"></i></a>
+                            <a href="#" class="text-secondary"><i
+                                    class="fa-solid fa-earth-americas"></i></a>
+                            <a href="#" class="text-secondary"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="text-secondary"><i
+                                    class="fa-brands fa-facebook"></i></a>
+                            <a href="#" class="text-secondary"><i
+                                    class="fa-brands fa-youtube"></i></a>
+                            <a href="#" class="text-secondary"><i
+                                    class="fa-brands fa-discord"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>

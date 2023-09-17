@@ -4,17 +4,17 @@
         @csrf
         <div class="filter_header">
             <span class="filter_counter">Filter</span>
-            <a class="text-light" href="#">Reset</a>
+            <a onclick="handleResetFilter()" class="text-light"
+                href="{{ route('clients.games') }}">Reset</a>
         </div>
         <div>
-            <div class="filter_search">
+            {{-- <div class="filter_search">
                 <div>
                     <span><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <input type="text" name="search">
+                    <input autocomplete="off"  type="text" name="search">
                 </div>
-            </div>
+            </div> --}}
 
-            <hr>
             <div class="filter_genre">
                 <div class="collapse_filter">
                     <button class="btn btn-secondary text-start" type="button"
@@ -36,7 +36,8 @@
                         @endforeach
                     </ul>
                     @foreach ($viewData['type'] as $genre)
-                        <input type="checkbox" name="genreItem[]" hidden
+                        <input autocomplete="off" type="checkbox"
+                            name="genreItem[]" hidden
                             id="{{ 'filter' . $genre->getTypeGame() }}"
                             {{ in_array($genre->getTypeId(), $viewData['oldCheck']) ? 'checked' : '' }}
                             value="{{ $genre->getTypeId() }}">
@@ -46,6 +47,8 @@
                     </button>
                 </div>
             </div>
+            <hr>
+
         </div>
     </form>
     <script>

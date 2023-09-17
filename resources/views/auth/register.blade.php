@@ -1,13 +1,14 @@
-@extends('layouts.client')
+@extends('clients.login')
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/form.css') }}">
-    <section class="bg-dark py-5">
+    <section class="bg-dark py-5 h-100 d-flex align-items-center">
         <div class="container-md">
             <div class="row justify-content-around">
                 <div class="col-md-7">
-                    <div class="rounded-circle overflow-hidden side_circle_avatar">
-                        <img src="form.svg" alt="" class="img-fluid">
-                    </div>
+                    <a href="{{ route('clients.home') }}"
+                        class="rounded-circle overflow-hidden side_circle_avatar mx-auto mx-md-0 mb-4">
+                        <img src="form.svg" alt="gameStore" class="img-fluid">
+                    </a>
                 </div>
                 <div class="col-md-5">
                     <div
@@ -18,20 +19,51 @@
                         <div class="flex-grow-1">
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
-                                <input spellcheck="false" id="name"
-                                    type="text"
+                                <div class="input-group">
+                                    <label class="input-group__label"
+                                        for="password">username</label>
+                                    <input autocomplete="off" spellcheck="false"
+                                        id="name" type="text"
+                                        class="input-group__input @error('name') is-invalid @enderror"
+                                        name="name" value="{{ old('name') }}"
+                                        required autocomplete="name" autofocus
+                                        placeholder="Exp: abcxyz">
+                                    @error('name')
+                                        <span class="text-end invalid-feedback"
+                                            role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                {{-- <input autocomplete="off" spellcheck="false"
+                                    id="name" type="text"
                                     class="form-control @error('name') is-invalid @enderror d-block login-form_input"
                                     name="name" value="{{ old('name') }}"
                                     required autocomplete="name" autofocus
-                                    placeholder="Username">
-                                @error('name')
+                                    placeholder="Username"> --}}
+                                {{-- @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
-
-                                <input spellcheck="false" id="email"
-                                    type="email"
+                                @enderror --}}
+                                <div class="input-group">
+                                    <label class="input-group__label"
+                                        for="password">email</label>
+                                    <input autocomplete="off" spellcheck="false"
+                                        id="email" type="email"
+                                        class="input-group__input @error('email') is-invalid @enderror"
+                                        name="email" value="{{ old('email') }}"
+                                        required autocomplete="email"
+                                        placeholder="Exp: Example@gmail.com">
+                                    @error('email')
+                                        <span class="text-end invalid-feedback"
+                                            role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                {{-- <input autocomplete="off" spellcheck="false"
+                                    id="email" type="email"
                                     class="form-control @error('email') is-invalid @enderror d-block login-form_input"
                                     name="email" value="{{ old('email') }}"
                                     required autocomplete="email"
@@ -40,10 +72,26 @@
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror --}}
 
-                                <input spellcheck="false" id="password"
-                                    type="password"
+                                <div class="input-group">
+                                    <label class="input-group__label"
+                                        for="password">password</label>
+                                    <input autocomplete="off" spellcheck="false"
+                                        id="password" type="password"
+                                        class="input-group__input @error('password') is-invalid @enderror"
+                                        name="password" required
+                                        autocomplete="new-password"
+                                        placeholder="At least 8 characters">
+                                    @error('password')
+                                        <span class="text-end invalid-feedback"
+                                            role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                {{-- <input autocomplete="off" spellcheck="false"
+                                    id="password" type="password"
                                     class="form-control @error('password') is-invalid @enderror d-block login-form_input"
                                     name="password" required
                                     autocomplete="new-password"
@@ -53,18 +101,28 @@
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
-
-                                <input id="password-confirm" type="password"
+                                @enderror --}}
+                                <div class="input-group">
+                                    <label class="input-group__label"
+                                        for="password">confirm password</label>
+                                    <input autocomplete="off" id="password-confirm"
+                                        type="password"
+                                        class="input-group__input d-block"
+                                        name="password_confirmation" required
+                                        autocomplete="new-password" placeholder="">
+                                </div>
+                                {{-- <input autocomplete="off" id="password-confirm"
+                                    type="password"
                                     class="form-control d-block login-form_input"
                                     name="password_confirmation" required
                                     autocomplete="new-password"
-                                    placeholder="Comfirm password">
+                                    placeholder="Comfirm password"> --}}
 
                                 <hr>
-                                <button type="submit"
-                                    class="btn btn-primary btn-lg login_btn fw-bold">
-                                    {{ __('Register') }}
+                                <button type="submit" class="login_btn"
+                                    style="--clr:#0FF0FC">
+                                    <span>Register</span>
+                                    <i></i>
                                 </button>
                             </form>
                             <hr>

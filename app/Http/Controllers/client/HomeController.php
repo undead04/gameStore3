@@ -28,6 +28,7 @@ class HomeController extends Controller
                 'games.image',
                 'games.name_Game',
                 'games.description',
+                'games.discount',
                 DB::raw('sum(gameorders.quantity) as totalQuantity')
             )
             ->groupBy(
@@ -36,6 +37,7 @@ class HomeController extends Controller
                 'games.image',
                 'games.name_Game',
                 'games.description',
+                'games.discount'
             )
             ->orderBy('totalQuantity', 'desc')
             ->take(10)->get();

@@ -8,6 +8,8 @@ use App\Http\Controllers\client\HomeController;
 use App\Http\Controllers\admin\GenresController;
 use App\Http\Controllers\client\LoginController;
 use App\Http\Controllers\admin\DeveloperController;
+use App\Http\Controllers\admin\HomeController as AdminHomeController;
+use App\Http\Controllers\admin\ProfitController;
 use App\Http\Controllers\client\FilterController;
 use Illuminate\Support\Facades\Auth;
 use PHPUnit\TextUI\XmlConfiguration\Group;
@@ -45,7 +47,8 @@ Route::get('home', function () {
 
 Route::middleware('admin')->group(function () {
     Route::prefix('admin')->group(function () {
-        Route::view('/', 'admin.home')->name('admin.home');
+        Route::get('/', [AdminHomeController::class, 'index'])->name('admin.home');
+        Route::get('/users', [AdminHomeController::class, 'user'])->name('admin.user');
         Route::get('/games', [GameController::class, 'index'])->name('admin.game.games');
         Route::post('/games/store', [GameController::class, 'store'])->name('admin.game.store');
         Route::delete('/games/delete/{id}', [GameController::class, 'delete'])->name('admin.game.delete');
@@ -58,6 +61,7 @@ Route::middleware('admin')->group(function () {
         Route::get('genres/edit/{id}', [GenresController::class, 'edit'])->name('admin.genre.edit');
         Route::put('genres/update/{id}', [GenresController::class, 'update'])->name('admin.genre.update');
         Route::delete('/genres/delete/{id}', [GenresController::class, 'delete'])->name('admin.genre.delete');
+        Route::get('/profit', [ProfitController::class, 'index'])->name('admin.profit.index');
     });
 });
 

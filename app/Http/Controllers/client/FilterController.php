@@ -17,8 +17,11 @@ class FilterController extends Controller
     public function filter(Request $request)
     {
         // $re = $request->all();
+        $genreItem = [];
         $genreItem = $request->input('genreItem');
-        $genreList = DB::table('games')->pluck('genre');
+        // dd($genreItem);
+        $genreList = DB::table('games')->pluck('genre', 'id');
+        // dd($genreList);
         $games = DB::table('games')->get();
         $result = [];
         // dd($games);
@@ -39,7 +42,8 @@ class FilterController extends Controller
                 foreach ($item as $key => $value) {
                     # code...
                     if (in_array($value, $genreItem)) {
-                        $result[] = $index + 1;
+                        $result[] = $index;
+                        // dd($result);
                     }
                 }
             } else {
@@ -48,6 +52,7 @@ class FilterController extends Controller
         }
         // dd($result);
         $viewData['games'] = Game::whereIn('id', $result)->get();
+        // dd($viewData['games']);
         $viewData['title'] = "Game Result " . count($viewData['games']) . " items found";
         $viewData['type'] = Type_Game::all();
 

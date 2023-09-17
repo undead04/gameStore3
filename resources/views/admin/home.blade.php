@@ -1,20 +1,66 @@
 @extends('layouts.admin')
 @section('table')
-    <div class="card w-100 text-light rounded-2 text-center  bg-transparent mx-auto">
-        <div class="card-body p-5 home_admin">
-            <div class="card-title display-2">Welcome to Admin panel center!!!</div>
-            <p class="card-text display-6">Use these controll in the main menu to
-                start</p>
-            <p class="card-text display-6"><small class="text-dark timer">0/00/0000,
-                    00:00:00 AM</small></p>
+    <div class="row g-0 g-md-5">
+        <div class="col-md-6">
+            <a href="{{ route('admin.user') }}"
+                class="admin_panel  mt-4 mt-md-0 bg-info text-light">
+                <div class="admin_title">
+                    <div class="admin_header">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    User
+                </div>
+                <div class="fs-2 fs-md-1 pe-5 text-end">
+                    {{ $viewData['userCount'] }}
+                    people
+                    joined</div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="{{ route('admin.game.games') }}">
+                <div class="admin_panel  mt-4 mt-md-0 bg-danger text-light">
+                    <div class="admin_title">
+                        <div class="admin_header">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        Games
+                    </div>
+                    <div class="fs-2 fs-md-1 pe-5 text-end">+
+                        {{ $viewData['gameCount'] }} hot
+                        games
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="{{ route('admin.profit.index') }}"
+                class="admin_panel  mt-4 mt-md-0 bg-warning text-light">
+                <div class="admin_title">
+                    <div class="admin_header">
+                        <i class="fa-solid fa-money-check"></i>
+                    </div>
+                    Benefit
+                </div>
+                <div class="fs-2 fs-md-1 pe-5 text-end">
+                    +₫{{ number_format($viewData['total'], 0, '.', ',') }}</div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="{{ route('admin.genre.genres') }}"
+                class="admin_panel  mt-4 mt-md-0 bg-primary text-light">
+                <div class="admin_title">
+                    <div class="admin_header">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </div>
+                    Genre
+                </div>
+                <div class="fs-2 fs-md-1 pe-5 text-end">
+                    +{{ $viewData['genreCount'] }}
+                    genres
+                </div>
+            </a>
         </div>
     </div>
 @endsection
 @section('script')
-    <script>
-        setInterval(() => {
-            const d = new Date();
-            document.querySelector('.timer').innerText = d.toLocaleString();
-        }, 1000);
-    </script>
 @endsection

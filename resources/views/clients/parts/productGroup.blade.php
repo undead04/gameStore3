@@ -1,7 +1,8 @@
 <section class="bg-black pb-5">
     @foreach ($viewData['gameAction'] as $types)
         <div class="container-md mb-3">
-            <div class="list_header d-flex justify-content-between align-items-center">
+            <div
+                class="list_header d-flex justify-content-between align-items-center">
 
                 <a class="">
                     <h2 class="text-white py-3">{{ $types->getTypeGame() }}
@@ -22,21 +23,37 @@
                                 <div class="game_picture product_group">
                                     <div class="game_picture_wrapper txf">
                                         <img src="{{ '/storage/' . $typeGames->games->getImage() }}"
-                                            class="card-img-top rounded-4" alt="{{ $typeGames->games->getNameGame() }}">
+                                            class="card-img-top rounded-4"
+                                            alt="{{ $typeGames->games->getNameGame() }}">
                                     </div>
                                 </div>
                                 <div class="card-body mt-3">
-                                    <h5 class="card-title productGroup_item_title truncated">
+                                    <h5
+                                        class="card-title productGroup_item_title truncated">
                                         {{ $typeGames->games->getNameGame() }}
                                     </h5>
-                                    <p class="card-text truncated-3 productGroup_description">
+                                    <p
+                                        class="card-text truncated-3 productGroup_description">
                                         {{ $typeGames->games->getDescription() }}
                                     </p>
                                     @if ($typeGames->games->getPrice() == 0)
-                                        <span class="productGroup_price_label">Free</span>
+                                        <span
+                                            class="productGroup_price_label">Free</span>
                                     @else
-                                        <span class="productGroup_price_label"><span>
-                                                ₫{{ $typeGames->games->getPrice() }}
+                                        <span class="productGroup_price_label">
+                                            <span
+                                                class="d-flex justify-content-between">
+                                                @if ($typeGames->games->getDiscount() == 0)
+                                                    <div></div>
+                                                @else
+                                                    <div
+                                                        class="badge py-2 px-3 fs-secondary bg-primary">
+                                                        -{{ $typeGames->games->getDiscount() }}%
+                                                    </div>
+                                                @endif
+                                                <span>
+                                                    ₫{{ $typeGames->games->getPrice() * (1 - $typeGames->games->getDiscount() / 100) }}
+                                                </span>
                                             </span>
                                     @endif
                                 </div>

@@ -18,10 +18,23 @@
     border-bottom: 2px solid white;
 }
 
+@media (min-width: 768px) {
+    .game-details_avatar {
+        min-width: 605px;
+        margin-bottom: 30px;
+    }
+
+    
+    .game-details-side_avatar {
+        width: 280px;
+    }
+}
+
 .game-details_avatar {
-    width: 605px;
     margin-bottom: 30px;
 }
+
+
 
 .game-details_avatar div {
     overflow: hidden;
@@ -90,28 +103,25 @@
 
 
 /* ======================================================================== */
-.game-details-side_wrapper {
-    margin-left: 20%;
+@media (min-width : 768px) {
+    .game-details-side_wrapper {
+        margin-left: 20%;
+    }
+
+   
 }
 
-.game-details-side_avatar {
-    width: 280px;
+.game-details-side_wrapper form {
+    text-align: center;
 }
 
 .limited-age_labels {
     max-width: 50px;
+    margin-top: 8px;
     border: 1px solid #666;
 }
 
 
-.game-details_categories  {
-    align-items: center;
-    margin-top: 15px;
-}
-
-.game-details_category + .game-details_category {
-    margin-left: 8px;
-}
 
 .game-details_prices {
     display: flex;
@@ -119,19 +129,6 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 15px;
-}
-
-.game-details_saleoff {
-    border-radius: 4px;
-    width: 45px;
-    padding: 5px 10px;
-    font-size: 1rem;
-    text-align: center;
-}
-
-.game-details_oldprice,
-.game-details_curprice {
-    font-size: 1.4rem;
 }
 
 .game-details_saleoff-deadline {
@@ -155,7 +152,6 @@
 .game-details_info {
     font-size: 1.4rem;
     padding: 8px;
-    width: 75%;
     display: flex;
     justify-content: space-between;
 }
@@ -192,7 +188,6 @@
     align-items: center;
     justify-content: space-around;
     font-size: 2.8rem;
-    padding: 27px 100px;
 }
 
 .contact_group_body > a:hover i {

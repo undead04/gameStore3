@@ -27,7 +27,6 @@ class ShoppingController extends Controller
         }
         $viewData["total"] = $total;
         $viewData["games"] = $gameInSession;
-
         return view('cart.index')->with("viewData", $viewData);
     }
     public function add($id)
@@ -40,7 +39,6 @@ class ShoppingController extends Controller
             'price' => $gameItem->getPrice(),
             'discount' => $gameItem->getDiscount(),
             'image' => $gameItem->getImage(),
-
         ];
         session()->put('cart', $cart);
 

@@ -1,4 +1,4 @@
-<div class="col-sm-6 col-md-2-4">
+<div class="col-6 col-md-2-4">
     <div>
         <a
             href="{{ route('clients.gamesDetail', ['id' => $games->getGameId()]) }}">
@@ -26,15 +26,20 @@
                                     class="game_new_price fw-bold mt-3">Free</span>
                             </div>
                         @else
-                            <div class="bg-primary badge py-2 px-3 fs-5">
-                                -25%</div>
+                            <div>
+                                <div
+                                    class="badge bg-primary me-3 {{ $games->getDiscount() == 0 ? 'd-none' : 'd-inline-block' }}">
+                                    -{{ $games->getDiscount() . '%' }}
+                                </div>
+                            </div>
+
                             <div class="game_price">
                                 <div
                                     class="text-decoration-line-through text-secondary game_old_price">
-                                    <span>₫{{ number_format($games->getPrice(), 0, '.', ',') }}</span>
+                                    <span>{{ $games->getDiscount() == 0 ? '' : '₫' . number_format($games->getPrice(), 0, '.', ',') }}</span>
                                 </div>
                                 <div class="text-light game_new_price">
-                                    <span>₫{{ number_format($games->getPrice(), 0, '.', ',') }}</span>
+                                    <span>₫{{ number_format($games->getPrice() * (1 - $games->getDiscount() / 100), 0, '.', ',') }}</span>
                                 </div>
                             </div>
                         @endif

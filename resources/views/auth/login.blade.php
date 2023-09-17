@@ -1,13 +1,14 @@
-@extends('layouts.client')
+@extends('clients.login')
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/form.css') }}">
-    <section class="bg-dark py-5">
+    <section class="bg-dark py-5 h-100 d-flex align-items-center">
         <div class="container-md">
             <div class="row justify-content-around">
                 <div class="col-md-7">
-                    <div class="rounded-circle overflow-hidden side_circle_avatar">
+                    <a href="{{ route('clients.home') }}"
+                        class="user-select-none overflow-hidden side_circle_avatar mx-auto mx-md-0">
                         <img src="form.svg" alt="" class="img-fluid">
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-5 d-flex flex-column justify-content-center">
                     <div
@@ -17,34 +18,57 @@
                     <div class="form_wrapper">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
-                            <input spellcheck="false"
+                            <div class="input-group">
+                                <label class="input-group__label"
+                                    for="emailLogin">Email</label>
+                                <input autocomplete="off" spellcheck="false"
+                                    class="input-group__input @error('email') is-invalid @enderror"
+                                    type="email" id="email" name="email"
+                                    value="{{ old('email') }}" autocomplete="email"
+                                    autofocus required />
+                                @error('email')
+                                    <span class="text-end invalid-feedback mt-2"
+                                        role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            {{-- <input autocomplete="off" spellcheck="false"
                                 class="d-block form-control login-form_input border-primary @error('email') is-invalid @enderror"
                                 type="text" placeholder="Email" id="email"
                                 type="email" name="email"
                                 value="{{ old('email') }}" required
-                                autocomplete="email" autofocus>
+                                autocomplete="email" autofocus> --}}
 
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
 
-                            <input id="password" type="password"
+
+                            <div class="input-group">
+                                <label class="input-group__label"
+                                    for="password">Password</label>
+                                <input autocomplete="off" spellcheck="false"
+                                    type="password" id="password"
+                                    class="input-group__input @error('password') is-invalid @enderror"
+                                    required autocomplete="current-password"
+                                    name="password" value="{{ old('password') }}"
+                                    required />
+                                @error('password')
+                                    <span class="text-end invalid-feedback"
+                                        role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            {{-- <input autocomplete="off" id="password" type="password"
                                 class="form-control d-block login-form_input border-primary @error('password') is-invalid @enderror"
                                 name="password" required
                                 autocomplete="current-password"
-                                placeholder="Password">
+                                placeholder="Password"> --}}
 
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+
 
                             <div class="d-flex my-3 remember_check">
-                                <input class="form-check-input" type="checkbox"
-                                    name="remember" id="remember"
+                                <input autocomplete="off" class="form-check-input"
+                                    type="checkbox" name="remember" id="remember"
                                     {{ old('remember') ? 'checked' : '' }}>
 
                                 <label class="ms-2 text-white" for="remember">
@@ -52,9 +76,8 @@
                                 </label>
                             </div>
                             <hr>
-                            <button
-                                class="btn btn-primary btn-lg login_btn fw-bold">
-                                Login</button>
+                            <button class="login_btn" style="--clr:#39FF14">
+                                <span>Login</span><i></i></button>
                             <div class="mt-5 request_text_login">
                                 <a class="text-light fw-bold"
                                     href="{{ route('password.request') }}">Forgot
@@ -77,7 +100,7 @@
 {{-- <form method="POST" action="{{ route('login') }}">
     @csrf
 
-    <input spellcheck="false"
+    <input autocomplete="off"  spellcheck="false"
         class="d-block form-control login-form_input border-primary @error('email') is-invalid @enderror"
         type="text" placeholder="Email" id="email"
         type="email" name="email"
@@ -90,7 +113,7 @@
         </span>
     @enderror
 
-    <input id="password" type="password"
+    <input autocomplete="off"  id="password" type="password"
         class="form-control d-block login-form_input border-primary @error('password') is-invalid @enderror"
         name="password" required
         autocomplete="current-password"
@@ -103,7 +126,7 @@
     @enderror
 
     <div class="d-flex my-2">
-        <input class="form-check-input" type="checkbox"
+        <input autocomplete="off"  class="form-check-input" type="checkbox"
             name="remember" id="remember"
             {{ old('remember') ? 'checked' : '' }}>
 
