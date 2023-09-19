@@ -18,9 +18,15 @@
                         </div>
                         <div class="game-details_avatar">
                             <div class="picture16x9">
-                                <img class="img-fluid"
-                                    src="{{ '/storage/' . $viewData['game']->getImagePaner() }}"
-                                    alt="">
+                               <div class="pt_lv1">
+                                    <div class="pt_lv2">
+                                        <div class="pt_wrapper">
+                                            <img class="img-fluid"
+                                                src="{{ '/storage/' . $viewData['game']->getImagePaner() }}"
+                                                alt="">
+                                        </div>
+                                    </div>
+                               </div>
                             </div>
 
                         </div>
