@@ -26,7 +26,8 @@
 
     
     .game-details-side_avatar {
-        width: 280px;
+        /* width: 280px; */
+        overflow: hidden;
     }
 }
 

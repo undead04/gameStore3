@@ -139,7 +139,7 @@
 }
 
 .collapse_items.active {
-    opacity: 0.7;
+    background-color: #666;
 }
 /* ============================= Select arrow ============================= */
 .select_group {

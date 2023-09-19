@@ -20,17 +20,14 @@
                     <div
                         class="card-footer game_price d-flex align-items-center justify-content-between">
                         @if ($games->getPrice() == 0)
-                            <div></div>
                             <div class="game_price text-light">
                                 <span
                                     class="game_new_price fw-bold mt-3">Free</span>
                             </div>
                         @else
-                            <div>
-                                <div
-                                    class="badge bg-primary me-3 {{ $games->getDiscount() == 0 ? 'd-none' : 'd-inline-block' }}">
-                                    -{{ $games->getDiscount() . '%' }}
-                                </div>
+                            <div
+                                class="badge bg-primary me-3 {{ $games->getDiscount() == 0 ? 'd-none' : 'd-inline-block' }}">
+                                -{{ $games->getDiscount() . '%' }}
                             </div>
 
                             <div class="game_price">

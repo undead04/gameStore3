@@ -22,7 +22,7 @@
                                 class="card bg-transparent text-light">
                                 <div class="game_picture product_group">
                                     <div class="game_picture_wrapper txf">
-                                        <img src="{{ '/storage/' . $typeGames->games->getImage() }}"
+                                        <img src="{{ '/storage/' . $typeGames->games->getImagePaner() }}"
                                             class="card-img-top rounded-4"
                                             alt="{{ $typeGames->games->getNameGame() }}">
                                     </div>
@@ -52,7 +52,8 @@
                                                     </div>
                                                 @endif
                                                 <span>
-                                                    ₫{{ $typeGames->games->getPrice() * (1 - $typeGames->games->getDiscount() / 100) }}
+                                                    {{-- ₫{{ number_format($viewData['game']->getPrice(), 0, '.', ',') }} --}}
+                                                    ₫{{ number_format($typeGames->games->getPrice() * (1 - $typeGames->games->getDiscount() / 100), 0, '.', ',') }}
                                                 </span>
                                             </span>
                                     @endif

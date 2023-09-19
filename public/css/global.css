@@ -66,24 +66,18 @@ ul {
 }
 
 /* Font - size */
-
-.fs-primary {
-    font-size: 1.2rem!important;
-}
-
 .fs-secondary {
     font-size: 1rem;
 }
 
-@media (min-width : 768px) {
-    .fs-primary {
-        font-size: 1.6rem!important;
-    }
-
-    .fs-secondary {
-        font-size: 1.4rem!important;
-    }
+.fs-primary {
+    font-size: 1.6rem!important;
 }
+
+.fs-secondary {
+    font-size: 1.4rem!important;
+}
+
 /* 
 .fs-primary-mobile {
     .fs
@@ -131,9 +125,156 @@ ul {
     background-image: linear-gradient(to right, #c364fa, #a230fa, #7b00fa, darkviolet)!important;
 }
 
+.gradient {
+    display: inline-block;
+    height: 250px;
+    width: 80%;
+    background: linear-gradient(33deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 20px;
+    box-shadow: 0 5px 10px #0002;
+}
+
+.start-color, .end-color {
+    padding: 10px 0 0 10px;
+}
+
+.start-color::before, .end-color::before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 999px;
+    display: inline-block;
+  }
+
+.start-color::after,  .end-color::after {
+    padding: 0 10px;
+    vertical-align: 2px;
+    border-radius: 999px;
+    display: inline-block;
+
+}
+
+.start-color::before {
+    background-color: var(--gradient-end);
+}
 
 
+.end-color::before {
+    /* background-color: var(--gradient-start); */
+    background-color: white;
+}
 
+.gradient--0 {
+    --gradient-start: #6DE195;
+    --gradient-start-text: '#6DE195';
+    --gradient-end: #C4E759;
+    --gradient-end-text: '#C4E759';
+}
+
+.gradient--0 {
+    --gradient-start: #6DE195;
+    --gradient-start-text: '#6DE195';
+    --gradient-end: #C4E759;
+    --gradient-end-text: '#C4E759';
+  }
+  
+  .gradient--1 {
+    --gradient-start: #41C7AF;
+    --gradient-start-text: '#41C7AF';
+    --gradient-end: #54E38E;
+    --gradient-end-text: '#54E38E';
+  }
+  
+  .gradient--2 {
+    --gradient-start: #99E5A2;
+    --gradient-start-text: '#99E5A2';
+    --gradient-end: #D4FC78;
+    --gradient-end-text: '#D4FC78';
+  }
+  
+  .gradient--3 {
+    --gradient-start: #ABC7FF;
+    --gradient-start-text: '#ABC7FF';
+    --gradient-end: #C1E3FF;
+    --gradient-end-text: '#C1E3FF';
+  }
+  
+  .gradient--4 {
+    --gradient-start: #6CACFF;
+    --gradient-start-text: '#6CACFF';
+    --gradient-end: #8DEBFF;
+    --gradient-end-text: '#8DEBFF';
+  }
+  
+  .gradient--5 {
+    --gradient-start: #5583EE;
+    --gradient-start-text: '#5583EE';
+    --gradient-end: #41D8DD;
+    --gradient-end-text: '#41D8DD';
+  }
+  
+  .gradient--6 {
+    --gradient-start: #A16BFE;
+    --gradient-start-text: '#A16BFE';
+    --gradient-end: #DEB0DF;
+    --gradient-end-text: '#DEB0DF';
+  }
+  
+  .gradient--7 {
+    --gradient-start: #D279EE;
+    --gradient-start-text: '#D279EE';
+    --gradient-end: #F8C390;
+    --gradient-end-text: '#F8C390';
+  }
+  
+  .gradient--8 {
+    --gradient-start: #F78FAD;
+    --gradient-start-text: '#F78FAD';
+    --gradient-end: #FDEB82;
+    --gradient-end-text: '#FDEB82';
+  }
+  
+  .gradient--9 {
+    --gradient-start: #BC3D2F;
+    --gradient-start-text: '#BC3D2F';
+    --gradient-end: #A16BFE;
+    --gradient-end-text: '#A16BFE';
+  }
+  
+  .gradient--10 {
+    --gradient-start: #A43AB2;
+    --gradient-start-text: '#A43AB2';
+    --gradient-end: #E13680;
+    --gradient-end-text: '#E13680';
+  }
+  
+  .gradient--11 {
+    --gradient-start: #9D2E7D;
+    --gradient-start-text: '#9D2E7D';
+    --gradient-end: #E16E93;
+    --gradient-end-text: '#E16E93';
+  }
+  
+  .gradient--12 {
+    --gradient-start: #F5CCF6;
+    --gradient-start-text: '#F5CCF6';
+    --gradient-end: #F1EEF9;
+    --gradient-end-text: '#F1EEF9';
+  }
+  
+  .gradient--13 {
+    --gradient-start: #F0EFF0;
+    --gradient-start-text: '#F0EFF0';
+    --gradient-end: #FAF8F9;
+    --gradient-end-text: '#FAF8F9';
+  }
+  
+  .gradient--14 {
+    --gradient-start: #121317;
+    --gradient-start-text: '#121317';
+    --gradient-end: #323B42;
+    --gradient-end-text: '#323B42';
+  }
 
 /* Scroll bar */
 
@@ -152,15 +293,68 @@ ul {
 }
 /* Aspect ratio */
 /* Wrapper a image */
+
 .picture16x9 {
-    height: 1px;
+    position: relative;
     padding-bottom: calc(9/16*100%);
 }
+
 
 .picture3x3 {
     height: 1px;
     padding-bottom: 100%;
 }
+
+
+.pt_lv1 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+.pt_lv2 {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.pt_lv2 > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.pt_wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.pt_wrapper img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.img_css {
+    transition: opacity 125ms ease-in-out 450ms;
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 1;
+}
+
+
 
 
 /* Accordion */

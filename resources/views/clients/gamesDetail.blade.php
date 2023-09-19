@@ -18,7 +18,8 @@
                         </div>
                         <div class="game-details_avatar">
                             <div class="picture16x9">
-                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->getImagePaner() }}"
+                                <img class="img-fluid"
+                                    src="{{ '/storage/' . $viewData['game']->getImagePaner() }}"
                                     alt="">
                             </div>
 
@@ -30,7 +31,8 @@
                             <div class="game-details_tag">
                                 <div>Genres</div>
                                 @foreach ($viewData['game']->typegame as $typeGame)
-                                    <a href="">{{ $typeGame->type->getTypeGame() }}</a>
+                                    <a
+                                        href="">{{ $typeGame->type->getTypeGame() }}</a>
                                 @endforeach
                             </div>
                             <div class="game-details_tag">
@@ -53,7 +55,8 @@
                         </div>
                         <div class="game-details_description">
                             <div>
-                                <div class="collapse mb-3" id="game_details_description">
+                                <div class="collapse mb-3"
+                                    id="game_details_description">
                                     <ul class="game_details_description-list">
                                         <li>Beautiful hand-drawn art</li>
                                         <li>Classic platforming and combat system
@@ -66,8 +69,10 @@
                                 </div>
                                 <button
                                     class="btn bg-secondary-subtle w-100 btn-lg py-4 display-5 text-uppercase btn-viewMore fw-bold"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#game_details_description"
-                                    aria-expanded="false" aria-controls="game_details_description">
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#game_details_description"
+                                    aria-expanded="false"
+                                    aria-controls="game_details_description">
                                     Show more
                                 </button>
                             </div>
@@ -75,11 +80,19 @@
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <div class="d-flex flex-column pt-5 pt-md-0 ps-md-5 px-3 px-md-0 game-details-side_wrapper">
+                    <div
+                        class="d-flex flex-column pt-5 pt-md-0 ps-md-5 px-3 px-md-0 game-details-side_wrapper">
                         <div class="game-details-side_avatar">
                             <div class="picture16x9">
-                                <img class="img-fluid" src="{{ '/storage/' . $viewData['game']->getImageLogo() }}"
-                                    alt="">
+                                <div class="pt_lv1">
+                                    <div class="pt_lv2">
+                                        <div class="pt_wrapper">
+                                            <img class="img-fluid img_css"
+                                                src="{{ '/storage/' . $viewData['game']->getImageLogo() }}"
+                                                alt="">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="limited-age_labels">
@@ -104,11 +117,13 @@
                                 </div>
                             @else
                                 @if ($viewData['game']->getDiscount() > 0)
-                                    <div class="badge py-3 px-4 bg-primary fs-secondary">
+                                    <div
+                                        class="badge py-3 px-4 bg-primary fs-secondary">
                                         {{ '-' . $viewData['game']->getDiscount() . '%' }}
                                     </div>
-                                    <div class="fs-primary text-decoration-line-through text-secondary ms-2">
-                                        <span>₫{{ number_format($viewData['game']->getPrice(), 3, '.', ',') }}</span>
+                                    <div
+                                        class="fs-primary text-decoration-line-through text-secondary ms-2">
+                                        <span>₫{{ number_format($viewData['game']->getPrice(), 0, '.', ',') }}</span>
 
                                     </div>
                                     <div class="fs-secondary ms-2">
@@ -116,7 +131,7 @@
                                     </div>
                                 @else
                                     <div class="fs-secondary ms-2">
-                                        <span>₫{{ number_format($viewData['game']->getPrice(), 3, '.', ',') }}</span>
+                                        <span>₫{{ number_format($viewData['game']->getPrice(), 0, '.', ',') }}</span>
                                     </div>
                                 @endif
                             @endif
@@ -124,14 +139,18 @@
                         <div class="game-details_saleoff-deadline">
                             <span>Sale ends 8/28/2023 at 7:00 AM</span>
                         </div>
-                        <form action="{{ route('cart.purchaseNow', ['id' => $viewData['game']->getGameId()]) }}"
+                        <form
+                            action="{{ route('cart.purchaseNow', ['id' => $viewData['game']->getGameId()]) }}"
                             method="post">
                             @csrf
-                            <button type="submit" class="game-details_buynow w-100 btn btn-lg btn-primary text-center">
+                            <button type="submit"
+                                class="game-details_buynow w-100 btn btn-lg btn-primary text-center">
                                 BUY NOW
                             </button>
                         </form>
-                        <form action="{{ route('cart.add', ['id' => $viewData['game']->getGameId()]) }}" method="post">
+                        <form
+                            action="{{ route('cart.add', ['id' => $viewData['game']->getGameId()]) }}"
+                            method="post">
                             @csrf
                             <button type="submit"
                                 class="game-details_addcart w-100 btn btn-lg btn-outline-light text-center">
@@ -172,12 +191,18 @@
                     <div class="contact_group">
                         <span class="game_details_title">Follow us</span>
                         <div class="contact_group_body py-5 p-md-5 bg-dark">
-                            <a href="#" class="text-secondary"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#" class="text-secondary"><i class="fa-solid fa-earth-americas"></i></a>
-                            <a href="#" class="text-secondary"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" class="text-secondary"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#" class="text-secondary"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="#" class="text-secondary"><i class="fa-brands fa-discord"></i></a>
+                            <a href="#" class="text-secondary"><i
+                                    class="fa-brands fa-twitter"></i></a>
+                            <a href="#" class="text-secondary"><i
+                                    class="fa-solid fa-earth-americas"></i></a>
+                            <a href="#" class="text-secondary"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="text-secondary"><i
+                                    class="fa-brands fa-facebook"></i></a>
+                            <a href="#" class="text-secondary"><i
+                                    class="fa-brands fa-youtube"></i></a>
+                            <a href="#" class="text-secondary"><i
+                                    class="fa-brands fa-discord"></i></a>
                         </div>
                     </div>
                 </div>

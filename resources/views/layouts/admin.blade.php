@@ -67,7 +67,7 @@
             </div>
         </div>
     </section>
-    <section class="py-5">
+    <section class="py-5 bg-info-subtle min-vh-100">
         <div class="container-md">
             <div class="row">
                 <div class="admin_table col">

@@ -43,13 +43,19 @@
                                         class="text-light">
                                         <span><i
                                                 class="fa-solid fa-cart-shopping"></i>
-                                            Cart</span></a>
+                                            Cart</span>
+                                        <div
+                                            class="badge bg-light py-2 px-3 rounded-2 text-dark ms-2">
+                                            1
+                                        </div>
+                                    </a>
                                 </li>
                                 <li>
                                     <a href="{{ route('cart.orders') }}"
                                         class="text-light">
                                         <span><i class="fa-solid fa-wallet"></i>
-                                            Orders</span></a>
+                                            Orders</span>
+                                    </a>
                                 </li>
                                 <li>
                                     <form action="{{ route('logout') }}"

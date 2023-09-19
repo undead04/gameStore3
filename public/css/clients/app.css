@@ -59,8 +59,13 @@
     font-size: 2rem;
 }
 
+.user_options {
+    min-width: 120px;
+}
+
 .user_options li a {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 40px;
     padding: 4px 8px;
