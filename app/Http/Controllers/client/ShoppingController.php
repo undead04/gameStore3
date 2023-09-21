@@ -16,6 +16,7 @@ class ShoppingController extends Controller
 {
     public function index()
     {
+
         $total = 0;
         $totalDiscount = 0;
         $gameInSession = session()->get("cart");
@@ -36,8 +37,10 @@ class ShoppingController extends Controller
     }
     public function add($id)
     {
+
         $gameItem = Game::find($id);
         $cart = session()->get('cart', []);
+
         $cart[$id] = [
             'id' => $gameItem->getGameId(),
             'name' => $gameItem->getNameGame(),

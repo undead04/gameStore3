@@ -6,8 +6,7 @@ use App\Http\Controllers\admin\GameController;
 use App\Http\Controllers\client\GameController as ClientGameController;
 use App\Http\Controllers\client\HomeController;
 use App\Http\Controllers\admin\GenresController;
-use App\Http\Controllers\client\LoginController;
-use App\Http\Controllers\admin\DeveloperController;
+
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
 use App\Http\Controllers\admin\ProfitController;
 use App\Http\Controllers\client\FilterController;
