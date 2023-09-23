@@ -26,4 +26,4 @@
 @endsection
 
 
-$viewData['game']->getIamge()
+
