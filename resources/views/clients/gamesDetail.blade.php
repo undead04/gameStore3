@@ -223,4 +223,22 @@
                 "show more"
         }
     </script>
+    @if (Session::has('message'))
+        <script>
+            swal("Message", "{{ Session::get('message')}}", 'success', {
+                button: true,
+                button: "OK",
+                timer: "3000"
+            })
+        </script>
+    @endif
+    @if (Session::has('buynow'))
+    <script>
+        swal("{{ Session::get('buynow')}}", "{{Session::get('messageBuyNow')}} {{Session::get('order')->getOrderId()}}", 'success', {
+            button: true,
+            button: "OK",
+            timer: "3000"
+        })
+    </script>
+@endif
 @endsection

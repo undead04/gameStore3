@@ -109,4 +109,12 @@
             @endif
         </div>
     </section>
+    @if (Session::has('message'))
+        <script>
+            swal("{{ Session::get('message')}}", "Your Order id: {{Session::get('viewData')['order']->getOrderId()}}", 'success', {
+                button: true,
+                button: "OK",
+            })
+        </script>
+    @endif
 @endsection

@@ -50,7 +50,7 @@ class ShoppingController extends Controller
         ];
         session()->put('cart', $cart);
 
-        return back();
+        return back()->with("message", "Game has been added to your cart!");
     }
     public function delete($id)
     {
@@ -60,7 +60,7 @@ class ShoppingController extends Controller
         session()->put('cart', $cart);
 
 
-        return back();
+        return back()->with("message", "Game has been removed from your cart");
     }
     public function purchase()
     {
@@ -93,7 +93,8 @@ class ShoppingController extends Controller
             $viewData["title"] = "Purchase - Online Store";
             $viewData["subtitle"] = "Purchase Status";
             $viewData["order"] = $order;
-            return view('cart.purchase')->with("viewData", $viewData);
+            // return view('cart.purchase')->with("viewData", $viewData);
+            return back()->with("message", "Purchase complete successfully!")->with("viewData", $viewData);
         } else {
             return redirect()->route('cart.index');
         }
@@ -122,6 +123,6 @@ class ShoppingController extends Controller
 
 
 
-        return redirect()->back();
+        return back()->with("buynow", "Purchase complete successfully!")->with("order", $order)->with('messageBuyNow', "Your Order ID:");
     }
 }
