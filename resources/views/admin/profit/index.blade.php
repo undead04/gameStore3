@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', 'Benefit | Admin')
 
 @section('table')
     <div class="d-flex align-items-center justify-content-between text-end">

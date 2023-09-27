@@ -1,7 +1,7 @@
 <li class="sidebar_item">
     <a class="sidebar_link" aria-current="page" href="{{ route('admin.home') }}"><i
             class="text-secondary fa-regular fa-compass"></i>
-        <span>Home</span></a>
+        <span>Dashboard</span></a>
 </li>
 <li class="sidebar_item">
     <a class="sidebar_link" href="{{ route('admin.user') }}"> <i

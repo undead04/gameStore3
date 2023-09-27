@@ -1,4 +1,6 @@
 @extends('layouts.admin')
+@section('title', 'Edit games | Admin')
+
 @section('table')
     <form
         action="{{ route('admin.game.update', ['id' => $viewData['game']->getGameId()]) }}"

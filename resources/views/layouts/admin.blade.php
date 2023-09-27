@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin - Game Store</title>
+    <title>@yield('title')</title>
     {{-- Icon embedding --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
@@ -33,7 +33,7 @@
                 {{-- class="btn btn-primary" >
                 Button with data-bs-target --}}
                 <div class="text-center">
-                    <span class="display-4">Admin page - Game Store</span>
+                    <span class="display-4">Mouse - Admin page</span>
                 </div>
                 <div class="text-light admin_nav_item">
                     <div class="admin_avatar">
@@ -47,14 +47,9 @@
     <section class="">
         <div class="offcanvas offcanvas-start admin_sidebar" tabindex="-1" id="adminSidebar">
             <div class="w-100">
-                {{-- <div style="width: 200px; height: 60px"
-                    class="mx-auto overflow-hidden d-flex align-items-center pt-4">
-                    <img src="logo.svg" class="img-fluid" alt="">
-                </div>
-                <div class="fs-big text-center">Game Store 3</div> --}}
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title display-3" id="offcanvasExampleLabel">Game
-                        Store 3</h5>
+                    <h5 class="offcanvas-title display-3" id="offcanvasExampleLabel">Mouse - Menu
+                        </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 @include('admin.parts.sidebar')

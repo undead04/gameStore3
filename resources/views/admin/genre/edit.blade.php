@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', 'Edit genres | Admin')
 @section('table')
     <form
         action="{{ route('admin.genre.update', ['id' => $viewData['genre']->getTypeId()]) }}"

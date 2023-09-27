@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+@section('title', 'Games | Admin')
 @section('table')
     <div class="d-flex align-items-center justify-content-between text-end">
         <div>

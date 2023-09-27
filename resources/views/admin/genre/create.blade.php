@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', 'Add genres | Admin')
 @section('table')
     <form action="{{ route('admin.genres.store') }}" method="POST">
         @csrf

@@ -1,4 +1,6 @@
 @extends('layouts.admin')
+@section('title', 'Dashboard | Admin')
+
 @section('table')
     <div class="row g-0 g-md-5">
         <div class="col-md-6">

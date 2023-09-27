@@ -1,4 +1,6 @@
 @extends('layouts.admin')
+@section('title', 'Add games | Admin')
+
 @section('table')
     <form action="{{ route('admin.game.store') }}" method="post"
         class="mx-auto data_form" enctype="multipart/form-data">

@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', 'Genres | Admin')
 @section('table')
     <div class="w-100 d-flex align-items-center text-end">
         <div>
