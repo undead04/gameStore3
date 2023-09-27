@@ -12,7 +12,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     {{-- Bootstrap embedding --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-
+    <link rel="icon" href="/logo_min.ico" type="image/x-icon"/>
     {{-- CSS --}}
     <link href="{{ asset('/css/global.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('/css/form.css') }}">

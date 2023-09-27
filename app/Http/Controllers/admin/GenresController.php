@@ -32,6 +32,7 @@ class GenresController extends Controller
         $newType = new Type_Game();
         $newType->setTypeGame($request->input('typeName'));
         $newType->save();
+        toastr()->success('Create a new genre successfully!');
 
         return redirect()->route('admin.genre.genres');
     }
@@ -52,6 +53,8 @@ class GenresController extends Controller
         $oldGame = Type_Game::find($id);
         $oldGame->setTypeGame($request->input('typeName'));
         $oldGame->save();
+        toastr()->info('Edit a new genre successfully!');
+        
         return redirect()->route('admin.genre.genres');
     }
 
@@ -60,6 +63,8 @@ class GenresController extends Controller
         TypeGame::where('typeId', $id)->delete();
 
         Type_Game::destroy($id);
+        toastr()->info('Remove a genre successfully!');
+
         return back();
     }
 }

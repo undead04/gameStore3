@@ -117,4 +117,14 @@
             })
         </script>
     @endif
+
+    @if (Session::has('messageDelete'))
+    <script>
+        swal("Success", "{{ Session::get('messageDelete')}}", 'success', {
+            button: true,
+            button: "OK",
+            timer: "3000"
+        })
+    </script>
+@endif
 @endsection

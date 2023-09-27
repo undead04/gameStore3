@@ -2,10 +2,10 @@
 @section('table')
     <div class="w-100 d-flex align-items-center text-end">
         <div>
-            <h1 class="text-dark display-2">Genre</h1>
+            <h1 class="text-dark display-2">Genre view</h1>
         </div>
         <a href="{{ route('admin.genre.create') }}"
-            class="btn btn-lg btn-submit btn-info text-light rounded-0">Add
+            class="btn btn-lg btn-submit btn-info text-light rounded-0">Add a
             new
             genres</a>
     </div>

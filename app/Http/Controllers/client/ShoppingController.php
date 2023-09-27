@@ -60,7 +60,7 @@ class ShoppingController extends Controller
         session()->put('cart', $cart);
 
 
-        return back()->with("message", "Game has been removed from your cart");
+        return back()->with("messageDelete", "Game has been removed from your cart");
     }
     public function purchase()
     {

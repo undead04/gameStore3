@@ -90,6 +90,8 @@ class GameController extends Controller
             $newTypeGame->setTypeId($genre);
             $newTypeGame->save();
         }
+
+        toastr()->success('Add a new game successfully!');
         return redirect()->route('admin.game.games');
     }
     public function delete($id)
@@ -98,6 +100,8 @@ class GameController extends Controller
         TypeGame::where('gameId', $id)->delete();
 
         Game::destroy($id);
+
+        toastr()->success('Remove a game successfully!');
         return back();
     }
     public function edit($id)
@@ -107,7 +111,6 @@ class GameController extends Controller
         $viewData['title'] = 'Admin Edit Pages';
         $viewData['game'] = Game::findOrFail($id);
         $viewData['typeGame'] = Type_Game::all();
-
         return view('admin.game.edit')->with('viewData', $viewData);
     }
     public function update($id, Request $request)
@@ -173,6 +176,7 @@ class GameController extends Controller
 
 
         $oldGame->save();
+        toastr()->info('Edit a new game successfully!');
 
         return redirect()->route('admin.game.games');
     }

@@ -8,7 +8,7 @@
             <label class="form-label">Type name:</label>
             <div class="flex-grow-1">
                 <input autocomplete="off" name="typeName" value="{{ old('name') }}"
-                    type="text" class="form-control bg-transparent text-light">
+                    type="text" class="form-control bg-transparent text-primary">
                 @error('typeName')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror

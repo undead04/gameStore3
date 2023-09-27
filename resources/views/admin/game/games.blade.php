@@ -3,10 +3,10 @@
 @section('table')
     <div class="d-flex align-items-center justify-content-between text-end">
         <div>
-            <h1 class="text-dark display-2">Games</h1>
+            <h1 class="text-dark display-2">Games view</h1>
         </div>
         <a href="{{ route('admin.game.create') }}"
-            class="btn btn-lg btn-submit btn-info text-light rounded-0">Add
+            class="btn btn-lg btn-submit btn-info text-light rounded-0">Add a
             new
             game</a>
     </div>
@@ -61,5 +61,5 @@
         </table>
 
     </div>
-
+z
 @endsection

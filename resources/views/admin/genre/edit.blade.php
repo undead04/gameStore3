@@ -12,7 +12,7 @@
             <div class="flex-grow-1">
                 <input autocomplete="off" name="typeName"
                     value="{{ $viewData['genre']->getTypeGame() }}" type="text"
-                    class="form-control bg-transparent text-light">
+                    class="form-control bg-transparent text-primary">
                 @error('name')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
